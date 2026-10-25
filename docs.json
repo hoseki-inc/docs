@@ -15,7 +15,6 @@
         "pages": [
           "index",
           "quickstart",
-          "getting-started/control-center-vs-prove",
           "getting-started/install-desktop",
           "getting-started/install-startos",
           "getting-started/install-umbrel",
@@ -63,7 +62,7 @@
         {
           "anchor": "Download",
           "icon": "download",
-          "href": "https://github.com/hoseki-inc/bitcoin-control-center/releases"
+          "href": "https://www.bitcoincontrolcenter.com"
         }
       ]
     }
@@ -98,7 +97,7 @@
       "website": "https://www.bitcoincontrolcenter.com"
     }
   },
-  "description": "Help for Bitcoin Control Center: local-first, watch-only Bitcoin savings app. Not Prove.",
+  "description": "Help for Bitcoin Control Center: local-first, watch-only Bitcoin savings app.",
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg",
