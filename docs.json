@@ -11,49 +11,26 @@
   "navigation": {
     "products": [
       {
-        "product": "Hoseki Prove",
-        "description": "Verify self-custodied Bitcoin and create statements",
-        "icon": "badge-check",
+        "product": "Home",
+        "description": "Proof of reserves and the basics",
+        "icon": "house",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start here",
             "pages": [
-              "index",
-              "prove/index",
-              "prove/getting-started"
+              "index"
             ]
           },
           {
-            "group": "Claims",
+            "group": "Learn",
             "pages": [
-              "prove/claims/how-claims-work",
-              "prove/claims/hardware-wallets",
-              "prove/claims/multisig",
-              "prove/claims/manual-signing",
-              "prove/claims/manage-claims"
+              "learn/proof-of-reserves",
+              "learn/keys-xpubs-and-signing"
             ]
           },
           {
-            "group": "Statements and requests",
+            "group": "Support",
             "pages": [
-              "prove/statements",
-              "prove/requests-and-sharing",
-              "prove/credits"
-            ]
-          },
-          {
-            "group": "Wallet guides",
-            "pages": [
-              "prove/wallet-guides/find-xpub",
-              "prove/wallet-guides/sign-message",
-              "prove/wallet-guides/export-multisig"
-            ]
-          },
-          {
-            "group": "Help",
-            "pages": [
-              "prove/privacy-security",
-              "prove/help",
               "contact"
             ]
           }
@@ -61,7 +38,7 @@
       },
       {
         "product": "Bitcoin Control Center",
-        "description": "Private, local Bitcoin savings tracker",
+        "description": "Track your Bitcoin privately on your own device",
         "icon": "vault",
         "groups": [
           {
@@ -133,6 +110,53 @@
             ]
           }
         ]
+      },
+      {
+        "product": "Hoseki Prove",
+        "description": "Web statements via Hoseki Prove",
+        "icon": "badge-check",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "prove/index",
+              "prove/getting-started"
+            ]
+          },
+          {
+            "group": "Claims",
+            "pages": [
+              "prove/claims/how-claims-work",
+              "prove/claims/hardware-wallets",
+              "prove/claims/multisig",
+              "prove/claims/manual-signing",
+              "prove/claims/manage-claims"
+            ]
+          },
+          {
+            "group": "Statements and requests",
+            "pages": [
+              "prove/statements",
+              "prove/requests-and-sharing",
+              "prove/credits"
+            ]
+          },
+          {
+            "group": "Wallet guides",
+            "pages": [
+              "prove/wallet-guides/find-xpub",
+              "prove/wallet-guides/sign-message",
+              "prove/wallet-guides/export-multisig"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "prove/privacy-security",
+              "prove/help"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -143,7 +167,7 @@
         "href": "mailto:support@hoseki.app"
       },
       {
-        "label": "Open Prove",
+        "label": "Web statements via Prove",
         "href": "https://prove.hoseki.app"
       }
     ],
@@ -171,7 +195,7 @@
       "github": "https://github.com/hoseki-inc"
     }
   },
-  "description": "Help for Hoseki Prove and Bitcoin Control Center.",
+  "description": "Help for Bitcoin Control Center and Hoseki Prove.",
   "logo": {
     "light": "/logo/hoseki-light.svg",
     "dark": "/logo/hoseki-dark.svg",
