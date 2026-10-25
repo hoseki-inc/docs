@@ -1,0 +1,91 @@
+If your wallet isn't one of the guided options, you can still prove control. Sign the message from {appName} in your own wallet app, then paste the signature back.
+
+<Info>Signing a message is **not** a transaction. It can't move or spend your Bitcoin, and it doesn't reveal your private key.</Info>
+
+You need two things from {appName}: the **address** and the **message**. Sign with that exact address, using the exact message. Don't add spaces or line breaks.
+
+<Tabs>
+  <Tab title="Sparrow">
+    Sparrow works with most hardware wallets, including Keystone, BitBox, and Passport. Connect your device to Sparrow first.
+
+    1. Open the **Addresses** tab. Find the address {appName} shows. It is usually the first receive address.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-find-first-receive-address.png" alt="Sparrow Addresses tab with the first receive address highlighted" />
+       </Frame>
+
+    2. Select the **pen** icon on that row.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-pen.png" alt="Pen icon on the address row in Sparrow" />
+       </Frame>
+
+    3. Paste the message from {appName} into **Message**. Check the **Address** matches.
+
+       <Frame>
+         <img src="/images/wallet-guides/message-prompt-with-message.png" alt="Sparrow Sign/Verify Message dialog with address and message filled in" />
+       </Frame>
+
+    4. Select **Sign**. Approve on your device by QR, USB, or SD card.
+    5. Copy the **Signature**. Optionally select **Verify** to check it first.
+
+       <Frame>
+         <img src="/images/wallet-guides/signature-sparrow-verified.png" alt="Sparrow showing a verified signature" />
+       </Frame>
+  </Tab>
+  <Tab title="Blockstream (Jade)">
+    1. Connect and unlock your Jade in the Blockstream desktop app. Open **Addresses**.
+
+       <Frame>
+         <img src="/images/wallet-guides/blockstream-addresses.png" alt="Blockstream app Addresses view" />
+       </Frame>
+
+    2. Select the address {appName} shows. In Blockstream, the first receive address is at the bottom of the used addresses.
+
+       <Frame>
+         <img src="/images/wallet-guides/blockstream-first-receive-address.png" alt="First receive address selected in Blockstream" />
+       </Frame>
+
+    3. Select **Authenticate address** at the bottom of the side panel.
+
+       <Frame>
+         <img src="/images/wallet-guides/blockstream-authenticate-address.png" alt="Authenticate address action in Blockstream" />
+       </Frame>
+
+    4. Paste the message from {appName}. Select **Authenticate**. Approve on your Jade.
+
+       <Frame>
+         <img src="/images/wallet-guides/blockstream-signed-message.png" alt="Blockstream showing the signed message" />
+       </Frame>
+
+    5. Copy the signature.
+  </Tab>
+  <Tab title="BlueWallet">
+    <Note>BlueWallet can only sign with keys stored in BlueWallet. If your wallet is on a hardware device, use Sparrow.</Note>
+
+    1. Open BlueWallet. Select your wallet.
+    2. Tap the **three dots** at the top right.
+
+       <Frame>
+         <img src="/images/wallet-guides/sign-message-blue-wallet-2.png" alt="BlueWallet wallet screen with the menu button" />
+       </Frame>
+
+    3. Scroll down. Select **Sign / Verify Message**. Not there? Your keys are on a hardware device. Use Sparrow.
+
+       <Frame>
+         <img src="/images/wallet-guides/sign-message-blue-wallet-3.png" alt="BlueWallet settings with Sign / Verify Message" />
+       </Frame>
+
+    4. Check the **Address** matches. Paste the message from {appName}. Sign.
+
+       <Frame>
+         <img src="/images/wallet-guides/sign-message-blue-wallet-4.png" alt="BlueWallet sign message screen with address, message, and signature fields" />
+       </Frame>
+
+    5. Copy the **Signature**.
+  </Tab>
+</Tabs>
+
+Paste the signature into {appName}. Select **Verify**.
+
+**Signature not accepted?** Check that you signed the unchanged message, with the exact address shown, and pasted the signature unchanged.

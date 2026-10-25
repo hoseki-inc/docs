@@ -1,0 +1,50 @@
+---
+title: "Manual signing (Advanced)"
+sidebarTitle: "Manual signing"
+description: "Verify any single-signature wallet by pasting its public key and a signed message."
+keywords:
+  - "manual"
+  - "advanced"
+  - "xpub"
+  - "zpub"
+  - "descriptor"
+  - "sign message"
+  - "keystone"
+  - "jade"
+  - "bitbox"
+---
+
+Use manual signing for any single-signature wallet Prove doesn't connect to directly. For example Keystone, Jade, BitBox, Passport, or a software wallet.
+
+You'll paste your wallet's public key, then sign a message in your own wallet app.
+
+## Start
+
+Open **Claims**. Open **Manually Verify Your Self-Custodial Bitcoin Holdings**. Select **Verify with Manual Signing**.
+
+## 1. Add the wallet
+
+1. Enter a **Display name**.
+2. Paste the **account descriptor or public key**. Need help finding it? See [Find your xpub](/prove/wallet-guides/find-xpub).
+3. If you pasted an `xpub`, pick the **script type**. Match the start of your addresses:
+
+   | Addresses start with | Pick |
+   | --- | --- |
+   | `1` | Legacy (P2PKH) |
+   | `3` | Nested SegWit (P2SH) |
+   | `bc1q` | Native SegWit (P2WPKH) |
+   | `bc1p` | Taproot (P2TR) |
+
+4. Select **Add Account**.
+
+<Tip>A descriptor, `zpub`, or `ypub` already includes the script type. You don't need to pick one.</Tip>
+
+## 2. Sign the message
+
+1. Copy the **Address** and **Message**.
+2. Sign the message with that address in your wallet app. See [Sign a message in your wallet](/prove/wallet-guides/sign-message).
+3. Paste the signature. Select **Verify**.
+
+**"Failed to complete claim registration"?** Sign the exact message, unchanged, with the exact address shown.
+
+<Warning>Never paste a private key (`xprv`) or seed phrase. Prove only needs public keys.</Warning>

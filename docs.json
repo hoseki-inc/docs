@@ -1,97 +1,155 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Bitcoin Control Center",
+  "name": "Hoseki Help Center",
   "colors": {
     "primary": "#0F172A",
     "light": "#CBD5E1",
     "dark": "#334155"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon-hoseki.svg",
   "navigation": {
-    "pages": [
+    "products": [
       {
-        "group": "Getting started",
-        "pages": [
-          "index",
-          "quickstart",
-          "getting-started/install-desktop",
-          "getting-started/install-startos",
-          "getting-started/install-umbrel",
-          "getting-started/first-run",
-          "getting-started/tour"
+        "product": "Hoseki Prove",
+        "description": "Verify self-custodied Bitcoin and create statements",
+        "icon": "badge-check",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "index",
+              "prove/index",
+              "prove/getting-started"
+            ]
+          },
+          {
+            "group": "Claims",
+            "pages": [
+              "prove/claims/how-claims-work",
+              "prove/claims/hardware-wallets",
+              "prove/claims/multisig",
+              "prove/claims/manual-signing",
+              "prove/claims/manage-claims"
+            ]
+          },
+          {
+            "group": "Statements and requests",
+            "pages": [
+              "prove/statements",
+              "prove/requests-and-sharing",
+              "prove/credits"
+            ]
+          },
+          {
+            "group": "Wallet guides",
+            "pages": [
+              "prove/wallet-guides/find-xpub",
+              "prove/wallet-guides/sign-message",
+              "prove/wallet-guides/export-multisig"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "prove/privacy-security",
+              "prove/help",
+              "contact"
+            ]
+          }
         ]
       },
       {
-        "group": "Accounts",
-        "pages": [
-          "accounts/how-accounts-work",
-          "accounts/hardware-wallets",
-          "accounts/verify-ownership",
-          "accounts/multisig",
-          "accounts/xpub-and-descriptors",
-          "accounts/exchanges",
-          "accounts/manual-and-etfs",
-          "accounts/manage-accounts"
-        ]
-      },
-      {
-        "group": "Portfolio",
-        "pages": [
-          "portfolio/home-and-portfolio"
-        ]
-      },
-      {
-        "group": "Statements",
-        "pages": [
-          "statements/statements-and-hoseki-verified"
-        ]
-      },
-      {
-        "group": "Settings and security",
-        "pages": [
-          "settings/app-settings",
-          "security/pin",
-          "privacy-security"
-        ]
-      },
-      {
-        "group": "Updates and backup",
-        "pages": [
-          "maintenance/updates",
-          "maintenance/backup-restore"
-        ]
-      },
-      {
-        "group": "Help",
-        "pages": [
-          "help/troubleshooting",
-          "help/faq",
-          "help/glossary",
-          "help/contact"
+        "product": "Bitcoin Control Center",
+        "description": "Private, local Bitcoin savings tracker",
+        "icon": "vault",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "bitcoin-control-center/index",
+              "bitcoin-control-center/quickstart",
+              "bitcoin-control-center/getting-started/install-desktop",
+              "bitcoin-control-center/getting-started/install-startos",
+              "bitcoin-control-center/getting-started/install-umbrel",
+              "bitcoin-control-center/getting-started/first-run",
+              "bitcoin-control-center/getting-started/tour"
+            ]
+          },
+          {
+            "group": "Accounts",
+            "pages": [
+              "bitcoin-control-center/accounts/how-accounts-work",
+              "bitcoin-control-center/accounts/hardware-wallets",
+              "bitcoin-control-center/accounts/verify-ownership",
+              "bitcoin-control-center/accounts/multisig",
+              "bitcoin-control-center/accounts/xpub-and-descriptors",
+              "bitcoin-control-center/accounts/exchanges",
+              "bitcoin-control-center/accounts/manual-and-etfs",
+              "bitcoin-control-center/accounts/manage-accounts"
+            ]
+          },
+          {
+            "group": "Portfolio",
+            "pages": [
+              "bitcoin-control-center/portfolio/home-and-portfolio"
+            ]
+          },
+          {
+            "group": "Statements",
+            "pages": [
+              "bitcoin-control-center/statements/statements-and-hoseki-verified"
+            ]
+          },
+          {
+            "group": "Wallet guides",
+            "pages": [
+              "bitcoin-control-center/wallet-guides/find-xpub",
+              "bitcoin-control-center/wallet-guides/sign-message",
+              "bitcoin-control-center/wallet-guides/export-multisig"
+            ]
+          },
+          {
+            "group": "Settings and security",
+            "pages": [
+              "bitcoin-control-center/settings/app-settings",
+              "bitcoin-control-center/security/pin",
+              "bitcoin-control-center/privacy-security"
+            ]
+          },
+          {
+            "group": "Updates and backup",
+            "pages": [
+              "bitcoin-control-center/maintenance/updates",
+              "bitcoin-control-center/maintenance/backup-restore"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "bitcoin-control-center/help/troubleshooting",
+              "bitcoin-control-center/help/faq",
+              "bitcoin-control-center/help/glossary"
+            ]
+          }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Download",
-          "icon": "download",
-          "href": "https://www.bitcoincontrolcenter.com"
-        }
-      ]
-    }
+    ]
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@bitcoincontrolcenter.com"
+        "href": "mailto:support@hoseki.app"
+      },
+      {
+        "label": "Open Prove",
+        "href": "https://prove.hoseki.app"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Download",
+      "label": "Download Control Center",
       "href": "https://www.bitcoincontrolcenter.com"
     }
   },
@@ -109,14 +167,14 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/hoseki-inc/bitcoin-control-center",
-      "website": "https://www.bitcoincontrolcenter.com"
+      "website": "https://www.hoseki.app",
+      "github": "https://github.com/hoseki-inc"
     }
   },
-  "description": "Help for Bitcoin Control Center: local-first, watch-only Bitcoin savings app.",
+  "description": "Help for Hoseki Prove and Bitcoin Control Center.",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg",
+    "light": "/logo/hoseki-light.svg",
+    "dark": "/logo/hoseki-dark.svg",
     "href": "/"
   },
   "background": {
@@ -124,5 +182,163 @@
       "light": "#FFFFFF",
       "dark": "#0F0F0F"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/article/10-what-is-a-claim",
+      "destination": "/prove/claims/how-claims-work"
+    },
+    {
+      "source": "/article/11-are-my-keys-ever-at-risk",
+      "destination": "/prove/privacy-security"
+    },
+    {
+      "source": "/article/17-device-not-connecting",
+      "destination": "/prove/help"
+    },
+    {
+      "source": "/article/23-how-is-my-xpub-used",
+      "destination": "/prove/privacy-security"
+    },
+    {
+      "source": "/article/25-how-do-you-prove-ownership",
+      "destination": "/prove/claims/how-claims-work"
+    },
+    {
+      "source": "/article/26-what-is-message-signing",
+      "destination": "/prove/claims/how-claims-work"
+    },
+    {
+      "source": "/article/27-what-wallets-and-devices-do-you-support",
+      "destination": "/prove/claims/hardware-wallets"
+    },
+    {
+      "source": "/article/28-i-generated-a-statement-but-the-balance-looks-wrong",
+      "destination": "/prove/help"
+    },
+    {
+      "source": "/article/29-wallet-not-supported",
+      "destination": "/prove/claims/manual-signing"
+    },
+    {
+      "source": "/article/30-what-is-a-statement-request",
+      "destination": "/prove/requests-and-sharing"
+    },
+    {
+      "source": "/article/32-my-trezor-won-t-connect-what-should-i-do",
+      "destination": "/prove/help"
+    },
+    {
+      "source": "/article/33-what-is-a-sharing-request",
+      "destination": "/prove/requests-and-sharing"
+    },
+    {
+      "source": "/article/36-how-to-sign-a-message-manually",
+      "destination": "/prove/wallet-guides/sign-message"
+    },
+    {
+      "source": "/article/37-how-to-find-xpub-in-blockstream-wallet",
+      "destination": "/prove/wallet-guides/find-xpub"
+    },
+    {
+      "source": "/article/39-sign-message-blockstream-wallet",
+      "destination": "/prove/wallet-guides/sign-message"
+    },
+    {
+      "source": "/article/40-how-to-find-xpub-sparrow",
+      "destination": "/prove/wallet-guides/find-xpub"
+    },
+    {
+      "source": "/article/41-how-to-find-your-xpub-in-bluewallet",
+      "destination": "/prove/wallet-guides/find-xpub"
+    },
+    {
+      "source": "/article/42-sign-message-blue-wallet",
+      "destination": "/prove/wallet-guides/sign-message"
+    },
+    {
+      "source": "/article/43-how-to-export-your-multisig-wallet",
+      "destination": "/prove/wallet-guides/export-multisig"
+    },
+    {
+      "source": "/article/44-exporting-your-multisig-wallet-from-sparrow-wallet",
+      "destination": "/prove/wallet-guides/export-multisig"
+    },
+    {
+      "source": "/article/45-exporting-your-multisig-wallet-from-unchained",
+      "destination": "/prove/wallet-guides/export-multisig"
+    },
+    {
+      "source": "/article/46-exporting-your-multisig-wallet-from-nunchuk",
+      "destination": "/prove/wallet-guides/export-multisig"
+    },
+    {
+      "source": "/article/47-exporting-your-multisig-wallet-from-bluewallet",
+      "destination": "/prove/wallet-guides/export-multisig"
+    },
+    {
+      "source": "/article/49-can-i-pay-with-bitcoin",
+      "destination": "/prove/credits"
+    },
+    {
+      "source": "/article/50-do-requests-use-credits",
+      "destination": "/prove/credits"
+    },
+    {
+      "source": "/article/:slug*",
+      "destination": "/prove"
+    },
+    {
+      "source": "/collection/:slug*",
+      "destination": "/prove"
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/prove"
+    },
+    {
+      "source": "/quickstart",
+      "destination": "/bitcoin-control-center/quickstart"
+    },
+    {
+      "source": "/privacy-security",
+      "destination": "/bitcoin-control-center/privacy-security"
+    },
+    {
+      "source": "/help/contact",
+      "destination": "/contact"
+    },
+    {
+      "source": "/getting-started/:slug*",
+      "destination": "/bitcoin-control-center/getting-started/:slug*"
+    },
+    {
+      "source": "/accounts/:slug*",
+      "destination": "/bitcoin-control-center/accounts/:slug*"
+    },
+    {
+      "source": "/portfolio/:slug*",
+      "destination": "/bitcoin-control-center/portfolio/:slug*"
+    },
+    {
+      "source": "/statements/:slug*",
+      "destination": "/bitcoin-control-center/statements/:slug*"
+    },
+    {
+      "source": "/settings/:slug*",
+      "destination": "/bitcoin-control-center/settings/:slug*"
+    },
+    {
+      "source": "/security/:slug*",
+      "destination": "/bitcoin-control-center/security/:slug*"
+    },
+    {
+      "source": "/maintenance/:slug*",
+      "destination": "/bitcoin-control-center/maintenance/:slug*"
+    },
+    {
+      "source": "/help/:slug*",
+      "destination": "/bitcoin-control-center/help/:slug*"
+    }
+  ]
 }

@@ -1,0 +1,86 @@
+To add a multisig wallet to {appName}, export its configuration from your coordinator. The export holds only **public** information: extended public keys, derivation paths, and the policy, such as 2 of 3. It never includes private keys.
+
+<Warning>Your wallet configuration reveals every address in the wallet. Never post it publicly. Share it only with apps you trust, and delete the file when you're done. Never share your seed phrase or wallet backup.</Warning>
+
+<Tabs>
+  <Tab title="Sparrow">
+    **Option 1: export a file (recommended)**
+
+    1. Open your multisig wallet. Select **Settings** in the left menu.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-export-1.png" alt="Sparrow multisig wallet Settings" />
+       </Frame>
+
+    2. Select **Export** at the bottom left.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-export-2.png" alt="Export button in Sparrow Settings" />
+       </Frame>
+
+    3. Choose **Unchained Caravan Multisig**. **BlueWallet Multisig** and **Coldcard Multisig** also work.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-export-3.png" alt="Sparrow export format list" />
+       </Frame>
+
+    4. Upload the file in {appName}.
+
+    **Option 2: copy the descriptor**
+
+    1. In **Settings**, find **Script Policy**. Select **Edit**.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-export-4.png" alt="Script Policy section with Edit button" />
+       </Frame>
+
+    2. Copy the long descriptor text. Paste it in {appName}.
+
+       <Frame>
+         <img src="/images/wallet-guides/sparrow-export-5.png" alt="Sparrow showing the wallet descriptor" />
+       </Frame>
+  </Tab>
+  <Tab title="Nunchuk">
+    1. Select your wallet on the main screen.
+
+       <Frame>
+         <img src="/images/wallet-guides/nunchuck-export-1.png" alt="Nunchuk wallet list" />
+       </Frame>
+
+    2. Tap **View Wallet Config**.
+
+       <Frame>
+         <img src="/images/wallet-guides/nunchuck-export-2.png" alt="Nunchuk wallet screen with View Wallet Config" />
+       </Frame>
+
+    3. Tap the **three dots** at the top right. Select **Export Wallet Configuration**.
+
+       <Frame>
+         <img src="/images/wallet-guides/nunchuck-export-4.png" alt="Nunchuk menu with Export Wallet Configuration" />
+       </Frame>
+
+    4. Choose **Descriptor**. This is the only Nunchuk format that works.
+
+       <Frame>
+         <img src="/images/wallet-guides/nunchuck-export-5.png" alt="Nunchuk export format choice with Descriptor" />
+       </Frame>
+
+    5. Upload the file in {appName}, or open it and paste its contents.
+  </Tab>
+  <Tab title="BlueWallet">
+    1. Open your **multisig vault**. Tap the **three dots** at the top right.
+
+       <Frame>
+         <img src="/images/wallet-guides/blue-wallet-export-2.png" alt="BlueWallet multisig vault with the menu button" />
+       </Frame>
+
+    2. Choose an export:
+
+       <Frame>
+         <img src="/images/wallet-guides/blue-wallet-export-3.png" alt="BlueWallet export options" />
+       </Frame>
+
+       - **Export Coordination Setup** (recommended): saves a file. Upload it in {appName}.
+       - **Export / Backup**: copy the text, save it as a `.txt` file, and upload that.
+  </Tab>
+</Tabs>

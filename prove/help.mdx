@@ -1,0 +1,100 @@
+---
+title: "Troubleshooting and FAQ"
+sidebarTitle: "Troubleshooting and FAQ"
+description: "Fixes for common Prove problems, and quick answers."
+keywords:
+  - "troubleshooting"
+  - "faq"
+  - "error"
+  - "code"
+  - "not working"
+  - "desktop required"
+---
+
+## Signing in
+
+<AccordionGroup>
+  <Accordion title="I didn't get a code">
+    Check spam. Wait for the timer, then select **Resend code**. Codes work for 5 minutes. Only the newest code works.
+  </Accordion>
+  <Accordion title="&quot;Desktop Required&quot;">
+    Prove works on desktop browsers only. Open it on a computer.
+  </Accordion>
+  <Accordion title="&quot;Rate limit exceeded&quot;">
+    Too many tries. Wait the number of seconds shown, then try again.
+  </Accordion>
+  <Accordion title="&quot;Your account is blocked&quot;">
+    Email [support@hoseki.app](mailto:support@hoseki.app).
+  </Accordion>
+  <Accordion title="I was signed out everywhere">
+    **Sign Out** signs out every device. Sign in again.
+  </Accordion>
+</AccordionGroup>
+
+## Claims
+
+<AccordionGroup>
+  <Accordion title="&quot;No wallets found&quot;">
+    Ledger and COLDCARD only list accounts with a balance. Use [manual signing](/prove/claims/manual-signing) for an empty wallet.
+  </Accordion>
+  <Accordion title="Ledger not detected">
+    Use Chrome, Brave, or Edge. Unlock it and open the Bitcoin app. Close Ledger Live. Use a USB cable that carries data.
+  </Accordion>
+  <Accordion title="Trezor Suite doesn't open">
+    Allow pop-ups for prove.hoseki.app. If asked, allow local network access.
+  </Accordion>
+  <Accordion title="My wallet isn't listed">
+    Use [manual signing](/prove/claims/manual-signing). It works with any wallet that can sign a message, such as Keystone, Jade, BitBox, or Passport through Sparrow.
+  </Accordion>
+  <Accordion title="Signature not accepted">
+    Sign the exact message, unchanged, with the exact address shown. Paste the signature unchanged.
+  </Accordion>
+  <Accordion title="&quot;Cannot create more than 10 claims&quot;">
+    Delete pending claims you don't need, or email [support@hoseki.app](mailto:support@hoseki.app) to raise your limit.
+  </Accordion>
+  <Accordion title="Someone already claimed my wallet">
+    Each wallet can be verified by one Hoseki account. If you didn't claim it from another account, email [support@hoseki.app](mailto:support@hoseki.app).
+  </Accordion>
+</AccordionGroup>
+
+## Statements
+
+<AccordionGroup>
+  <Accordion title="A claim is missing from the list">
+    Only verified claims appear. Open the claim and finish signing.
+  </Accordion>
+  <Accordion title="The balance looks wrong">
+    Check the dates. The statement shows balances for the period you chose, not today. Check you picked the right script type for manual claims.
+  </Accordion>
+  <Accordion title="The download is monthly, not the full period">
+    **Download** saves the format shown in the viewer. Switch to **Full Period** first.
+  </Accordion>
+  <Accordion title="&quot;Failed to generate statement&quot;">
+    You weren't charged. Try again. If it keeps failing, email [support@hoseki.app](mailto:support@hoseki.app).
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can Hoseki move my Bitcoin?">
+    No. Prove only has public keys. Signing a message can't move funds.
+  </Accordion>
+  <Accordion title="Do partners see my addresses?">
+    No. Partners see claim names, balances, and history you approve. Never addresses or keys.
+  </Accordion>
+  <Accordion title="Can I pay with Bitcoin?">
+    Yes. Single credits can be paid over Lightning. Bundles use a card.
+  </Accordion>
+  <Accordion title="Do I need to verify again?">
+    No. You verify each wallet once.
+  </Accordion>
+  <Accordion title="Does Prove support exchanges or other coins?">
+    No. Prove is for self-custodied Bitcoin. To track exchanges privately, see [Bitcoin Control Center](/bitcoin-control-center).
+  </Accordion>
+  <Accordion title="How do I delete my account?">
+    Email [support@hoseki.app](mailto:support@hoseki.app) from your account's email.
+  </Accordion>
+</AccordionGroup>
+
+Still stuck? [Contact support](/contact).

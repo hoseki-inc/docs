@@ -1,0 +1,190 @@
+---
+title: "Troubleshooting"
+description: "Fixes for the most common problems."
+keywords:
+  - "error"
+  - "not working"
+  - "electrum"
+  - "balance zero"
+  - "hardware wallet"
+  - "exchange"
+  - "certificate"
+  - "no wallets found"
+  - "reconnect"
+  - "pin"
+---
+
+## Connection
+
+<AccordionGroup>
+  <Accordion title="Cannot connect to Electrum">
+    <Frame caption="Electrum connection error.">
+      <img
+        src="/images/troubleshoot-electrum-error.png"
+        alt="Electrum connection error message"
+      />
+    </Frame>
+
+    - Check host, port, and protocol. SSL usually uses `50002`. TCP usually uses `50001`.
+    - Confirm the server is on mainnet and fully synced.
+    - `.onion` address? Turn on **Connect via Tor**. Tor can take up to two minutes to start.
+    - Using a StartOS Root CA? Install the CA on your computer. Fully quit and reopen the app.
+    - Select **Test Connection** in [Settings](/bitcoin-control-center/settings/app-settings#electrum-server-desktop) to check.
+  </Accordion>
+  <Accordion title="Portfolio says &quot;Last synced…&quot;">
+    Control Center can't reach your Electrum server right now. It shows your last saved balances and keeps retrying. Fix the connection above.
+  </Accordion>
+  <Accordion title="Tor won't start">
+    - Check your internet connection. Some networks block Tor.
+    - "Tor could not connect within two minutes": try again on another network.
+    - "Bundled Tor is missing": reinstall the desktop app.
+  </Accordion>
+  <Accordion title="StartOS: Control Center won't start">
+    Control Center waits for Electrs. Check Electrs is running and fully synced. Then restart Control Center.
+  </Accordion>
+  <Accordion title="StartOS: &quot;Insecure connection not allowed&quot;">
+    Open the `https://` address or the `.onion` address. The PIN doesn't work over plain `http://`.
+  </Accordion>
+</AccordionGroup>
+
+## Balances
+
+<AccordionGroup>
+  <Accordion title="Balance is zero or wrong">
+    <Frame caption="Still syncing.">
+      <img
+        src="/images/troubleshoot-zero-balance.png"
+        alt="Account still syncing with zero balance"
+      />
+    </Frame>
+
+    - Wait for the first sync to finish.
+    - Confirm your Electrum server is fully synced.
+    - **Wrong address type.** Added by xpub? Pick the script type that matches your addresses. See [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors#which-script-type).
+    - **Wrong account.** Check you picked the right account number or passphrase wallet.
+    - **Unconfirmed funds** don't count yet. Wait for one confirmation.
+  </Accordion>
+  <Accordion title="&quot;No wallets found&quot; when adding a hardware wallet">
+    Scans only list accounts with a balance above zero. Ledger also stops at the first empty account. Add the wallet by [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors) instead.
+  </Accordion>
+  <Accordion title="My total shows &quot;—&quot; or dropped">
+    - "—" means a balance couldn't be confirmed. Select **Try Again**.
+    - A drop usually means an exchange needs **Reconnect**, or you archived a wallet. See [Home and Portfolio](/bitcoin-control-center/portfolio/home-and-portfolio#why-a-number-might-look-off).
+  </Accordion>
+  <Accordion title="An exchange balance is counted twice">
+    You connected the same exchange twice. Open one and select **Remove Account**. This deletes it immediately.
+  </Accordion>
+</AccordionGroup>
+
+## Hardware wallets
+
+<AccordionGroup>
+  <Accordion title="Hardware wallet not detected">
+    <Frame caption="Allow the browser prompt.">
+      <img
+        src="/images/troubleshoot-hw-permission.png"
+        alt="Browser permission prompt to connect a hardware wallet"
+      />
+    </Frame>
+
+    - Unlock it. Open the Bitcoin app.
+    - Close Ledger Live, Trezor Suite, and other wallet apps.
+    - Use a USB cable that carries data, not just power.
+    - On StartOS or Umbrel, use Chrome, Brave, or Edge. Firefox and Safari can't connect to a Ledger.
+  </Accordion>
+  <Accordion title="Trezor Suite doesn't open">
+    Allow pop-ups for Control Center. If asked, allow local network access so it can find Trezor Suite desktop.
+  </Accordion>
+  <Accordion title="Camera doesn't work for COLDCARD Q or Keystone">
+    Allow camera access in your browser and operating system. Close other apps using the camera.
+  </Accordion>
+  <Accordion title="COLDCARD over USB">
+    USB isn't supported. Use a MicroSD card, or a COLDCARD Q with its QR codes.
+  </Accordion>
+  <Accordion title="Stuck on &quot;Waiting for device confirmation&quot;">
+    Check the device screen. After 20 seconds, select the reset link and try again.
+  </Accordion>
+  <Accordion title="&quot;Invalid signature&quot;">
+    Sign the exact message with the exact address shown. See [Verify ownership](/bitcoin-control-center/accounts/verify-ownership#if-signing-fails).
+  </Accordion>
+  <Accordion title="Multisig: &quot;Not a match&quot;">
+    That device's key isn't in the descriptor. Check the device, passphrase, and account. See [Multisig](/bitcoin-control-center/accounts/multisig#device-notes).
+  </Accordion>
+</AccordionGroup>
+
+## Exchanges
+
+<AccordionGroup>
+  <Accordion title="Exchange will not connect">
+    <Frame caption="Exchange connection error.">
+      <img
+        src="/images/troubleshoot-exchange-error.png"
+        alt="Exchange connection failed error"
+      />
+    </Frame>
+
+    - Re-copy the key. Check for extra spaces.
+    - Confirm the key has the right read permission. See [Exchanges](/bitcoin-control-center/accounts/exchanges#exchange-by-exchange).
+    - **Coinbase:** use an **ECDSA** key, and paste the whole private key.
+    - **Strike:** turn on **Read account balances**. It's off by default.
+    - Create a new key and try again.
+  </Accordion>
+  <Accordion title="Exchange shows &quot;Reconnect&quot;">
+    Keys expire in Control Center after one year, or after a restore without the key file. Create a new key. Open the account. Select **Reconnect Account**.
+  </Accordion>
+  <Accordion title="&quot;Rate limit exceeded&quot;">
+    The exchange is limiting requests. Wait a few minutes and select **Refresh Balance**.
+  </Accordion>
+</AccordionGroup>
+
+## Statements
+
+<AccordionGroup>
+  <Accordion title="A wallet is missing from the statement list">
+    Only **verified** self-custody wallets can go on statements. [Verify it](/bitcoin-control-center/accounts/verify-ownership). Exchanges, manual, and ETF holdings never appear.
+  </Accordion>
+  <Accordion title="I can't pick recent dates">
+    Statements must end at least 2 days ago, so recent transactions can confirm. They can start no earlier than April 2023 and cover up to 2 years.
+  </Accordion>
+  <Accordion title="Statement will not generate">
+    <Frame caption="Statement error.">
+      <img
+        src="/images/troubleshoot-statement-error.png"
+        alt="Statement generation error"
+      />
+    </Frame>
+
+    - Check your Electrum connection.
+    - On StartOS or Umbrel, make sure Mempool is running.
+    - "Generation was interrupted" means the app restarted. Generate it again.
+    - See [If a statement fails](/bitcoin-control-center/statements/statements-and-hoseki-verified#if-a-statement-fails).
+  </Accordion>
+  <Accordion title="The download is monthly, not the full period">
+    **Download** saves the format shown in the viewer. Switch to **Full Period** first.
+  </Accordion>
+</AccordionGroup>
+
+## App and PIN
+
+<AccordionGroup>
+  <Accordion title="Forgot my PIN">
+    See [PIN and lock](/bitcoin-control-center/security/pin#forgot-your-pin). Your data stays.
+  </Accordion>
+  <Accordion title="&quot;Too many wrong PINs&quot;">
+    Wait for the timer. Each wrong try after the fifth doubles the wait, up to 1 hour.
+  </Accordion>
+  <Accordion title="I was signed out">
+    The app or server restarted. Enter your PIN again.
+  </Accordion>
+  <Accordion title="I closed the window, but the app is still running">
+    That's expected. It keeps running in the tray and locks. Use **Quit** in the tray menu to quit fully.
+  </Accordion>
+  <Accordion title="Mac says the app cannot be opened">
+    Download the official release from [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com). Test builds are not notarized.
+  </Accordion>
+  <Accordion title="Windows SmartScreen warning">
+    Select **More info** → **Run anyway**.
+  </Accordion>
+</AccordionGroup>
+
+Still stuck? [Contact support](/contact).

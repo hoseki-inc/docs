@@ -1,0 +1,60 @@
+---
+title: "Multisig claims"
+sidebarTitle: "Multisig"
+description: "Verify a multisig wallet by signing with enough of its keys."
+keywords:
+  - "multisig"
+  - "descriptor"
+  - "quorum"
+  - "sparrow"
+  - "nunchuk"
+  - "unchained"
+  - "2 of 3"
+---
+
+Add a multisig wallet from its **descriptor**, then sign with enough keys to meet its quorum. A 2-of-3 wallet needs 2 keys.
+
+## Why only some devices can sign
+
+Most wallets can't yet sign a message for a multisig address. The standard for that is called BIP-322.
+
+So Prove verifies multisig its own way. Each key signs separately, from its own single-key address. Prove then checks that each key belongs to your multisig wallet.
+
+This works with the devices Prove connects to directly: **Trezor**, **Ledger**, and **COLDCARD**. We're working to add more.
+
+<Note>Other keys can sit on any device. You only need enough supported devices to meet your quorum.</Note>
+
+## What you need
+
+- Your wallet's descriptor file, or the descriptor text. See [Export a multisig wallet](/prove/wallet-guides/export-multisig).
+- Enough supported signing devices to meet your quorum.
+
+Supported script types: `wsh(...)`, `sh(wsh(...))`, and `sh(...)` with `multi` or `sortedmulti`. Mainnet only.
+
+## Add a multisig claim
+
+<Steps>
+  <Step title="Upload the descriptor">
+    Open **Claims** → **Multisig**. Drop your `.txt` or `.json` file, or paste the descriptor and select **Verify Descriptor**.
+  </Step>
+  <Step title="Name it">
+    Prove shows the quorum it found, such as "2 of 3". Enter a name. Select **Next**.
+  </Step>
+  <Step title="Pick a key and device">
+    Under **Select a Signing Device**, pick Trezor, Ledger, or COLDCARD. Select **Check Now** to confirm the device holds one of the wallet's keys.
+  </Step>
+  <Step title="Sign">
+    Sign the message on the device. You see **Key Verified!**
+  </Step>
+  <Step title="Repeat">
+    Select **Verify Next Key** until you meet your quorum. Then you see **Claim Verified!**
+  </Step>
+</Steps>
+
+## Device notes
+
+- **"Not a match"** means the device's key isn't in this descriptor. Check the device, passphrase, and account.
+- **"Unusual derivation path"** warnings on the device are normal.
+- **Trezor** can't sign for legacy P2SH multisig, or for keys on `m/45'` or custom paths. Use another device for those keys.
+
+<Tip>Delete the descriptor file from your computer when you finish. It reveals every address in your wallet.</Tip>

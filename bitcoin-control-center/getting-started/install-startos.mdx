@@ -1,0 +1,60 @@
+---
+title: "Install on StartOS"
+description: "Run Control Center as a StartOS service."
+keywords:
+  - "startos"
+  - "start9"
+  - "s9pk"
+  - "sideload"
+  - "pin"
+  - "electrs"
+  - "mempool"
+---
+
+## Before you start
+
+Install and fully sync these StartOS services. Control Center needs all of them running.
+
+| Service | Why it is needed |
+| --- | --- |
+| **Bitcoin** | Your node. |
+| **Electrs** | Wallet balances and transaction history. |
+| **Mempool** | Bitcoin prices and transaction details for statements. |
+
+<Warning>If Electrs is stopped or still syncing, Control Center may not start. Wait for Electrs to finish first.</Warning>
+
+## Install
+
+<Steps>
+  <Step title="Sideload the package">
+    Download the `.s9pk` from [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com). Sideload it in StartOS.
+  </Step>
+  <Step title="Set your PIN">
+    StartOS shows a task: **Set a PIN before using Bitcoin Control Center**. Run **Set PIN**. Enter 6 digits twice. Save it in your password manager.
+  </Step>
+  <Step title="Open it">
+    Start the service. Open **Web Interface**.
+  </Step>
+  <Step title="Sign in">
+    Enter your PIN.
+  </Step>
+</Steps>
+
+<Note>The PIN works only over `https://` or the `.onion` address. Over plain `http://`, you see **Insecure connection not allowed**.</Note>
+
+## Options
+
+In StartOS, open Control Center → **Actions** → **Configure**. Saving restarts the service.
+
+- **Mempool URL Override:** leave blank to use your Mempool service. Enter a URL to use another Mempool instance.
+- **Log Level:** keep **Info** unless support asks for **Debug**.
+
+StartOS has no Electrum or Tor settings in the app. It always uses your Electrs.
+
+## Forgot your PIN?
+
+Run **Set PIN** again. Your accounts and history stay. Everyone is signed out. See [PIN and lock](/bitcoin-control-center/security/pin).
+
+## Back up
+
+Use the normal StartOS backup. It saves everything. See [Backup and restore](/bitcoin-control-center/maintenance/backup-restore).

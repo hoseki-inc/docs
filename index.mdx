@@ -1,66 +1,33 @@
 ---
-title: "Bitcoin Control Center help"
+title: "Hoseki Help Center"
 sidebarTitle: "Welcome"
-description: "Help for Bitcoin Control Center, the local-first, watch-only Bitcoin app."
+description: "Help for Hoseki Prove and Bitcoin Control Center."
+mode: "wide"
 keywords:
-  - "bitcoin control center"
-  - "bcc"
+  - "hoseki"
   - "help"
-  - "watch-only"
+  - "support"
 ---
 
-Bitcoin Control Center tracks your Bitcoin savings on your own device. It is watch-only. It never holds your seed or private keys. There is no Hoseki account.
+Find guides and answers for Hoseki's products.
 
 <Columns cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/quickstart">
-    Install, connect, add an account.
+  <Card title="Hoseki Prove" icon="badge-check" href="/prove">
+    Prove you own your self-custodied Bitcoin and create verified statements, in your browser.
   </Card>
-
-  <Card title="How accounts work" icon="wallet" href="/accounts/how-accounts-work">
-    Wallets, exchanges, manual holdings.
-  </Card>
-
-  <Card title="Statements" icon="file-circle-check" href="/statements/statements-and-hoseki-verified">
-    Create a statement of your holdings.
-  </Card>
-
-  <Card title="Troubleshooting" icon="life-ring" href="/help/troubleshooting">
-    Fix common problems.
+  <Card title="Bitcoin Control Center" icon="vault" href="/bitcoin-control-center">
+    Track your Bitcoin savings privately on your own computer or home server. No account needed.
   </Card>
 </Columns>
 
-## How it works
+## Popular guides
 
-Control Center runs on your computer or home server. It reads your balances from the sources you choose and keeps everything it learns on your device.
+- [Sign in to Prove](/prove/getting-started)
+- [Install Bitcoin Control Center](/bitcoin-control-center/quickstart)
+- [Find your xpub](/prove/wallet-guides/find-xpub)
+- [Sign a message in your wallet](/prove/wallet-guides/sign-message)
+- [Export a multisig wallet](/prove/wallet-guides/export-multisig)
 
-```mermaid
-flowchart LR
-  subgraph You["Your device"]
-    CC["Bitcoin Control Center<br/>accounts, history, statements"]
-  end
-  E["Electrum server<br/>wallet balances"] --> CC
-  X["Exchanges<br/>read-only API keys"] --> CC
-  P["Price source<br/>Bitcoin price"] --> CC
-  M["You<br/>manual and ETF holdings"] --> CC
-```
+## Need a hand?
 
-- **Wallets** are read from an Electrum server, using public keys only.
-- **Exchanges** are read with a read-only API key you create.
-- **Manual and ETF holdings** are numbers you type in.
-- **Prices** come from a price source you pick in [Settings](/settings/app-settings).
-
-Nothing is sent to Hoseki. See [Privacy and security](/privacy-security) for exactly what leaves your device.
-
-## New here?
-
-<Steps>
-  <Step title="Install">
-    Pick [Mac or Windows](/getting-started/install-desktop), [StartOS](/getting-started/install-startos), or [Umbrel](/getting-started/install-umbrel).
-  </Step>
-  <Step title="Set up">
-    Set your PIN and choose an Electrum server. See [First run](/getting-started/first-run).
-  </Step>
-  <Step title="Look around">
-    Learn what each page does in the [tour](/getting-started/tour).
-  </Step>
-</Steps>
+Email [support@hoseki.app](mailto:support@hoseki.app). See [Contact support](/contact).
