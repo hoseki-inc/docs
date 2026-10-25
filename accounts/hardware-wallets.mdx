@@ -86,15 +86,39 @@ Open **Accounts** → **Add Account**. Pick your wallet.
 
     **Manual Entry** stores a balance you type. **Advanced** checks a signature. See [Manual Bitcoin and ETFs](/accounts/manual-and-etfs).
 
+    <Frame caption="Open Advanced.">
+      <img
+        src="/images/accounts-advanced-expand.png"
+        alt="Add Account screen with Advanced open and Verify with Manual Signing"
+      />
+    </Frame>
+
     1. Open **Accounts** → **Add Account**.
     2. Under the account grid, open **Advanced** (**Manually Verify Your Self-Custodial Bitcoin Holdings**).
     3. Select **Verify with Manual Signing**.
     4. Enter a **Display name**.
     5. Paste an **Account descriptor or extended public key**.
     6. Select **Add Account**.
+
+    <Frame caption="Name and public key.">
+      <img
+        src="/images/accounts-advanced-manual-signing.png"
+        alt="Advanced form with display name, account descriptor, and Add Account"
+      />
+    </Frame>
+
     7. Sign the **Message** for the **Address** on your hardware wallet.
     8. Paste the **Signature**.
     9. Select **Verify**.
+
+    <Frame caption="Sign, then paste.">
+      <img
+        src="/images/accounts-advanced-verify.png"
+        alt="Signing step with address, message, and an empty signature"
+      />
+    </Frame>
+
+    The account row can show a wallet name, such as Bitcoin Core Wallet, instead of the display name you typed.
 
     The **Address** is the first receive address. Prefer an account descriptor. It includes the script type. If the key starts with `x`, choose **Select script type**: Legacy (P2PKH), Nested SegWit (P2SH), Native SegWit (P2WPKH), or Taproot (P2TR).
 
