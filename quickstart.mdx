@@ -11,11 +11,16 @@ keywords:
   <Step title="Install">
     Pick [desktop](/getting-started/install-desktop), [StartOS](/getting-started/install-startos), or [Umbrel](/getting-started/install-umbrel).
   </Step>
-  <Step title="Connect to Electrum">
-    Choose the Electrum server for balances. See [First run](/getting-started/first-run).
+  <Step title="Set your PIN">
+    Choose a 6-digit PIN. You enter it each time you open Control Center. See [PIN and lock](/security/pin).
+  </Step>
+  <Step title="Choose an Electrum server">
+    On desktop, the app starts on a public server. Switch to your own for privacy. See [First run](/getting-started/first-run).
+
+    StartOS and Umbrel use your own node automatically.
   </Step>
   <Step title="Add an account">
-    Open **Accounts** → **Add Account**. Pick a [wallet](/accounts/hardware-wallets), [exchange](/accounts/exchanges), or [manual](/accounts/manual-and-etfs) holding.
+    Select **Add Account**. Pick a [wallet](/accounts/hardware-wallets), [exchange](/accounts/exchanges), or [manual](/accounts/manual-and-etfs) holding.
 
     <Frame caption="Pick an account type.">
       <img
@@ -24,8 +29,8 @@ keywords:
       />
     </Frame>
   </Step>
-  <Step title="Wait for sync">
-    New wallets take a few minutes. Large wallets take longer.
+  <Step title="Prove control (wallets only)">
+    Sign one message on your hardware wallet. This marks the wallet **verified** so it can go on a [statement](/statements/statements-and-hoseki-verified). See [Verify ownership](/accounts/verify-ownership).
   </Step>
   <Step title="Back up">
     Set up [backups](/maintenance/backup-restore) before you rely on it.

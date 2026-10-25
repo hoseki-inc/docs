@@ -1,0 +1,110 @@
+---
+title: "Understand Home and Portfolio"
+sidebarTitle: "Home and Portfolio"
+description: "What each number means, where it comes from, and why it might look off."
+keywords:
+  - "portfolio"
+  - "home"
+  - "balance"
+  - "chart"
+  - "net accumulated"
+  - "30d change"
+  - "synced"
+  - "usd"
+  - "cost basis"
+---
+
+## Where the total comes from
+
+Your total is the sum of every active account:
+
+- **Wallets:** confirmed balance from your Electrum server.
+- **Exchanges:** latest balance from the exchange.
+- **Manual and ETF:** the amounts you entered.
+
+USD is your BTC total × the current Bitcoin price from your [price source](/settings/app-settings#bitcoin-price).
+
+<Info>Control Center tracks Bitcoin amounts. It does not track cost basis, gains, or losses. All USD figures use **today's** price.</Info>
+
+## Home
+
+| Item | What it shows |
+| --- | --- |
+| Total | Your BTC total and its USD value now. |
+| **Last 30 Days** chart | Your BTC total over the last 30 days. |
+| **30d Change** | BTC total now minus 30 days ago. USD is that change at today's price. |
+| **Accounts** | How many accounts you track. |
+| **Bitcoin Price** | USD price, with **7D**, **30D**, **6M**, or **1Y** history. Refreshes every 5 minutes. |
+| **Recent Statements** | Your last three statements. |
+
+## Portfolio
+
+<Frame caption="Portfolio with the account filter on the left.">
+  <img
+    src="/images/tour-portfolio.png"
+    alt="Portfolio page with an account filter, total balance, Synced status, balance chart, and Net accumulated card"
+  />
+</Frame>
+
+### Filter by account
+
+Select accounts on the left to see just those. **All accounts** shows everything. On a narrow window, use the **Filter accounts** button instead.
+
+- **Generate Statement** starts a statement with the wallets you filtered to.
+- Exchanges marked **Reconnect needed** can't be selected. Select them to reconnect.
+
+### Sync status
+
+Next to the account name, a dot shows how fresh the numbers are.
+
+| Status | Meaning |
+| --- | --- |
+| **Synced** (green) | Up to date. |
+| **Updating balances** or **Updating history** | Working. The page refreshes itself. |
+| **Last synced …** (amber) | Your Electrum server can't be reached. Showing the last saved balances. |
+| **History unavailable** (red) | History couldn't load. It retries automatically. |
+
+Seeing **Last synced** for a while? Check your [Electrum connection](/help/troubleshooting#connection).
+
+### Date ranges
+
+Choose **7D**, **30D**, **90D** (default), **1Y**, **All**, or **Custom**.
+
+<Frame caption="Pick any start and end date with Custom.">
+  <img
+    src="/images/portfolio-custom-range.png"
+    alt="Choose a date range popover with start date and end date"
+  />
+</Frame>
+
+Older wallet history is rebuilt from the blockchain the first time you view it. Long ranges can take a moment.
+
+### Net accumulated
+
+**Net accumulated** is how much your BTC total changed in the range. **Avg / month** spreads it across the months in the range.
+
+When there were outflows, you also see **in** and **out** totals.
+
+<Note>"In" and "out" are worked out from changes between balance snapshots. They are close to your real transactions but are not a transaction list. Moving Bitcoin between two of your own tracked wallets can show as both in and out.</Note>
+
+The **monthly** bars show the net change for each month.
+
+## Why a number might look off
+
+<AccordionGroup>
+  <Accordion title="My total shows &quot;—&quot;">
+    Control Center couldn't confirm one of your balances. It shows "—" instead of a wrong total. Wait a moment, or select **Try Again**. Check your Electrum connection.
+  </Accordion>
+  <Accordion title="I just received Bitcoin but it's not showing">
+    Only confirmed transactions count. Wait for one confirmation.
+  </Accordion>
+  <Accordion title="My total dropped suddenly">
+    Check for an exchange showing **Reconnect**, or a wallet you archived. Neither counts in the total.
+  </Accordion>
+  <Accordion title="The USD change doesn't match my gains">
+    USD figures use today's price for every past change. They are not profit or loss.
+  </Accordion>
+  <Accordion title="My history has gaps">
+    Control Center records snapshots only while it runs. Exchange and manual history between runs can be missing. Wallet history is rebuilt from the blockchain.
+  </Accordion>
+</AccordionGroup>

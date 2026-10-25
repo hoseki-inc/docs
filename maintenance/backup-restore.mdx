@@ -8,34 +8,73 @@ keywords:
   - "migrate"
   - "new computer"
   - "data folder"
+  - "reset"
 ---
 
 Your data lives only on your device. Hoseki cannot recover it.
 
+<Info>Your coins are never at risk. A backup protects your history, settings, statements, and saved exchange keys.</Info>
+
+## What's in the data folder
+
+| File | What it holds |
+| --- | --- |
+| `sentinel.db` | Accounts, balances, history, settings, and statements. |
+| `sentinel.db-wal`, `sentinel.db-shm` | Temporary database files. Copy them too. |
+| `secrets/exchange-credentials.key` | The key that unlocks your saved exchange API keys. |
+
+<Warning>Copy the whole folder. Keep the database and the `secrets` key together. Without the key, saved exchange keys can't be read and each exchange must be reconnected.</Warning>
+
 ## Desktop
 
-1. Quit the app fully.
-2. Copy the whole data folder.
+1. Quit fully from the tray menu. Closing the window is not enough.
+2. Copy the whole data folder somewhere safe.
 
 <Tabs>
   <Tab title="Mac">
     `~/Library/Application Support/desktop/data`
+
+    In Finder, choose **Go** → **Go to Folder**, and paste the path.
   </Tab>
   <Tab title="Windows">
     `%APPDATA%\desktop\data`
+
+    Paste the path into File Explorer's address bar.
   </Tab>
 </Tabs>
 
-3. To restore, quit the app. Put the folder back. Reopen.
+The folder is named `desktop` for historical reasons. It is Control Center's folder.
 
-<Warning>Copy the whole folder. The database and the `secrets` key must stay together. Without the key, saved exchange keys cannot be read.</Warning>
+### Restore or move to a new computer
+
+1. Install Control Center on the new computer. Open it once, then quit fully.
+2. Replace its `data` folder with your copy.
+3. Open the app. Enter the PIN from the old computer.
 
 ## StartOS
 
-Use the normal StartOS backup. It saves everything.
+Use the normal StartOS backup. It saves everything, including the key.
+
+## Umbrel
+
+Stop the app in Umbrel. Then copy its data folder over SSH:
+
+```bash
+~/umbrel/app-data/bitcoin-control-center/data
+```
+
+Start the app again when the copy finishes.
 
 ## After a restore
 
-Check accounts and history. If an exchange asks, reconnect it.
+- Check your accounts and history.
+- If an exchange shows **Reconnect**, reconnect it with a new key.
+- Saved Electrum connections and settings come back with the data.
 
-Lost your data? Re-add your wallets. Your coins are never at risk. Only history and settings are lost.
+## Start fresh
+
+To reset Control Center on desktop, quit fully. Rename the `data` folder, for example to `data-old`. Open the app. It starts as a new install.
+
+## Lost your data?
+
+Re-add your wallets. Wallet history is rebuilt from the blockchain. Exchange and manual history, statements, and settings are lost.

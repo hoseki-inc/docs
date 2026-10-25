@@ -1,0 +1,82 @@
+---
+title: "Add by xpub or descriptor"
+sidebarTitle: "xpub or descriptor"
+description: "Track any single-signature wallet from its public key, without connecting a device."
+keywords:
+  - "xpub"
+  - "ypub"
+  - "zpub"
+  - "descriptor"
+  - "advanced"
+  - "manual signing"
+  - "sparrow"
+  - "bitcoin core"
+  - "watch-only"
+---
+
+Use this for any single-signature wallet. For example, a software wallet, a wallet the scan didn't find, or a wallet with no balance yet.
+
+It's an **Advanced** option. You'll need to sign a message yourself to verify the wallet.
+
+## Find it
+
+Select **Add Account**. Scroll down. Open **Manually Verify Your Self-Custodial Bitcoin Holdings**. Select **Verify with Manual Signing**.
+
+<Frame caption="The Advanced option is below the account tiles.">
+  <img
+    src="/images/accounts-add-advanced.png"
+    alt="Add Account screen with the Advanced manual signing section open"
+  />
+</Frame>
+
+## Add the wallet
+
+1. Enter a **Display name**.
+2. Paste an **account descriptor or extended public key**.
+3. If you pasted an `xpub`, pick the **script type**.
+4. Select **Add Account**.
+
+<Frame caption="Paste a descriptor or xpub. Pick the script type for an xpub.">
+  <img
+    src="/images/accounts-xpub-form.png"
+    alt="Advanced form with Display name, extended public key, and script type options"
+  />
+</Frame>
+
+### What you can paste
+
+| Input | Example start | Script type |
+| --- | --- | --- |
+| Descriptor (preferred) | `wpkh(`, `sh(wpkh(`, `pkh(`, `tr(` | Included |
+| `zpub` | `zpub6…` | Native SegWit |
+| `ypub` | `ypub6…` | Nested SegWit |
+| `xpub` | `xpub6…` | You pick |
+
+<Tip>Use a descriptor if you can. It includes the script type, so the balance is right the first time.</Tip>
+
+### Which script type?
+
+Match the start of your receive addresses.
+
+| Your addresses start with | Pick |
+| --- | --- |
+| `1` | Legacy (P2PKH) |
+| `3` | Nested SegWit (P2SH) |
+| `bc1q` | Native SegWit (P2WPKH) |
+| `bc1p` | Taproot (P2TR) |
+
+Balance is zero? You probably picked the wrong type. Go back and change it.
+
+## Verify it
+
+1. Copy the **Address** and **Message**.
+2. Sign the message with that address in your wallet software. In Sparrow and Electrum, use **Sign/Verify Message**.
+3. Paste the signature. Select **Verify**.
+
+See [Verify ownership](/accounts/verify-ownership) for details.
+
+## Limits
+
+- Single-signature only. For multisig, see [Multisig](/accounts/multisig).
+- Mainnet only on packaged apps.
+- Never paste an `xprv` or a seed phrase. Control Center only needs public keys.

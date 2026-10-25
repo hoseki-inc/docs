@@ -1,20 +1,39 @@
 ---
 title: "Statements and Hoseki Verified"
 sidebarTitle: "Statements"
-description: "Create a statement and prove you control your Bitcoin."
+description: "Create a PDF statement of your self-custody Bitcoin, and what Hoseki Verified means."
 keywords:
   - "statement"
   - "proof of reserves"
   - "hoseki verified"
   - "pdf"
   - "proof of control"
+  - "monthly"
+  - "currency"
 ---
 
-A statement is a PDF of your balances for a date range. Sync all accounts first.
+A statement is a PDF of your self-custody Bitcoin for a date range. Think of it as a bank statement for your own wallets. It shows opening balance, money in, money out, and closing balance for each wallet.
+
+## Before you start
+
+- **Only verified wallets** can go on a statement. [Verify ownership](/accounts/verify-ownership) first.
+- **Exchanges, manual, and ETF holdings are never included.** Ask your exchange for its own statement.
+- **On StartOS and Umbrel,** Mempool must be running.
+
+No verified wallets yet? The page says **First, Connect an Account**.
+
+<Frame caption="You need at least one verified wallet.">
+  <img
+    src="/images/statements-no-verified-wallets.png"
+    alt="Generate Statement page asking you to connect a wallet and verify control first"
+  />
+</Frame>
+
+## Create a statement
 
 <Steps>
   <Step title="Start">
-    Open **Statements** → **Generate Statement**.
+    Open **Statements** → **Generate Statement**. You can also start from **Home** or **Portfolio**.
 
     <Frame caption="Generate Statement.">
       <img
@@ -23,28 +42,27 @@ A statement is a PDF of your balances for a date range. Sync all accounts first.
       />
     </Frame>
   </Step>
-  <Step title="Choose options">
-    Pick accounts, dates, and a currency (USD, CAD, GBP, or EUR).
+  <Step title="Pick dates and currency">
+    Choose a **Start Date**, **End Date**, and **Currency**: USD, CAD, GBP, or EUR.
 
-    <Frame caption="Accounts, dates, currency.">
+    <Frame caption="Dates, currency, and wallets.">
       <img
         src="/images/statements-options.png"
         alt="Statement options: accounts, date range, and currency"
       />
     </Frame>
   </Step>
-  <Step title="Sign">
-    Sign the request on each hardware wallet when asked.
-
-    <Frame caption="Sign on your device.">
-      <img
-        src="/images/statements-signing.png"
-        alt="Hardware wallet signing prompt for proof of control"
-      />
-    </Frame>
+  <Step title="Add contact details (optional)">
+    Open **Contact Information**. **Name** comes from [Settings](/settings/app-settings). **Address** prints exactly as you type it.
+  </Step>
+  <Step title="Pick wallets">
+    All verified wallets are checked. Uncheck any you want to leave out.
+  </Step>
+  <Step title="Generate">
+    Select **Generate Statement**. It can take a few minutes. You can close the progress screen and come back from **Statements**.
   </Step>
   <Step title="Download">
-    Download the PDF.
+    Choose **Full Period** or **Monthly** in the viewer. Select **Download**.
 
     <Frame caption="Your finished statement.">
       <img
@@ -55,9 +73,33 @@ A statement is a PDF of your balances for a date range. Sync all accounts first.
   </Step>
 </Steps>
 
+## Date rules
+
+| Rule | Why |
+| --- | --- |
+| Earliest start: April 2023 | Price history for statements starts then. |
+| Latest end: 2 days ago | So recent transactions have time to confirm. |
+| Longest range: 2 years | Make two statements for longer periods. |
+
+## Full Period or Monthly
+
+**Download** saves the format you're viewing.
+
+- **Full Period:** one summary for the whole range, then each wallet's transactions.
+- **Monthly:** one summary per month, then that month's transactions.
+
+## What's on the PDF
+
+- A summary table: opening balance, money out, money in, and closing balance per wallet.
+- A page of transactions for each wallet. Unconfirmed transactions show "PENDING".
+- Your total in BTC. Non-USD statements also show an approximate value in that currency.
+- Your name and address, if you added them.
+
+Currency values use saved daily prices from Mempool. They are approximate.
+
 ## Hoseki Verified
 
-The badge means you signed a fresh message with each self-custody wallet. That proves you controlled it when you made the statement.
+Every statement carries the **Hoseki Verified** badge.
 
 <Frame caption="The Hoseki Verified badge.">
   <img
@@ -66,7 +108,31 @@ The badge means you signed a fresh message with each self-custody wallet. That p
   />
 </Frame>
 
-- It does not move funds.
-- It does not apply to exchange, manual, or ETF holdings.
+It means each wallet on the statement passed [proof of control](/accounts/verify-ownership) in Control Center: you signed a message with that wallet's key.
 
-On StartOS and Umbrel, Mempool must be running to create statements.
+- Balances and transactions come straight from the Bitcoin blockchain.
+- Signing does not move funds.
+- Control was proven when you verified the wallet, not on the statement date.
+
+## Manage statements
+
+Open **Statements**. Switch between card and list view.
+
+- **View** opens a statement. **Download** saves it.
+- The trash icon deletes it, after you confirm. This can't be undone. Statement numbers are not reused.
+
+## Where lookups go (desktop)
+
+To build a statement, Control Center looks up every transaction in your wallets. By default this uses **mempool.space**. It is fast, but mempool.space sees your IP address and transactions.
+
+To keep lookups on your own server, open **Settings** → **Statement data** → **Configured Electrum server**. It is slower, especially over Tor. See [Settings](/settings/app-settings#statement-data-desktop).
+
+## If a statement fails
+
+| Message | Fix |
+| --- | --- |
+| **Generation was interrupted.** | The app restarted during generation. Generate it again. |
+| **Couldn't get Bitcoin prices for this statement.** | Check your internet connection. On StartOS or Umbrel, check Mempool is running. |
+| **Couldn't load all transactions.** | Check your Electrum connection or statement data source. Try again. |
+| **Statement date range cannot exceed 2 years** | Pick a shorter range. |
+| **Statements must end at least 2 days ago** | Move the end date back. |
