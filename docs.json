@@ -90,8 +90,9 @@
       }
     ],
     "primary": {
-      "type": "github",
-      "href": "https://github.com/hoseki-inc/bitcoin-control-center"
+      "type": "button",
+      "label": "Download",
+      "href": "https://www.bitcoincontrolcenter.com"
     }
   },
   "contextual": {
