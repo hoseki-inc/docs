@@ -18,21 +18,41 @@
           "getting-started/install-desktop",
           "getting-started/install-startos",
           "getting-started/install-umbrel",
-          "getting-started/first-run"
+          "getting-started/first-run",
+          "getting-started/tour"
         ]
       },
       {
-        "group": "Adding accounts",
+        "group": "Accounts",
         "pages": [
+          "accounts/how-accounts-work",
           "accounts/hardware-wallets",
+          "accounts/verify-ownership",
+          "accounts/multisig",
+          "accounts/xpub-and-descriptors",
           "accounts/exchanges",
-          "accounts/manual-and-etfs"
+          "accounts/manual-and-etfs",
+          "accounts/manage-accounts"
+        ]
+      },
+      {
+        "group": "Portfolio",
+        "pages": [
+          "portfolio/home-and-portfolio"
         ]
       },
       {
         "group": "Statements",
         "pages": [
           "statements/statements-and-hoseki-verified"
+        ]
+      },
+      {
+        "group": "Settings and security",
+        "pages": [
+          "settings/app-settings",
+          "security/pin",
+          "privacy-security"
         ]
       },
       {
@@ -43,16 +63,11 @@
         ]
       },
       {
-        "group": "Privacy and security",
-        "pages": [
-          "privacy-security"
-        ]
-      },
-      {
         "group": "Help",
         "pages": [
           "help/troubleshooting",
           "help/faq",
+          "help/glossary",
           "help/contact"
         ]
       }

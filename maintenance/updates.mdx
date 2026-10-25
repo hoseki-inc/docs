@@ -15,7 +15,11 @@ keywords:
 | StartOS | Sideload the new `.s9pk`. |
 | Umbrel | Run `./install.sh` from the new bundle. |
 
-The desktop app shows a notice when a new version exists. It does not update itself.
+Your data stays during updates. [Back up](/maintenance/backup-restore) first anyway.
+
+## Desktop update notice
+
+The desktop app checks for a new version at launch and about once a day. When one exists, a notice appears at the bottom of the window.
 
 <Frame caption="The update notice.">
   <img
@@ -24,6 +28,15 @@ The desktop app shows a notice when a new version exists. It does not update its
   />
 </Frame>
 
-Your data stays during updates. Back up first anyway.
+- **Download** opens [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com) in your browser.
+- **Dismiss** hides the notice until you restart the app.
 
-<Tip>After an update, fully quit and reopen the app.</Tip>
+The app does not update itself.
+
+## Update the desktop app
+
+1. Quit fully. Use **Quit** in the tray menu, not just the window's close button.
+2. Run the new installer.
+3. Open the app. Enter your PIN.
+
+<Note>A statement that is generating when the app quits will fail. Generate it again after the update.</Note>

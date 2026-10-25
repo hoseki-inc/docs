@@ -1,0 +1,86 @@
+---
+title: "PIN and lock"
+description: "Set, change, and reset your PIN. Lock the app."
+keywords:
+  - "pin"
+  - "lock"
+  - "forgot pin"
+  - "reset pin"
+  - "change pin"
+  - "sign out"
+  - "locked out"
+---
+
+Control Center uses a **6-digit PIN** on desktop, StartOS, and Umbrel. It stops anyone else on your computer or network from opening it.
+
+## Set your PIN
+
+| Platform | Where |
+| --- | --- |
+| Mac and Windows | The app asks on first launch. |
+| Umbrel | The app asks the first time anyone opens it. |
+| StartOS | In StartOS: **Actions** → **Set PIN**. |
+
+<Frame caption="Enter 6 digits, then enter them again.">
+  <img
+    src="/images/security-pin-setup.png"
+    alt="Set up your PIN screen with six empty digit boxes"
+  />
+</Frame>
+
+Save your PIN in a password manager.
+
+## Unlock
+
+Enter your PIN each time you open Control Center.
+
+<Frame caption="Enter your PIN.">
+  <img
+    src="/images/security-pin-enter.png"
+    alt="Enter your PIN screen with a Forgot PIN? link"
+  />
+</Frame>
+
+**Wrong PIN?** You get 5 tries. After that, you wait 30 seconds. Each further wrong try doubles the wait, up to 1 hour.
+
+## When the app locks
+
+- You select the **padlock** icon at the top right.
+- You close the desktop window.
+- You reopen a closed tab, or duplicate a tab.
+- The app or server restarts. Everyone is signed out.
+
+Reloading the page does not lock it. There is no idle timeout.
+
+## Change your PIN
+
+Open **Settings** → **Security** → **Change PIN**. Enter your current PIN, then the new one twice. Other tabs and browsers are signed out.
+
+On StartOS and Umbrel, **Sign out everywhere** signs out every browser at once.
+
+## Forgot your PIN?
+
+Select **Forgot PIN?** on the sign-in screen. Your accounts and history are kept on every platform.
+
+<Tabs>
+  <Tab title="Mac and Windows">
+    1. Select **Reset PIN**.
+    2. Enter your computer's administrator password when asked.
+    3. The app restarts. Set a new PIN.
+  </Tab>
+  <Tab title="StartOS">
+    1. Open StartOS. Go to Bitcoin Control Center.
+    2. Select **Actions** → **Set PIN**. Enter a new PIN.
+    3. Come back. Enter the new PIN.
+  </Tab>
+  <Tab title="Umbrel">
+    1. Open the umbrelOS terminal (**Settings** → **Advanced settings**).
+    2. Run:
+
+       ```bash
+       sudo docker exec bitcoin-control-center_web_1 node /app/dist/cli.js reset-pin
+       ```
+
+    3. Restart Bitcoin Control Center. Set a new PIN.
+  </Tab>
+</Tabs>

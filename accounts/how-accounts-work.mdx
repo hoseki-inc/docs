@@ -1,0 +1,70 @@
+---
+title: "How accounts work"
+description: "The three kinds of account, what each status means, and how balances update."
+keywords:
+  - "account"
+  - "pending"
+  - "verified"
+  - "manually added"
+  - "reconnect"
+  - "claim"
+  - "sync"
+  - "balance"
+---
+
+An **account** is anything Control Center tracks: a wallet, an exchange, or a holding you enter by hand.
+
+<Note>Some screens say **claim**. A claim is the same thing as a wallet account.</Note>
+
+## Three kinds of account
+
+| Kind | Examples | How the balance is read | Can go on a statement |
+| --- | --- | --- | --- |
+| **Self-custody wallet** | [Ledger, Trezor, COLDCARD, Keystone](/accounts/hardware-wallets), [multisig](/accounts/multisig), [xpub or descriptor](/accounts/xpub-and-descriptors) | Your Electrum server, from public keys | Yes, once verified |
+| **Exchange** | [Coinbase, Kraken, Robinhood, Strike](/accounts/exchanges) | The exchange, with a read-only API key | No |
+| **Manual** | [Manual Bitcoin, Bitcoin ETFs](/accounts/manual-and-etfs) | The numbers you enter | No |
+
+All three count toward your totals on Home and Portfolio.
+
+## Statuses
+
+Each account card shows a badge.
+
+| Badge | Meaning | What to do |
+| --- | --- | --- |
+| **verified** | You proved control of this wallet. | Nothing. It can go on a statement. |
+| **pending** | Wallet added, but not yet verified. Its balance is still tracked. | Open it. Select **Continue** to [verify](/accounts/verify-ownership). |
+| **Connected** | Exchange key works. | Nothing. |
+| **Reconnect** | Exchange key expired or cannot be read. Balance shows "—" and is left out of totals. | Open it. Select **Reconnect Account**. |
+| **Manually Added** | A manual or ETF holding. | Update it when it changes. |
+
+## The life of a wallet account
+
+```mermaid
+flowchart TD
+  A["Add wallet"] --> B["pending<br/>balance tracked"]
+  B -- "Sign a message" --> C["verified<br/>can go on statements"]
+  B -- "Abandon" --> X["Removed"]
+  C -- "Archive" --> D["Archived<br/>history kept"]
+  D -- "Restore" --> C
+  D -- "Delete Permanently" --> X
+```
+
+You can leave a wallet **pending** if you only want to track it. You only need to verify it for statements.
+
+## How balances update
+
+- **Wallets:** read from your Electrum server. Only **confirmed** transactions count. Incoming Bitcoin appears after its first confirmation.
+- **Exchanges:** refreshed when you open **Accounts** or **Portfolio** (at most once a minute), and in the background.
+- **Manual and ETF:** change only when you edit them. ETF values drift slightly each day to reflect fund fees.
+- **History:** Control Center saves a balance snapshot for every account about every 15 minutes while it runs.
+
+<Tip>History is only recorded while Control Center is running. On desktop, leave it running in the tray to keep history complete. Wallet history before you added the account is rebuilt from the blockchain when you need it.</Tip>
+
+## Account limits to know
+
+- **Mainnet only** for hardware wallets and multisig.
+- **Wallet scans hide empty accounts.** Ledger, COLDCARD, and Keystone only list accounts with a balance above zero. To track an empty wallet, use an [xpub or descriptor](/accounts/xpub-and-descriptors).
+- **Exchange keys expire after one year.** Reconnect with a fresh key.
+
+Next: [manage your accounts](/accounts/manage-accounts).

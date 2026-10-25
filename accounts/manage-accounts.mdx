@@ -1,0 +1,68 @@
+---
+title: "Manage accounts"
+description: "Rename, archive, restore, or delete accounts."
+keywords:
+  - "rename"
+  - "archive"
+  - "restore"
+  - "delete"
+  - "remove"
+  - "abandon"
+  - "refresh"
+---
+
+Open any account from **Accounts** to manage it.
+
+## What you can do
+
+| Action | Wallets | Exchanges | Manual and ETF |
+| --- | --- | --- | --- |
+| Rename | **Rename** | No | No |
+| Refresh balance | Automatic | **Refresh Balance** | Edit it yourself |
+| Stop tracking, keep history | **Archive Account** | No | No |
+| Delete with history | From **Archived**, **Delete Permanently** | **Remove Account** | **Remove Account** |
+| Undo | **Restore** | No | No |
+
+## Archive a wallet
+
+Archive a wallet you no longer use. Control Center stops tracking it but keeps its history.
+
+1. Open the wallet. Select **Archive Account**.
+2. Read the message. Select **Archive**.
+
+<Frame caption="Archiving keeps the wallet's history.">
+  <img
+    src="/images/accounts-archive-dialog.png"
+    alt="Archive Account? dialog with Cancel and Archive buttons"
+  />
+</Frame>
+
+<Warning>If the wallet still holds Bitcoin, your total will drop by that amount. The funds are still in your wallet. Control Center just stops counting them.</Warning>
+
+Archived wallets appear under **Archived** at the bottom of **Accounts**. From there:
+
+- **Restore** brings the wallet back.
+- **Delete Permanently** removes it and all its history. This can't be undone.
+
+Past balances of archived wallets still show in your **All accounts** history.
+
+## Abandon an unfinished wallet
+
+A **pending** wallet has an **Abandon** button. It removes the wallet and its history. Use it to cancel a setup you don't want to finish.
+
+<Frame caption="Abandon removes an unfinished setup.">
+  <img
+    src="/images/accounts-abandon-dialog.png"
+    alt="Abandon Account Setup? dialog"
+  />
+</Frame>
+
+## Remove an exchange, manual, or ETF account
+
+Open the account. Select **Remove Account**.
+
+<Warning>This deletes the account and all its history **immediately**. There is no confirmation and no undo. For Strike, imported statements are deleted too.</Warning>
+
+## Add the same wallet again
+
+Adding a wallet you archived shows "This account is archived". Restore it from **Archived** instead. Adding a wallet that's already tracked takes you to the existing account. It does not create a duplicate.

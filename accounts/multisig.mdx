@@ -1,0 +1,95 @@
+---
+title: "Multisig wallets"
+sidebarTitle: "Multisig"
+description: "Track a multisig wallet and verify it with your signing keys."
+keywords:
+  - "multisig"
+  - "descriptor"
+  - "sparrow"
+  - "unchained"
+  - "nunchuk"
+  - "caravan"
+  - "quorum"
+  - "2 of 3"
+---
+
+Track a multisig wallet from its **descriptor**. No funds move. Your custody does not change.
+
+## What you need
+
+- Your wallet's descriptor file, or the descriptor text.
+- Enough signing devices to meet your quorum. A 2-of-3 wallet needs 2 keys.
+- Supported signing devices: Ledger, Trezor, COLDCARD, Keystone.
+
+### Where to get the descriptor
+
+Control Center reads these formats:
+
+| Format | Comes from |
+| --- | --- |
+| A single descriptor line, such as `wsh(sortedmulti(2,…))` | Sparrow, Nunchuk, and most coordinators. Copy and paste it. |
+| Wallet configuration `.json` | Unchained / Caravan, Specter Desktop, Electrum |
+| Generic multisig setup `.txt` (Name, Policy, Derivation, Format) | COLDCARD, BlueWallet, Sparrow |
+| Descriptor export `.txt` | Bitcoin Core |
+
+Not sure? Find "descriptor" or "export" in your coordinator's wallet settings, and paste the descriptor text.
+
+Supported script types: `wsh(...)`, `sh(wsh(...))`, and `sh(...)` with `multi` or `sortedmulti`. Mainnet only.
+
+<Warning>Never upload a file that contains a seed phrase. Control Center rejects it with "Seed phrase found in wallet export file."</Warning>
+
+## Add a multisig wallet
+
+<Steps>
+  <Step title="Start">
+    Select **Add Account** → **Multisig**. Select **Next**.
+
+    <Frame caption="What the multisig setup involves.">
+      <img
+        src="/images/accounts-multisig-intro.png"
+        alt="Connect Your Multisig Wallet introduction screen"
+      />
+    </Frame>
+  </Step>
+  <Step title="Upload the descriptor">
+    Drop the `.txt` or `.json` file. Or open **Paste Your Multisig Descriptor**, paste it, and select **Verify Descriptor**.
+
+    <Frame caption="Upload a file or paste the descriptor.">
+      <img
+        src="/images/accounts-multisig-upload.png"
+        alt="Upload Your Multisig Descriptor screen with a file drop zone"
+      />
+    </Frame>
+  </Step>
+  <Step title="Name it">
+    Control Center shows the quorum it found, such as "2 of 3". Enter a name. Select **Next**.
+  </Step>
+  <Step title="Connect and sign with each key">
+    Pick a key. Choose its device. Control Center checks the device is part of this wallet. Then sign the message on it.
+
+    Repeat until you meet your quorum. You can use the keys in any order.
+  </Step>
+</Steps>
+
+## Key statuses
+
+Each key has an avatar at the top of the wallet page.
+
+| Status | Meaning |
+| --- | --- |
+| Pending | No device connected yet. |
+| Identified | Device matched, not signed yet. Select **Continue**. |
+| Verified | Signed. |
+
+When enough keys are verified, the wallet becomes **verified**.
+
+## Device notes
+
+- **"Not a match"** means the device's key isn't in this descriptor. Check you picked the right device, passphrase, and account.
+- **"Unusual derivation path"** warnings on the device are normal. Each key signs with its own simple address.
+- **Trezor** can't sign for keys on `m/45'` or custom paths. Use another device for those keys.
+- **Replace a device:** on an identified key, select **Replace this device?** → **Connect New Device**.
+
+After it's verified, select any key avatar to see its details or rename it.
+
+<Tip>Delete the descriptor file from your computer when you finish. It reveals all your addresses.</Tip>

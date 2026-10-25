@@ -7,31 +7,83 @@ keywords:
   - "safe"
   - "free"
   - "node"
+  - "taxes"
+  - "cost basis"
 ---
+
+## The basics
 
 <AccordionGroup>
   <Accordion title="Is it free?">
     Yes. It is open source under Apache 2.0.
   </Accordion>
   <Accordion title="Can it spend my Bitcoin?">
-    No. It is watch-only. It never has your private keys.
+    No. It is watch-only. It never has your private keys or seed phrase.
   </Accordion>
   <Accordion title="Do I need a Hoseki account?">
     No.
   </Accordion>
   <Accordion title="Can Hoseki see my data?">
-    No. Your data stays on your device.
+    No. Your data stays on your device. See [Privacy and security](/privacy-security).
   </Accordion>
   <Accordion title="Do I need my own node?">
-    No. You need an Electrum server. Your own is best for privacy.
+    No. You need an Electrum server. The desktop app starts on a public one. Your own is best for privacy.
   </Accordion>
   <Accordion title="Does it work on Intel Macs or Linux desktops?">
     Not yet. Use an Apple Silicon Mac, Windows x64, StartOS, or Umbrel.
   </Accordion>
-  <Accordion title="Which wallets and exchanges work?">
-    Ledger, Trezor, Coldcard, Keystone, and multisig. Coinbase, Kraken, Robinhood, and Strike. Plus manual Bitcoin and ETFs.
+  <Accordion title="Can I use it on my phone?">
+    There is no mobile app. On StartOS or Umbrel, you can open the web interface in a phone browser. Hardware wallets need a computer.
   </Accordion>
+</AccordionGroup>
+
+## Accounts
+
+<AccordionGroup>
+  <Accordion title="Which wallets and exchanges work?">
+    Ledger, Trezor, COLDCARD, Keystone, multisig, and any wallet by xpub or descriptor. Coinbase, Kraken, Robinhood, and Strike. Plus manual Bitcoin and ETFs. See [How accounts work](/accounts/how-accounts-work).
+  </Accordion>
+  <Accordion title="What's the difference between pending and verified?">
+    Both are tracked. Verified wallets have proven control by signing a message, so they can go on statements. See [Verify ownership](/accounts/verify-ownership).
+  </Accordion>
+  <Accordion title="Does signing a message cost anything or move funds?">
+    No. It's not a transaction. Nothing is broadcast.
+  </Accordion>
+  <Accordion title="Can I track testnet?">
+    Not in the packaged apps. They are mainnet only.
+  </Accordion>
+  <Accordion title="Can I track other coins?">
+    No. Control Center is Bitcoin only.
+  </Accordion>
+</AccordionGroup>
+
+## Numbers and statements
+
+<AccordionGroup>
+  <Accordion title="Does it track cost basis or gains?">
+    No. It tracks how much Bitcoin you hold over time. USD figures use today's price. See [Home and Portfolio](/portfolio/home-and-portfolio).
+  </Accordion>
+  <Accordion title="Can I see balances in another currency?">
+    Home and Portfolio show USD. Statements can use USD, CAD, GBP, or EUR.
+  </Accordion>
+  <Accordion title="Can I use a statement for taxes?">
+    A statement shows your Bitcoin balances and transactions for a period. It is not tax advice or a tax form. Ask your tax professional what they need.
+  </Accordion>
+  <Accordion title="Why aren't my exchanges on my statement?">
+    Statements cover self-custody wallets you've verified. Your exchange can provide its own statement.
+  </Accordion>
+</AccordionGroup>
+
+## Data
+
+<AccordionGroup>
   <Accordion title="What if I lose my computer?">
     Your coins are safe. Restore from a [backup](/maintenance/backup-restore), or re-add your accounts.
+  </Accordion>
+  <Accordion title="Does it record history when it's closed?">
+    No. It records balances about every 15 minutes while running. Wallet history is rebuilt from the blockchain when needed.
+  </Accordion>
+  <Accordion title="Is there dark mode?">
+    Not yet.
   </Accordion>
 </AccordionGroup>

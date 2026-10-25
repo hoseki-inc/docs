@@ -16,15 +16,51 @@ Bitcoin Control Center tracks your Bitcoin savings on your own device. It is wat
     Install, connect, add an account.
   </Card>
 
-  <Card title="Add accounts" icon="wallet" href="/accounts/hardware-wallets">
+  <Card title="How accounts work" icon="wallet" href="/accounts/how-accounts-work">
     Wallets, exchanges, manual holdings.
   </Card>
 
   <Card title="Statements" icon="file-circle-check" href="/statements/statements-and-hoseki-verified">
-    Create a statement. Prove control.
+    Create a statement of your holdings.
   </Card>
 
   <Card title="Troubleshooting" icon="life-ring" href="/help/troubleshooting">
     Fix common problems.
   </Card>
 </Columns>
+
+## How it works
+
+Control Center runs on your computer or home server. It reads your balances from the sources you choose and keeps everything it learns on your device.
+
+```mermaid
+flowchart LR
+  subgraph You["Your device"]
+    CC["Bitcoin Control Center<br/>accounts, history, statements"]
+  end
+  E["Electrum server<br/>wallet balances"] --> CC
+  X["Exchanges<br/>read-only API keys"] --> CC
+  P["Price source<br/>Bitcoin price"] --> CC
+  M["You<br/>manual and ETF holdings"] --> CC
+```
+
+- **Wallets** are read from an Electrum server, using public keys only.
+- **Exchanges** are read with a read-only API key you create.
+- **Manual and ETF holdings** are numbers you type in.
+- **Prices** come from a price source you pick in [Settings](/settings/app-settings).
+
+Nothing is sent to Hoseki. See [Privacy and security](/privacy-security) for exactly what leaves your device.
+
+## New here?
+
+<Steps>
+  <Step title="Install">
+    Pick [Mac or Windows](/getting-started/install-desktop), [StartOS](/getting-started/install-startos), or [Umbrel](/getting-started/install-umbrel).
+  </Step>
+  <Step title="Set up">
+    Set your PIN and choose an Electrum server. See [First run](/getting-started/first-run).
+  </Step>
+  <Step title="Look around">
+    Learn what each page does in the [tour](/getting-started/tour).
+  </Step>
+</Steps>
