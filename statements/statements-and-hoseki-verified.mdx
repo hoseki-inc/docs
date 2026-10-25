@@ -1,0 +1,72 @@
+---
+title: "Statements and Hoseki Verified"
+sidebarTitle: "Statements"
+description: "Create a statement and prove you control your Bitcoin."
+keywords:
+  - "statement"
+  - "proof of reserves"
+  - "hoseki verified"
+  - "pdf"
+  - "proof of control"
+---
+
+A statement is a PDF of your balances for a date range. Sync all accounts first.
+
+<Steps>
+  <Step title="Start">
+    Open **Statements** → **Generate Statement**.
+
+    <Frame caption="Generate Statement.">
+      <img
+        src="/images/statements-generate.png"
+        alt="Statements page with Generate Statement button"
+      />
+    </Frame>
+  </Step>
+  <Step title="Choose options">
+    Pick accounts, dates, and a currency (USD, CAD, GBP, or EUR).
+
+    <Frame caption="Accounts, dates, currency.">
+      <img
+        src="/images/statements-options.png"
+        alt="Statement options: accounts, date range, and currency"
+      />
+    </Frame>
+  </Step>
+  <Step title="Sign">
+    Sign the request on each hardware wallet when asked.
+
+    <Frame caption="Sign on your device.">
+      <img
+        src="/images/statements-signing.png"
+        alt="Hardware wallet signing prompt for proof of control"
+      />
+    </Frame>
+  </Step>
+  <Step title="Download">
+    Download the PDF.
+
+    <Frame caption="Your finished statement.">
+      <img
+        src="/images/statements-download.png"
+        alt="Finished statement ready to download"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+## Hoseki Verified
+
+The badge means you signed a fresh message with each self-custody wallet. That proves you controlled it when you made the statement.
+
+<Frame caption="The Hoseki Verified badge.">
+  <img
+    src="/images/statements-pdf-verified.png"
+    alt="Statement PDF showing the Hoseki Verified badge"
+  />
+</Frame>
+
+- It does not move funds.
+- It does not apply to exchange, manual, or ETF holdings.
+
+On StartOS and Umbrel, Mempool must be running to create statements.

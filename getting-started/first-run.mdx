@@ -1,0 +1,63 @@
+---
+title: "First run and Electrum"
+sidebarTitle: "First run"
+description: "Connect to an Electrum server and set up the app."
+keywords:
+  - "electrum"
+  - "first run"
+  - "server"
+  - "tor"
+  - "ssl"
+  - "setup"
+---
+
+Control Center reads balances from an **Electrum server**. Your choice affects privacy.
+
+## Pick a server
+
+- **Your own node (best):** Electrs, Fulcrum, or Electrum Personal Server.
+- **Public server:** Works, but the operator can see which addresses you check.
+
+StartOS and Umbrel connect to your Electrs automatically.
+
+## Desktop: connect
+
+- **Host and port:** from your server. SSL often uses `50002`. Plain TCP often uses `50001`.
+- **SSL:** use it for any server not on your own network.
+- **Tor:** the desktop app includes Tor for `.onion` servers.
+
+<Frame caption="Enter your server details.">
+  <img
+    src="/images/first-run-electrum-settings.png"
+    alt="Desktop Electrum connection form with host, port, SSL, and Tor options"
+  />
+</Frame>
+
+<Frame caption="Connected.">
+  <img
+    src="/images/first-run-electrum-connected.png"
+    alt="Electrum connection showing a connected status"
+  />
+</Frame>
+
+## Finish setup
+
+1. Open **Settings**. Enter the name to show on statements.
+
+<Frame caption="Your name on statements.">
+  <img
+    src="/images/first-run-statement-name.png"
+    alt="Settings page with the statement name field"
+  />
+</Frame>
+
+2. Follow the short intro on **Home**, or skip it.
+
+<Frame caption="The first-run intro.">
+  <img
+    src="/images/first-run-intro.png"
+    alt="First-run introduction on Home"
+  />
+</Frame>
+
+3. [Add your first account](/accounts/hardware-wallets).

@@ -1,0 +1,41 @@
+---
+title: "Back up, restore, or move"
+sidebarTitle: "Backup and restore"
+description: "Keep your data safe. Move to a new computer."
+keywords:
+  - "backup"
+  - "restore"
+  - "migrate"
+  - "new computer"
+  - "data folder"
+---
+
+Your data lives only on your device. Hoseki cannot recover it.
+
+## Desktop
+
+1. Quit the app fully.
+2. Copy the whole data folder.
+
+<Tabs>
+  <Tab title="Mac">
+    `~/Library/Application Support/desktop/data`
+  </Tab>
+  <Tab title="Windows">
+    `%APPDATA%\desktop\data`
+  </Tab>
+</Tabs>
+
+3. To restore, quit the app. Put the folder back. Reopen.
+
+<Warning>Copy the whole folder. The database and the `secrets` key must stay together. Without the key, saved exchange keys cannot be read.</Warning>
+
+## StartOS
+
+Use the normal StartOS backup. It saves everything.
+
+## After a restore
+
+Check accounts and history. If an exchange asks, reconnect it.
+
+Lost your data? Re-add your wallets. Your coins are never at risk. Only history and settings are lost.

@@ -1,0 +1,44 @@
+---
+title: "Install on Umbrel"
+description: "Sideload Control Center on Umbrel. The App Store listing is pending."
+keywords:
+  - "umbrel"
+  - "sideload"
+  - "install.sh"
+  - "umbrelos"
+---
+
+<Info>Control Center is not in the Umbrel App Store yet. Sideload it for now.</Info>
+
+## Before you start
+
+Install and sync **Bitcoin Node**, **Electrs**, and **Mempool**.
+
+<Steps>
+  <Step title="Get the bundle">
+    Download the Umbrel sideload bundle from [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com). Copy it to your Umbrel.
+  </Step>
+  <Step title="Run the installer">
+    SSH in as `umbrel`. Extract the bundle. Run:
+
+    ```bash
+    ./install.sh
+    ```
+  </Step>
+  <Step title="Open it">
+    Open **Bitcoin Control Center** from the Umbrel home screen.
+  </Step>
+  <Step title="Set your PIN">
+    Pick 6 digits. Save it in your password manager.
+  </Step>
+</Steps>
+
+To update, run `./install.sh` from the new bundle. Uninstall from Umbrel's app menu.
+
+Forgot your PIN? In Umbrel's terminal, run:
+
+```bash
+sudo docker exec bitcoin-control-center_web_1 node /app/dist/cli.js reset-pin
+```
+
+Then set a new PIN on next open. Your data stays.
