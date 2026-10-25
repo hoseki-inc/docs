@@ -1,0 +1,129 @@
+---
+title: "Exchange accounts"
+sidebarTitle: "Exchanges"
+description: "Track Coinbase, Kraken, Robinhood, and Strike balances with a read-only API key."
+keywords:
+  - "coinbase"
+  - "kraken"
+  - "robinhood"
+  - "strike"
+  - "api key"
+  - "exchange"
+  - "reconnect"
+  - "read-only"
+---
+
+Control Center reads your exchange balance with an **API key** you create on the exchange. The key is encrypted and stored on your device only.
+
+<Warning>Give the key **view or read access only**. Never allow trading, transfers, or withdrawals. Control Center never needs them.</Warning>
+
+## Connect an exchange
+
+<Steps>
+  <Step title="Create a read-only key">
+    On the exchange, create an API key with the permissions in the table below.
+  </Step>
+  <Step title="Add the account">
+    Select **Add Account** → your exchange.
+  </Step>
+  <Step title="Paste and connect">
+    Paste the key fields. Select **Connect Account**.
+  </Step>
+</Steps>
+
+## Exchange by exchange
+
+| Exchange | Where to create the key | Permissions to turn on | What you paste |
+| --- | --- | --- | --- |
+| **Coinbase** | [coinbase.com/settings/api](https://www.coinbase.com/settings/api) | **View (Read-Only)** only. Under Advanced, pick **ECDSA**. | API Key Name and the whole Private Key |
+| **Kraken** | [Kraken API settings](https://www.kraken.com/c/account-settings/api) | **Query Funds** and **Query Ledger Entries** only | API Key and Private Key (secret) |
+| **Robinhood** | [Robinhood Crypto settings](https://robinhood.com/account/crypto) | Read-only API credential | Account name, API key (`rh-api-…`), and your base64 private key |
+| **Strike** | [Strike developer dashboard](https://dashboard.strike.me/developer/api-keys) | **Read account balances** only. It's off by default. | Account name and API key |
+
+<Tabs>
+  <Tab title="Coinbase">
+    1. Select **Create API Key**. Name it, for example "Bitcoin Control Center".
+    2. Under **Advanced**, select **ECDSA (Legacy SDKs)**. Control Center needs an ECDSA key.
+    3. Under **Permissions**, check **View (Read-Only)** only.
+    4. Select **Create & Download**. Paste the API Key Name, such as `organizations/…/apiKeys/…`.
+    5. Paste the whole Private Key, from `-----BEGIN EC PRIVATE KEY-----` to `-----END EC PRIVATE KEY-----`.
+
+    <Frame caption="Coinbase fields and setup steps.">
+      <img
+        src="/images/accounts-exchange-coinbase-guide.png"
+        alt="Connect Coinbase Account form with API Key Name, Private Key, and setup steps"
+      />
+    </Frame>
+
+    Coinbase shows your **available** balance. Bitcoin on hold is not counted.
+  </Tab>
+  <Tab title="Kraken">
+    1. Select **Create API Key**.
+    2. Turn on **Query Funds** and **Query Ledger Entries**. Leave everything else off.
+    3. Select **Generate Key**. Paste the API Key and the Private Key.
+
+    <Frame caption="Kraken fields and setup steps.">
+      <img
+        src="/images/accounts-exchange-kraken-guide.png"
+        alt="Connect Kraken Account form with API Key, Secret Key, and setup steps"
+      />
+    </Frame>
+
+    Kraken accounts are always named "Kraken".
+  </Tab>
+  <Tab title="Robinhood">
+    1. Create an Ed25519 key pair with the script in Robinhood's API docs. Save both keys.
+    2. In Robinhood Crypto settings, create an API credential with your **public** key.
+    3. Paste the API key (`rh-api-…`) and your base64 **private** key.
+
+    <Frame caption="Robinhood fields and setup steps.">
+      <img
+        src="/images/accounts-exchange-robinhood-guide.png"
+        alt="Connect Robinhood Account form with account name, API key, private key, and setup steps"
+      />
+    </Frame>
+  </Tab>
+  <Tab title="Strike">
+    1. Select **Create API key**. Name it, for example "Bitcoin Control Center".
+    2. Under **Account**, turn on **Read account balances**. Strike leaves it off by default. Without it, the connection fails.
+    3. Paste the API key.
+
+    <Frame caption="Strike fields and setup steps.">
+      <img
+        src="/images/accounts-exchange-strike-guide.png"
+        alt="Connect Strike Account form with account name, API key, and setup steps"
+      />
+    </Frame>
+  </Tab>
+</Tabs>
+
+## Keeping it up to date
+
+- Balances refresh when you open **Accounts** or **Portfolio**, and in the background.
+- To refresh now, open the account and select **Refresh Balance**.
+
+## Reconnect once a year
+
+Exchange keys expire in Control Center **after one year**. The card then shows **Reconnect**, and the balance shows "—". It is left out of your totals.
+
+To fix it, create a new key. Open the account. Select **Reconnect Account**. Your history is kept.
+
+You also need to reconnect if you restore the database without its key file. See [Backup and restore](/bitcoin-control-center/maintenance/backup-restore).
+
+## Strike transaction history
+
+Add Strike statements to show transaction detail.
+
+1. In Strike, open **Activity** → **Generate Report**, or **Documents** → a statement → **⋯** → **Export as CSV**.
+2. In Control Center, open your Strike account.
+3. Drop the CSV under **Account Statements**.
+
+Upload the CSV, not the PDF. If a statement includes a reversed transaction, use **Activity** → **Generate Report** instead.
+
+## Things to watch
+
+<Warning>**Remove Account** deletes an exchange account and all its history **immediately**. There is no confirmation and no undo.</Warning>
+
+- **Connect each key once.** Connecting the same exchange twice counts its balance twice.
+- **Exchanges are not on statements.** Statements cover self-custody wallets only. Ask your exchange for its own statement.
+- **Exchange accounts can't be renamed** in Control Center.

@@ -1,0 +1,103 @@
+---
+title: "Verify ownership (prove control)"
+sidebarTitle: "Verify ownership"
+description: "Why you sign a message, what it says, and how to finish a pending wallet."
+keywords:
+  - "verify"
+  - "prove control"
+  - "proof of control"
+  - "sign message"
+  - "pending"
+  - "verified"
+  - "signature"
+  - "claim verified"
+---
+
+To put a wallet on a [statement](/bitcoin-control-center/statements/statements-and-hoseki-verified), you prove you control it. You do this by signing a short message with your wallet.
+
+<Info>Signing a message **cannot move funds**. It is not a transaction. Nothing is broadcast to the Bitcoin network.</Info>
+
+## Why verify
+
+| | Pending wallet | Verified wallet |
+| --- | --- | --- |
+| Balance tracked | Yes | Yes |
+| Shown on Home and Portfolio | Yes | Yes |
+| Can go on a statement | No | Yes |
+
+Only want to track a wallet? You can leave it pending.
+
+## What you sign
+
+The message looks like this:
+
+```text
+I, the owner, affirm sole control of this account. No other third-party claims/access permitted. Ownership revocable solely by me. ID=…
+```
+
+The `ID` is unique to your account. You sign with the wallet's **first receive address** (path ending `/0/0`).
+
+## How to sign
+
+You sign right after adding a wallet. To finish later, open the **pending** account and select **Continue**.
+
+<Frame caption="A pending account. Select Continue to sign.">
+  <img
+    src="/images/accounts-pending-continue.png"
+    alt="Pending account page titled Continue Verification? with Abandon and Continue buttons"
+  />
+</Frame>
+
+<Tabs>
+  <Tab title="Ledger and Trezor">
+    1. Select **Prove Control**.
+    2. Check the message and address on your device. Approve it.
+
+    <Frame caption="Sign on your device.">
+      <img
+        src="/images/statements-signing.png"
+        alt="Hardware wallet signing prompt for proof of control"
+      />
+    </Frame>
+  </Tab>
+  <Tab title="COLDCARD (MicroSD)">
+    1. Select **Download** to save `hoseki-ownership-claim.txt`. Copy it to your MicroSD card. Do not edit it.
+    2. On the COLDCARD, go to **Advanced/Tools** → **File Management** → **Sign Text File**. Pick the file. Press Enter.
+    3. Upload the new `hoseki-ownership-claim-signed.txt`. Select **Prove Control**.
+  </Tab>
+  <Tab title="COLDCARD Q and Keystone">
+    1. Scan the QR code on screen with your device.
+    2. Confirm and sign on the device.
+    3. Select **Ready to Scan**. Hold the signed QR up to your webcam.
+  </Tab>
+  <Tab title="xpub or descriptor">
+    1. Copy the **Address** and **Message**.
+    2. Sign it in your wallet software. See [Sign a message in your wallet](/bitcoin-control-center/wallet-guides/sign-message).
+    3. Paste the signature. Select **Verify**.
+
+    <Frame caption="Sign with any wallet tool and paste the result.">
+      <img
+        src="/images/accounts-xpub-signing.png"
+        alt="Manual signing screen with Address, Message, and Signature fields"
+      />
+    </Frame>
+  </Tab>
+</Tabs>
+
+When it works, you see **Claim Verified!** Choose **Generate Statement**, **Connect Another Account**, or **Back to Home**.
+
+## Good to know
+
+- **Verification does not expire.** You sign once per wallet.
+- **The message says "the owner".** It does not include your name. Your name on statements comes from [Settings](/bitcoin-control-center/settings/app-settings).
+- **Multisig** needs a signature from enough keys to meet your quorum. See [Multisig](/bitcoin-control-center/accounts/multisig).
+- **Stuck waiting for the device?** After 20 seconds, a link appears to reset the step.
+
+## If signing fails
+
+| Message | Fix |
+| --- | --- |
+| **Invalid signature** | Sign the exact message shown, with the exact address shown. Don't add spaces or line breaks. |
+| **Signing address does not match the account key** | You signed with a different address or wallet. Use the address shown. |
+| **File not downloaded or copied** | Download or copy the message file before you select **Next**. |
+| **The signing process did not complete successfully** (COLDCARD) | Upload the file ending `-signed.txt`, not the original. |
