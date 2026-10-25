@@ -13,37 +13,93 @@ keywords:
 
 <AccordionGroup>
   <Accordion title="Cannot connect to Electrum">
+    <Frame caption="Electrum connection error. Screenshot coming soon.">
+      <img
+        src="/images/troubleshoot-electrum-error.png"
+        alt="Electrum connection error message"
+      />
+    </Frame>
+
     - Check host, port, and SSL.
     - Confirm the server is on mainnet.
     - Confirm the server is fully synced.
     - Using a StartOS Root CA? Install the CA on your computer. Fully quit and reopen the app.
   </Accordion>
   <Accordion title="Balance is zero or wrong">
+    <Frame caption="Still syncing. Screenshot coming soon.">
+      <img
+        src="/images/troubleshoot-zero-balance.png"
+        alt="Account still syncing with zero balance"
+      />
+    </Frame>
+
     - Wait for the first sync to finish.
     - Confirm your Electrum server is fully synced.
     - Check you added the right wallet account.
   </Accordion>
   <Accordion title="Hardware wallet not detected">
+    <Frame caption="Allow the browser prompt. Screenshot coming soon.">
+      <img
+        src="/images/troubleshoot-hw-permission.png"
+        alt="Browser permission prompt to connect a hardware wallet"
+      />
+    </Frame>
+
     - Unlock it. Open the Bitcoin app.
     - Close other wallet apps.
     - On StartOS or Umbrel, use Chrome, Brave, or Edge.
     - Coldcard and Keystone: use the QR or MicroSD option.
   </Accordion>
   <Accordion title="Exchange will not connect">
+    <Frame caption="Exchange connection error. Screenshot coming soon.">
+      <img
+        src="/images/troubleshoot-exchange-error.png"
+        alt="Exchange connection failed error"
+      />
+    </Frame>
+
     - Re-copy the key. Check for extra spaces.
     - Confirm the key has view access.
     - Create a new key and try again.
   </Accordion>
   <Accordion title="Exchange needs reconnecting after a restore">
     Open the account. Follow the reconnect prompt.
+
+    <Frame caption="Reconnect an exchange. Screenshot coming soon.">
+      <img
+        src="/images/backup-exchange-reconnect.png"
+        alt="Exchange account reconnect prompt after restore"
+      />
+    </Frame>
   </Accordion>
   <Accordion title="Mac says the app cannot be opened">
+    <Frame caption="macOS blocked the app. Screenshot coming soon.">
+      <img
+        src="/images/troubleshoot-mac-blocked.png"
+        alt="macOS message saying the app cannot be opened"
+      />
+    </Frame>
+
     Download the official release from GitHub. Test builds are not notarized.
   </Accordion>
   <Accordion title="Windows SmartScreen warning">
     Select **More info** → **Run anyway**.
+
+    <Frame caption="More info, then Run anyway. Screenshot coming soon.">
+      <img
+        src="/images/install-desktop-windows-smartscreen.png"
+        alt="Windows SmartScreen with More info and Run anyway highlighted"
+      />
+    </Frame>
   </Accordion>
   <Accordion title="Statement will not generate">
+    <Frame caption="Statement error. Screenshot coming soon.">
+      <img
+        src="/images/troubleshoot-statement-error.png"
+        alt="Statement generation error"
+      />
+    </Frame>
+
     - Sync all accounts first.
     - On StartOS or Umbrel, make sure Mempool is running.
   </Accordion>

@@ -13,21 +13,77 @@ keywords:
 
 Control Center connects with an **API key** you create on the exchange.
 
-## Steps
+<Steps>
+  <Step title="Create a read-only key">
+    On the exchange, allow **view** only. No trading. No withdrawals.
 
-1. On the exchange, create an API key with **view / read-only** access. Do not allow trading or withdrawals.
-2. In Control Center, open **Accounts** → **Add Account** → your exchange.
-3. Paste the key fields. Select **Connect**.
+    <Frame caption="View access only. Screenshot coming soon.">
+      <img
+        src="/images/accounts-exchange-readonly-key.png"
+        alt="Exchange API key settings with only view permission enabled"
+      />
+    </Frame>
+  </Step>
+  <Step title="Add the account">
+    Open **Accounts** → **Add Account** → your exchange.
+  </Step>
+  <Step title="Paste and connect">
+    Paste the key fields. Select **Connect**.
+  </Step>
+</Steps>
 
-| Exchange | What you paste |
-| --- | --- |
-| Coinbase | API key name and private key |
-| Kraken | API key and secret |
-| Robinhood | API key and private key |
-| Strike | API key |
+<Tabs>
+  <Tab title="Coinbase">
+    Paste the API key name and private key.
+
+    <Frame caption="Coinbase fields. Screenshot coming soon.">
+      <img
+        src="/images/accounts-exchange-coinbase.png"
+        alt="Coinbase connection form with API key name and private key fields"
+      />
+    </Frame>
+  </Tab>
+  <Tab title="Kraken">
+    Paste the API key and secret.
+
+    <Frame caption="Kraken fields. Screenshot coming soon.">
+      <img
+        src="/images/accounts-exchange-kraken.png"
+        alt="Kraken connection form with API key and secret fields"
+      />
+    </Frame>
+  </Tab>
+  <Tab title="Robinhood">
+    Paste the API key and private key.
+
+    <Frame caption="Robinhood fields. Screenshot coming soon.">
+      <img
+        src="/images/accounts-exchange-robinhood.png"
+        alt="Robinhood connection form with API key and private key fields"
+      />
+    </Frame>
+  </Tab>
+  <Tab title="Strike">
+    Paste the API key.
+
+    <Frame caption="Strike field. Screenshot coming soon.">
+      <img
+        src="/images/accounts-exchange-strike.png"
+        alt="Strike connection form with API key field"
+      />
+    </Frame>
+  </Tab>
+</Tabs>
 
 Keys are encrypted and stored on your device only.
 
 ## Strike statements
 
 If a Strike statement needs a CSV, export it in Strike from **Activity** → **Generate Report**.
+
+<Frame caption="Export the CSV in Strike. Screenshot coming soon.">
+  <img
+    src="/images/accounts-strike-csv.png"
+    alt="Strike Activity Generate Report screen"
+  />
+</Frame>
