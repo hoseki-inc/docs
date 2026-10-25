@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Bitcoin Control Center",
   "colors": {
-    "primary": "#FFE56C",
-    "light": "#FFE56C",
-    "dark": "#0F172A"
+    "primary": "#0F172A",
+    "light": "#CBD5E1",
+    "dark": "#334155"
   },
   "favicon": "/favicon.svg",
   "navigation": {
