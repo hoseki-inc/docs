@@ -1,0 +1,33 @@
+---
+title: "First run and Electrum"
+sidebarTitle: "First run"
+description: "Connect to an Electrum server and set up the app."
+keywords:
+  - "electrum"
+  - "first run"
+  - "server"
+  - "tor"
+  - "ssl"
+  - "setup"
+---
+
+Control Center reads balances from an **Electrum server**. Your choice affects privacy.
+
+## Pick a server
+
+- **Your own node (best):** Electrs, Fulcrum, or Electrum Personal Server.
+- **Public server:** Works, but the operator can see which addresses you check.
+
+StartOS and Umbrel connect to your Electrs automatically.
+
+## Desktop settings
+
+- **Host and port:** from your server. SSL often uses `50002`. Plain TCP often uses `50001`.
+- **SSL:** use it for any server not on your own network.
+- **Tor:** the desktop app includes Tor for `.onion` servers.
+
+## Then
+
+1. Open **Settings**. Enter the name to show on statements.
+2. Follow the short intro on **Home**, or skip it.
+3. [Add your first account](/accounts/hardware-wallets).

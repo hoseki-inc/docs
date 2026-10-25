@@ -1,0 +1,33 @@
+---
+title: "Install on StartOS"
+description: "Run Control Center as a StartOS service."
+keywords:
+  - "startos"
+  - "start9"
+  - "s9pk"
+  - "sideload"
+  - "pin"
+---
+
+## Before you start
+
+Install and fully sync **Bitcoin**, **Electrs**, and **Mempool** on StartOS.
+
+<Steps>
+  <Step title="Get the package">
+    Download the `.s9pk` file from [GitHub Releases](https://github.com/hoseki-inc/bitcoin-control-center/releases).
+  </Step>
+  <Step title="Sideload it">
+    In StartOS, sideload the `.s9pk` file.
+  </Step>
+  <Step title="Set your PIN">
+    Run the **Set PIN** action. Pick 6 digits. Save it in your password manager.
+  </Step>
+  <Step title="Open it">
+    Start the service. Open **Web Interface**. Enter your PIN.
+  </Step>
+</Steps>
+
+<Note>The PIN works only over `https://` or the `.onion` address.</Note>
+
+Forgot your PIN? Run **Set PIN** again. Your data stays. Everyone is signed out.

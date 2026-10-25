@@ -14,7 +14,47 @@
         "group": "Getting started",
         "pages": [
           "index",
-          "quickstart"
+          "quickstart",
+          "getting-started/control-center-vs-prove",
+          "getting-started/install-desktop",
+          "getting-started/install-startos",
+          "getting-started/install-umbrel",
+          "getting-started/first-run"
+        ]
+      },
+      {
+        "group": "Adding accounts",
+        "pages": [
+          "accounts/hardware-wallets",
+          "accounts/exchanges",
+          "accounts/manual-and-etfs"
+        ]
+      },
+      {
+        "group": "Statements",
+        "pages": [
+          "statements/statements-and-hoseki-verified"
+        ]
+      },
+      {
+        "group": "Updates and backup",
+        "pages": [
+          "maintenance/updates",
+          "maintenance/backup-restore"
+        ]
+      },
+      {
+        "group": "Privacy and security",
+        "pages": [
+          "privacy-security"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "help/troubleshooting",
+          "help/faq",
+          "help/contact"
         ]
       }
     ],

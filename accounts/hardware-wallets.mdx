@@ -1,0 +1,40 @@
+---
+title: "Hardware and watch-only wallets"
+sidebarTitle: "Hardware wallets"
+description: "Track self-custody Bitcoin with a hardware wallet."
+keywords:
+  - "ledger"
+  - "trezor"
+  - "coldcard"
+  - "keystone"
+  - "xpub"
+  - "descriptor"
+  - "watch-only"
+  - "multisig"
+---
+
+Control Center imports **public** keys (xpubs) only. Your coins stay on your wallet.
+
+## Supported
+
+| Wallet | How it connects |
+| --- | --- |
+| Ledger | USB |
+| Trezor | USB |
+| Coldcard | MicroSD file or QR code |
+| Keystone | QR code |
+| Multisig | Combine supported wallets |
+
+## Add one
+
+1. Open **Accounts** → **Add Account**.
+2. Pick your wallet. Follow the prompts.
+3. Wait for sync.
+
+## USB tips
+
+- Use a Chromium browser (Chrome, Brave, Edge) on StartOS or Umbrel.
+- Unlock the device. Open its Bitcoin app.
+- Close other wallet apps first.
+
+<Warning>Never type your seed phrase into Control Center. Approve signatures on the device only.</Warning>

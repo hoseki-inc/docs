@@ -1,0 +1,36 @@
+---
+title: "Privacy and security"
+description: "What stays local and what leaves your device."
+keywords:
+  - "privacy"
+  - "security"
+  - "data"
+  - "telemetry"
+  - "tor"
+  - "hoseki see"
+---
+
+## Stays on your device
+
+- Accounts, balances, history, settings, statements.
+- Exchange API keys, encrypted.
+
+No Hoseki account. No telemetry. Hoseki cannot see your data.
+
+## Leaves your device
+
+| Who | What they see |
+| --- | --- |
+| Your Electrum server | Addresses you track |
+| Exchanges | Requests made with your API key |
+| Price source (Block, mempool.space, Coinbase, CoinGecko) | Price requests |
+| bitcoincontrolcenter.com (desktop only) | Your IP during the daily update check. No wallet data. |
+
+Use your own Electrum server and Mempool for the most privacy.
+
+## Stay safe
+
+- Never enter a seed phrase or private key.
+- Use read-only exchange API keys.
+- Remove xpubs and keys from logs before you share them.
+- Report security issues privately. See [SECURITY.md](https://github.com/hoseki-inc/bitcoin-control-center/blob/main/SECURITY.md).
