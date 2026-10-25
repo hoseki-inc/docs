@@ -98,5 +98,10 @@
       "website": "https://www.bitcoincontrolcenter.com"
     }
   },
-  "description": "Help for Bitcoin Control Center: local-first, watch-only Bitcoin savings app. Not Prove."
+  "description": "Help for Bitcoin Control Center: local-first, watch-only Bitcoin savings app. Not Prove.",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "/"
+  }
 }
