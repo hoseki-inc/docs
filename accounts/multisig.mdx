@@ -21,6 +21,16 @@ Track a multisig wallet from its **descriptor**. No funds move. Your custody doe
 - Enough signing devices to meet your quorum. A 2-of-3 wallet needs 2 keys.
 - Supported signing devices: Ledger, Trezor, COLDCARD, Keystone.
 
+### Why only these devices
+
+Most wallets can't yet sign a message for a multisig address. The standard for that is called BIP-322.
+
+So Control Center verifies multisig its own way. Each key signs the message separately, from its own single-key address. Control Center then checks that each signing key belongs to your multisig wallet.
+
+This only works with devices Control Center can connect to directly: Ledger, Trezor, COLDCARD, and Keystone. We're working to add more.
+
+<Note>A key held in another device or app can still be part of your wallet. You just need enough supported devices among your keys to meet your quorum.</Note>
+
 ### Where to get the descriptor
 
 Control Center reads these formats:
