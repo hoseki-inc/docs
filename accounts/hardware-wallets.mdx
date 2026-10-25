@@ -1,7 +1,7 @@
 ---
 title: "Hardware and watch-only wallets"
 sidebarTitle: "Hardware wallets"
-description: "Track self-custody Bitcoin with a hardware wallet."
+description: "Track self-custody Bitcoin with a hardware wallet, or prove control by signing a message."
 keywords:
   - "ledger"
   - "trezor"
@@ -11,6 +11,10 @@ keywords:
   - "descriptor"
   - "watch-only"
   - "multisig"
+  - "advanced"
+  - "message signing"
+  - "bip322"
+  - "prove control"
 ---
 
 Control Center imports **public** keys (xpubs) only. Your coins stay on your wallet.
@@ -23,7 +27,7 @@ Control Center imports **public** keys (xpubs) only. Your coins stay on your wal
 | Trezor | USB |
 | Coldcard | MicroSD file or QR code |
 | Keystone | QR code |
-| Multisig | Combine supported wallets |
+| Multisig | Descriptor, then sign on each device |
 
 ## Add one
 
@@ -92,5 +96,41 @@ Wait for sync.
 
 - Use a Chromium browser (Chrome, Brave, Edge) on StartOS or Umbrel.
 - Close other wallet apps first.
+
+## Prove control manually
+
+Use **Advanced** to attach a single-signature hardware wallet and prove you control it. You sign a message on the device, then paste the signature.
+
+**Manual Entry** stores a balance you type. **Advanced** checks a signature. See [Manual Bitcoin and ETFs](/accounts/manual-and-etfs).
+
+1. Open **Accounts** → **Add Account**.
+2. Under the account grid, open **Advanced** (**Manually Verify Your Self-Custodial Bitcoin Holdings**).
+3. Select **Verify with Manual Signing**.
+4. Enter a **Display name**.
+5. Paste an **Account descriptor or extended public key**.
+6. Select **Add Account**.
+7. Sign the **Message** for the **Address** on your hardware wallet.
+8. Paste the **Signature**.
+9. Select **Verify**.
+
+The **Address** is the first receive address. Prefer an account descriptor. It includes the script type. If the key starts with `x`, choose **Select script type**: Legacy (P2PKH), Nested SegWit (P2SH), Native SegWit (P2WPKH), or Taproot (P2TR).
+
+<Note>Your seed stays on the device. Paste the public account data and the signature only.</Note>
+
+Multisig cannot use this path. See [Multisig](#multisig).
+
+## Multisig
+
+Open **Accounts** → **Add Account** → **Multisig**.
+
+Upload the descriptor file, or paste it. Export it from your hardware wallet or a coordinator such as Sparrow, Unchained, or Nunchuk. Enter a **Name**. Select **Next**.
+
+Sign on each required device. Choose **Select a Signing Device**: Trezor, Ledger, Coldcard, or Keystone. You can sign the keys in any order.
+
+A 2-of-3 wallet needs two signatures. A wallet that requires every key needs all of them.
+
+<Warning>
+**Advanced** manual signing is not available for multisig. Each required key signs its own message on the device. Many wallets do not support BIP322 yet, so you cannot paste one BIP322 proof for the multisig script.
+</Warning>
 
 <Warning>Never type your seed phrase into Control Center. Approve signatures on the device only.</Warning>
