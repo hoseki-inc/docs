@@ -1,7 +1,7 @@
 ---
 title: "Hardware and watch-only wallets"
 sidebarTitle: "Hardware wallets"
-description: "Track self-custody Bitcoin with a hardware wallet."
+description: "Track self-custody Bitcoin with a hardware wallet, including advanced manual signing."
 keywords:
   - "ledger"
   - "trezor"
@@ -11,6 +11,10 @@ keywords:
   - "descriptor"
   - "watch-only"
   - "multisig"
+  - "advanced"
+  - "manual signing"
+  - "prove control"
+  - "bip322"
 ---
 
 Control Center imports **public** keys (xpubs) only. Your coins stay on your wallet.
@@ -23,7 +27,7 @@ Control Center imports **public** keys (xpubs) only. Your coins stay on your wal
 | Trezor | USB |
 | Coldcard | MicroSD file or QR code |
 | Keystone | QR code |
-| Multisig | Combine supported wallets |
+| Multisig | Descriptor file, then sign on each device |
 
 ## Add one
 
@@ -88,9 +92,40 @@ Wait for sync.
   />
 </Frame>
 
+Single-signature wallets can also use [Advanced manual signing](#advanced-manual-signing).
+
+## Advanced manual signing
+
+Attach a single-signature wallet by pasting its account descriptor or extended public key, then signing a message on the device. That proves you control the key.
+
+**Manual Entry** only stores a balance you type. See [Manual Bitcoin and ETFs](/accounts/manual-and-etfs).
+
+Open **Accounts** → **Add Account**. At the bottom, expand **Advanced** → **Manually Verify Your Self-Custodial Bitcoin Holdings**. Select **Verify with Manual Signing**. The next screen is labeled **Advanced Feature**.
+
+1. Enter a **Display name**.
+2. Paste an **Account descriptor or extended public key** (xpub, ypub, or zpub). Prefer a descriptor. It already includes the script type.
+3. If you paste an xpub, select the script type: **Legacy (P2PKH)**, **Nested SegWit (P2SH)**, **Native SegWit (P2WPKH)**, or **Taproot (P2TR)**.
+4. Select **Add Account**.
+5. Copy the **Address** and **Message**. Sign that message with your wallet's message-signing tool.
+6. Paste the result into **Signature**. Select **Verify**.
+
+On Coldcard, if you have no MicroSD card, select **verify manually**. That opens this same path.
+
+<Note>Advanced manual signing works for a single-signature wallet only.</Note>
+
+## Multisig
+
+On **Add Account**, pick **Multisig**. Upload your descriptor file, or paste it. Then sign on each hardware wallet. You can sign the keys in any order.
+
+<Warning>
+Advanced manual signing is unavailable for multisig. A multisig proof needs a signature from each required key, on the device. Many wallets do not support BIP322 yet, so you cannot paste one message signature for a multisig setup.
+
+On a multisig device check, **Advanced** opens **Show Technical Details**. That is not manual signing.
+</Warning>
+
 ## USB tips
 
 - Use a Chromium browser (Chrome, Brave, Edge) on StartOS or Umbrel.
 - Close other wallet apps first.
 
-<Warning>Never type your seed phrase into Control Center. Approve signatures on the device only.</Warning>
+<Warning>Never type your seed phrase into Control Center. Approve each signature on your hardware wallet.</Warning>
