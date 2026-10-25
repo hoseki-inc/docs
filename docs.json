@@ -3,7 +3,7 @@
   "theme": "mint",
   "name": "Bitcoin Control Center",
   "colors": {
-    "primary": "#0F172A",
+    "primary": "#FFE56C",
     "light": "#FFE56C",
     "dark": "#0F172A"
   },
