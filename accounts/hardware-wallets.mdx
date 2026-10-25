@@ -81,6 +81,27 @@ Open **Accounts** → **Add Account**. Pick your wallet.
       />
     </Frame>
   </Tab>
+  <Tab title="Advanced" id="advanced">
+    Use this to attach a single-signature hardware wallet and prove you control it. You sign a message on the device, then paste the signature.
+
+    **Manual Entry** stores a balance you type. **Advanced** checks a signature. See [Manual Bitcoin and ETFs](/accounts/manual-and-etfs).
+
+    1. Open **Accounts** → **Add Account**.
+    2. Under the account grid, open **Advanced** (**Manually Verify Your Self-Custodial Bitcoin Holdings**).
+    3. Select **Verify with Manual Signing**.
+    4. Enter a **Display name**.
+    5. Paste an **Account descriptor or extended public key**.
+    6. Select **Add Account**.
+    7. Sign the **Message** for the **Address** on your hardware wallet.
+    8. Paste the **Signature**.
+    9. Select **Verify**.
+
+    The **Address** is the first receive address. Prefer an account descriptor. It includes the script type. If the key starts with `x`, choose **Select script type**: Legacy (P2PKH), Nested SegWit (P2SH), Native SegWit (P2WPKH), or Taproot (P2TR).
+
+    <Note>Your seed stays on the device. Paste the public account data and the signature only.</Note>
+
+    Multisig cannot use this path. See [Multisig](#multisig).
+  </Tab>
 </Tabs>
 
 Wait for sync.
@@ -97,28 +118,6 @@ Wait for sync.
 - Use a Chromium browser (Chrome, Brave, Edge) on StartOS or Umbrel.
 - Close other wallet apps first.
 
-## Prove control manually
-
-Use **Advanced** to attach a single-signature hardware wallet and prove you control it. You sign a message on the device, then paste the signature.
-
-**Manual Entry** stores a balance you type. **Advanced** checks a signature. See [Manual Bitcoin and ETFs](/accounts/manual-and-etfs).
-
-1. Open **Accounts** → **Add Account**.
-2. Under the account grid, open **Advanced** (**Manually Verify Your Self-Custodial Bitcoin Holdings**).
-3. Select **Verify with Manual Signing**.
-4. Enter a **Display name**.
-5. Paste an **Account descriptor or extended public key**.
-6. Select **Add Account**.
-7. Sign the **Message** for the **Address** on your hardware wallet.
-8. Paste the **Signature**.
-9. Select **Verify**.
-
-The **Address** is the first receive address. Prefer an account descriptor. It includes the script type. If the key starts with `x`, choose **Select script type**: Legacy (P2PKH), Nested SegWit (P2SH), Native SegWit (P2WPKH), or Taproot (P2TR).
-
-<Note>Your seed stays on the device. Paste the public account data and the signature only.</Note>
-
-Multisig cannot use this path. See [Multisig](#multisig).
-
 ## Multisig
 
 Open **Accounts** → **Add Account** → **Multisig**.
@@ -132,7 +131,7 @@ Sign on each required device. Choose **Select a Signing Device**: Trezor, Ledger
 A 2-of-3 wallet needs two signatures. A wallet that requires every key needs all of them.
 
 <Warning>
-**Advanced** manual signing is not available for multisig. Each required key signs its own message on the device. Many wallets do not support BIP322 yet, so you cannot paste one BIP322 proof for the multisig script.
+**Advanced** does not work for multisig. Each required key signs its own message on the device. There is no single pasteable BIP322-style proof for the multisig script. This path needs message signing through your wallet. Many wallets do not support the message signing needed for this prove-control path (BIP322).
 </Warning>
 
 <Warning>Never type your seed phrase into Control Center. Approve signatures on the device only.</Warning>
