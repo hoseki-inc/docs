@@ -64,11 +64,6 @@
           "anchor": "Download",
           "icon": "download",
           "href": "https://github.com/hoseki-inc/bitcoin-control-center/releases"
-        },
-        {
-          "anchor": "Looking for Prove?",
-          "icon": "arrow-up-right",
-          "href": "https://help.hoseki.app"
         }
       ]
     }
