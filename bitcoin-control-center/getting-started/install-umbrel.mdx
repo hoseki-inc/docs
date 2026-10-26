@@ -1,105 +1,16 @@
 ---
 title: "Install on Umbrel"
-description: "Sideload Control Center on Umbrel. The App Store listing is pending."
+description: "Umbrel support for Control Center is coming soon."
 keywords:
   - "umbrel"
-  - "sideload"
-  - "install.sh"
-  - "umbrelos"
-  - "reset pin"
+  - "coming soon"
+  - "support"
 ---
 
-<Info>Control Center is not in the Umbrel App Store yet. Sideload it for now. It needs umbrelOS 2.0 or later.</Info>
+Umbrel support is coming soon.
 
-## Before you start
+<Info>
+Email [support@hoseki.app](mailto:support@hoseki.app) if you need help.
+</Info>
 
-Install `bitcoin`, `electrs`, and `mempool` from the Umbrel App Store. Wait for them to sync.
-
-If one is missing, the installer stops with `Install bitcoin from the Umbrel App Store first.` The same line names `electrs` or `mempool`.
-
-Supported CPUs are x86_64 (`amd64`, Umbrel Home and PCs) and arm64 (Raspberry Pi). A bundle can contain only one architecture. On the other CPU it stops with `This bundle has no amd64 image.` or `This bundle has no arm64 image.`
-
-## Install
-
-<Steps>
-  <Step title="Get the bundle">
-    You need `bitcoin-control-center-umbrel-<version>.tar.gz`. A `.tar.gz.sha256` file is the checksum.
-
-    <Note>
-      The bundle is not always attached to the release. If there is no `bitcoin-control-center-umbrel-….tar.gz`, email [support@hoseki.app](mailto:support@hoseki.app).
-    </Note>
-
-    <Accordion title="Build the bundle yourself">
-      From a clone of the repository, pick one architecture:
-
-      ```bash
-      ./umbrel/build.sh --arch amd64
-      ```
-
-      Use `amd64` for Umbrel Home and x86 PCs. Use `arm64` for a Raspberry Pi. The files are written to `umbrel/dist/`.
-    </Accordion>
-  </Step>
-  <Step title="Upload it">
-    Open **Files** → **Home**. Upload the `.tar.gz`.
-  </Step>
-  <Step title="Extract and install">
-    Open **Settings** → **Advanced settings** → **Terminal** → **umbrelOS**.
-
-    Run this as the `umbrel` user, not root. Replace `<version>` with the version in the file name.
-
-    ```bash
-    tar -xzf ~/umbrel/home/bitcoin-control-center-umbrel-<version>.tar.gz -C ~
-    ~/bitcoin-control-center-umbrel/install.sh
-    ```
-
-    The archive always extracts to the folder `bitcoin-control-center-umbrel`. Enter your Umbrel password when asked.
-  </Step>
-  <Step title="Open it">
-    Open **Bitcoin Control Center** from the Umbrel home screen.
-  </Step>
-  <Step title="Set your PIN">
-    The first person to open it sets the PIN. Enter 6 digits twice. Save it in your password manager.
-
-    <Frame caption="Choose a 6-digit PIN.">
-      <img
-        src="/images/security-pin-setup.png"
-        alt="Set up your PIN screen with six empty digit boxes"
-      />
-    </Frame>
-  </Step>
-</Steps>
-
-<Note>Umbrel's own login does not protect the app from other apps on your Umbrel. That is why Control Center has its own PIN.</Note>
-
-## Update or uninstall
-
-Upload the new `.tar.gz` to **Files** → **Home**. In **Settings** → **Advanced settings** → **Terminal** → **umbrelOS**, run:
-
-```bash
-tar -xzf ~/umbrel/home/bitcoin-control-center-umbrel-<version>.tar.gz -C ~
-~/bitcoin-control-center-umbrel/install.sh
-```
-
-Run this as the `umbrel` user, not root. Re-running `install.sh` from a newer bundle updates the app in place.
-
-Use Umbrel's app menu for logs and to uninstall.
-
-## Forgot your PIN?
-
-<Frame caption="The reset steps in the app.">
-  <img
-    src="/images/security-pin-forgot-umbrel.png"
-    alt="Reset your PIN dialog with umbrelOS terminal steps"
-  />
-</Frame>
-
-1. Open the umbrelOS terminal (**Settings** → **Advanced settings**).
-2. Run:
-
-   ```bash
-   sudo docker exec bitcoin-control-center_web_1 node /app/dist/cli.js reset-pin
-   ```
-
-3. Restart Bitcoin Control Center. Set a new PIN.
-
-Your accounts and history stay.
+Downloads are on [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com).
