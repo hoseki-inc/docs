@@ -1,18 +1,38 @@
 ---
-title: "Statements and Hoseki Verified"
+title: "Statements"
 sidebarTitle: "Statements"
-description: "Create a PDF statement of your self-custody Bitcoin, and what Hoseki Verified means."
+description: "Create a self-custodial PDF statement of your Bitcoin, and how to read one."
 keywords:
   - "statement"
-  - "proof of reserves"
-  - "hoseki verified"
+  - "self-custodial"
   - "pdf"
   - "proof of control"
-  - "monthly"
-  - "currency"
+  - "ownership proven"
+  - "generated with bitcoin control center"
+  - "qr code"
 ---
 
-A statement is a PDF of your self-custody Bitcoin for a date range. Think of it as a bank statement for your own wallets. It shows opening balance, money in, money out, and closing balance for each wallet.
+A statement is a PDF of your self-custodial Bitcoin for a date range you choose. It is like a bank statement for wallets you hold yourself. You create it in Control Center, on your device.
+
+## If you scanned a QR code
+
+The QR code on a statement opens this page.
+
+The holder created the PDF in Bitcoin Control Center, on their own device.
+
+- **Generated with Bitcoin Control Center** in the header means they made it in the app.
+- Wallet balances and transactions come from the Bitcoin blockchain.
+- Each wallet passed a proof-of-control signature in Control Center.
+- **Ownership proven** and a date, such as **Ownership proven Oct 21, 2026**, is when that wallet last completed its signature. Control Center saves the date when it generates the statement.
+- Older statements show no date. Exchange accounts show no date.
+- That date is the signature date. It is separate from the statement's start and end dates. Signing does not move Bitcoin.
+
+<Frame caption="The first page of a statement.">
+  <img
+    src="/images/statements-pdf-page1.png"
+    alt="Statement PDF first page. The header says Generated with Bitcoin Control Center and shows a statement number. Wallet rows include Ownership proven dates. The footer has a QR code."
+  />
+</Frame>
 
 ## Before you start
 
@@ -20,14 +40,7 @@ A statement is a PDF of your self-custody Bitcoin for a date range. Think of it 
 - **Exchanges, manual, and ETF holdings are never included.** Ask your exchange for its own statement.
 - **On StartOS and Umbrel,** Mempool must be running.
 
-No verified wallets yet? The page says **First, Connect an Account**.
-
-<Frame caption="You need at least one verified wallet.">
-  <img
-    src="/images/statements-no-verified-wallets.png"
-    alt="Generate Statement page asking you to connect a wallet and verify control first"
-  />
-</Frame>
+No verified wallets yet? The heading says **First, Connect an Account.** Select **Connect Wallet**.
 
 ## Create a statement
 
@@ -90,29 +103,27 @@ No verified wallets yet? The page says **First, Connect an Account**.
 
 ## What's on the PDF
 
+- The header says **Generated with Bitcoin Control Center**, then the statement number (**Statement #** and a number) and the logo.
+- **Provided by user** shows your name and address, if you added them.
 - A summary table: opening balance, money out, money in, and closing balance per wallet.
+- Under a wallet, **Ownership proven** and the date of its latest completed signature, when Control Center saved one.
 - A page of transactions for each wallet. Unconfirmed transactions show "PENDING".
 - Your total in BTC. Non-USD statements also show an approximate value in that currency.
-- Your name and address, if you added them.
 
-Currency values use saved daily prices from Mempool. They are approximate.
+The footer says wallet balances and transactions come from the Bitcoin blockchain, and each included wallet passed a proof-of-control signature in Bitcoin Control Center.
 
-## Hoseki Verified
+Currency values are approximate. They use saved daily prices from Mempool.
 
-Every statement carries the **Hoseki Verified** badge.
+## Ownership proven
 
-<Frame caption="The Hoseki Verified badge.">
-  <img
-    src="/images/statements-pdf-verified.png"
-    alt="Statement PDF showing the Hoseki Verified badge"
-  />
-</Frame>
+**Ownership proven** is the date of that wallet's latest completed signature challenge. Control Center saves it when you generate the statement. A signature you make later does not change a statement already generated.
 
-It means each wallet on the statement passed [proof of control](/bitcoin-control-center/accounts/verify-ownership) in Control Center: you signed a message with that wallet's key.
+There is no date when Control Center has no completed signature to save:
 
-- Balances and transactions come straight from the Bitcoin blockchain.
-- Signing does not move funds.
-- Control was proven when you verified the wallet, not on the statement date.
+- The statement was generated before Control Center stored this date.
+- The row is an exchange account.
+
+See [Verify ownership](/bitcoin-control-center/accounts/verify-ownership) for how you sign.
 
 ## Manage statements
 
@@ -120,6 +131,8 @@ Open **Statements**. Switch between card and list view.
 
 - **View** opens a statement. **Download** saves it.
 - The trash icon deletes it, after you confirm. This can't be undone. Statement numbers are not reused.
+
+On a statement you open, a note says **Self-custodial Bitcoin statements**. **Help Center** links here.
 
 ## Where lookups go (desktop)
 
