@@ -98,6 +98,8 @@ Wallet makers like Trezor and Ledger run their own servers, but only for their o
 1. Turn on **Connect via Tor**. It works with **Blockstream (Public)**. Syncing is slower, but the server can't see your IP. Exchange and price requests still use your normal connection.
 2. Choose **My own server** to keep everything on your own node.
 
+With Tor, Blockstream still sees which addresses you check and can tell they were checked together (likely the same wallet), but it can't tie them to your IP. Only **My own server** avoids that.
+
 Least private to most private.
 
 ```mermaid
