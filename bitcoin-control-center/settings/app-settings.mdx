@@ -6,6 +6,8 @@ keywords:
   - "price source"
   - "electrum"
   - "tor"
+  - "blockstream"
+  - "privacy"
   - "statement data"
   - "name"
   - "fallbacks"
@@ -76,12 +78,32 @@ Where wallet balances come from. Use your own server for the most privacy.
 </Frame>
 
 - **Saved connections:** up to 5. One is active. Its status shows **Connected**, **Connecting…**, or **Disconnected**.
-- **New connection:** enter **Name**, **Host**, **Port**, and **Protocol**. **Start with** can fill in Blockstream's public server.
+- **New connection:** enter **Name**, **Host**, **Port**, and **Protocol**. **Start with** can fill in **Blockstream (Public)**.
 - **Test Connection** checks it without switching. **Save & Connect** switches to it.
 - **Connect via Tor** sends Electrum requests through Tor. It's required for `.onion` addresses. Exchange and price requests, and statement lookups on mempool.space, do not use Tor.
 - **Delete** a connection with the trash icon. You can't delete the active one. Connect to another first.
 
 Your accounts and history are kept when you switch servers.
+
+### Why Blockstream by default?
+
+Control Center needs an Electrum server to read your balances. Out of the box, it uses **Blockstream (Public)**.
+
+Wallet makers like Trezor and Ledger run their own servers, but only for their own apps. Other apps can't use them.
+
+**What Blockstream can see:** the addresses you check and your IP address. It can't see your keys or move your bitcoin.
+
+**More privacy:**
+
+1. Turn on **Connect via Tor** to hide your IP.
+2. Choose **My own server** to keep everything on your own node.
+
+Least private to most private.
+
+```mermaid
+flowchart LR
+  A["Blockstream (Public)"] --> B["Blockstream (Public) + Tor"] --> C["My own server"]
+```
 
 ### Tor messages
 
