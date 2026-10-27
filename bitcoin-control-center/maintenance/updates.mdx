@@ -7,15 +7,27 @@ keywords:
   - "upgrade"
   - "new version"
   - "release"
+  - "pin"
 ---
 
 | Platform | How to update |
 | --- | --- |
 | Mac / Windows | Download the new installer. Install over the old app. |
 | StartOS | Sideload the new `.s9pk`. |
-| Umbrel | Run `./install.sh` from the new bundle. |
+| Umbrel | Coming soon. Email [support@hoseki.app](mailto:support@hoseki.app) for help. See [Install on Umbrel](/bitcoin-control-center/getting-started/install-umbrel). |
 
-Your data stays during updates. [Back up](/bitcoin-control-center/maintenance/backup-restore) first anyway.
+In-place updates keep your data. [Back up](/bitcoin-control-center/maintenance/backup-restore) first anyway.
+
+## Updating from an older version
+
+### Updating to 1.1.0
+
+Updating to 1.1.0 from 1.0 or earlier adds a PIN. You must set one before you can use the app.
+
+- On StartOS, a critical task says **Set a PIN before using Bitcoin Control Center**. Run **Set PIN**.
+- On Mac, Windows, and Umbrel, the app shows **Set up your PIN** the first time you open it.
+
+Accounts, settings, and statements carry over. See [PIN and lock](/bitcoin-control-center/security/pin).
 
 ## Desktop update notice
 

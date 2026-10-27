@@ -1,71 +1,16 @@
 ---
 title: "Install on Umbrel"
-description: "Sideload Control Center on Umbrel. The App Store listing is pending."
+description: "Umbrel support for Control Center is coming soon."
 keywords:
   - "umbrel"
-  - "sideload"
-  - "install.sh"
-  - "umbrelos"
-  - "reset pin"
+  - "coming soon"
+  - "support"
 ---
 
-<Info>Control Center is not in the Umbrel App Store yet. Sideload it for now. It needs umbrelOS 2.0 or later.</Info>
+Umbrel support is coming soon.
 
-## Before you start
+<Info>
+Email [support@hoseki.app](mailto:support@hoseki.app) if you need help.
+</Info>
 
-Install and sync **Bitcoin Node**, **Electrs**, and **Mempool**.
-
-## Install
-
-<Steps>
-  <Step title="Get the bundle">
-    Download the Umbrel sideload bundle from [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com). Copy it to your Umbrel.
-  </Step>
-  <Step title="Run the installer">
-    SSH in as `umbrel`. Extract the bundle. Run:
-
-    ```bash
-    ./install.sh
-    ```
-  </Step>
-  <Step title="Open it">
-    Open **Bitcoin Control Center** from the Umbrel home screen.
-  </Step>
-  <Step title="Set your PIN">
-    The first person to open it sets the PIN. Enter 6 digits twice. Save it in your password manager.
-
-    <Frame caption="Choose a 6-digit PIN.">
-      <img
-        src="/images/security-pin-setup.png"
-        alt="Set up your PIN screen with six empty digit boxes"
-      />
-    </Frame>
-  </Step>
-</Steps>
-
-<Note>Umbrel's own login does not protect the app from other apps on your Umbrel. That is why Control Center has its own PIN.</Note>
-
-## Update or uninstall
-
-- **Update:** run `./install.sh` from the new bundle.
-- **Uninstall:** use Umbrel's app menu.
-
-## Forgot your PIN?
-
-<Frame caption="The reset steps in the app.">
-  <img
-    src="/images/security-pin-forgot-umbrel.png"
-    alt="Reset your PIN dialog with umbrelOS terminal steps"
-  />
-</Frame>
-
-1. Open the umbrelOS terminal (**Settings** → **Advanced settings**).
-2. Run:
-
-   ```bash
-   sudo docker exec bitcoin-control-center_web_1 node /app/dist/cli.js reset-pin
-   ```
-
-3. Restart Bitcoin Control Center. Set a new PIN.
-
-Your accounts and history stay.
+Downloads are on [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com).
