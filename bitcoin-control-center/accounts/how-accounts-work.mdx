@@ -5,7 +5,9 @@ keywords:
   - "account"
   - "pending"
   - "verified"
-  - "manually added"
+  - "unverified"
+  - "track"
+  - "bitkey"
   - "reconnect"
   - "claim"
   - "sync"
@@ -20,7 +22,7 @@ An **account** is anything Control Center tracks: a wallet, an exchange, or a ho
 
 | Kind | Examples | How the balance is read | Can go on a statement |
 | --- | --- | --- | --- |
-| **Self-custody wallet** | [Ledger, Trezor, COLDCARD, Keystone](/bitcoin-control-center/accounts/hardware-wallets), [multisig](/bitcoin-control-center/accounts/multisig), [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors) | Your Electrum server, from public keys | Yes, once verified |
+| **Self-custody wallet** | [Ledger, Trezor, COLDCARD, Keystone](/bitcoin-control-center/accounts/hardware-wallets), [Bitkey](/bitcoin-control-center/accounts/bitkey), [multisig](/bitcoin-control-center/accounts/multisig), [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors) | Your Electrum server, from public keys | Yes, once verified |
 | **Exchange** | [Coinbase, Kraken, Robinhood, Strike](/bitcoin-control-center/accounts/exchanges) | The exchange, with a read-only API key | No |
 | **Manual** | [Manual Bitcoin, Bitcoin ETFs](/bitcoin-control-center/accounts/manual-and-etfs) | The numbers you enter | No |
 
@@ -36,21 +38,32 @@ Each account card shows a badge.
 | **pending** | Wallet added, but not yet verified. Its balance is still tracked. | Open it. Select **Continue** to [verify](/bitcoin-control-center/accounts/verify-ownership). |
 | **Connected** | Exchange key works. | Nothing. |
 | **Reconnect** | Exchange key expired or cannot be read. Balance shows "—" and is left out of totals. | Open it. Select **Reconnect Account**. |
-| **Manually Added** | A manual or ETF holding. | Update it when it changes. |
+| **Unverified** | A wallet you track without proving you own it, such as a [tracked xpub](/bitcoin-control-center/accounts/xpub-and-descriptors) or a [Bitkey](/bitcoin-control-center/accounts/bitkey). Manual and ETF holdings show it too. Its balance is still tracked. | Nothing. To put a wallet on a statement, [verify it](#verify-a-tracked-wallet-later). |
 
 ## The life of a wallet account
 
 ```mermaid
 flowchart TD
   A["Add wallet"] --> B["pending<br/>balance tracked"]
+  T["Track an xpub<br/>or descriptor"] --> U["Unverified<br/>balance tracked"]
   B -- "Sign a message" --> C["verified<br/>can go on statements"]
+  U -- "Add again and sign" --> C
   B -- "Abandon" --> X["Removed"]
+  U -- "Archive" --> D
   C -- "Archive" --> D["Archived<br/>history kept"]
   D -- "Restore" --> C
   D -- "Delete Permanently" --> X
 ```
 
-You can leave a wallet **pending** if you only want to track it. You only need to verify it for statements.
+You only need to verify a wallet for statements. If you just want to watch its balance, [track it by xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors#track-a-wallet). It shows as **Unverified**.
+
+The **Accounts** summary counts each status, for example **2 Pending** and **1 Unverified**. Unverified wallets don't count as pending.
+
+### Verify a tracked wallet later
+
+Add the same wallet again with your device, **Multisig**, or **Manually Sign**. Control Center opens the account you already have and asks you to sign. Once you sign, it becomes **verified**. It does not create a duplicate.
+
+A [Bitkey](/bitcoin-control-center/accounts/bitkey) can't be verified. It stays **Unverified**.
 
 ## How balances update
 
