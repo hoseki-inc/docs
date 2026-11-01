@@ -58,6 +58,7 @@
             "pages": [
               "bitcoin-control-center/accounts/how-accounts-work",
               "bitcoin-control-center/accounts/hardware-wallets",
+              "bitcoin-control-center/accounts/bitkey",
               "bitcoin-control-center/accounts/verify-ownership",
               "bitcoin-control-center/accounts/multisig",
               "bitcoin-control-center/accounts/xpub-and-descriptors",

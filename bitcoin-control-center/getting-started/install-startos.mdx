@@ -1,15 +1,19 @@
 ---
 title: "Install on StartOS"
-description: "Run Control Center as a StartOS service."
+description: "Install Control Center from the Start9 Community Registry."
 keywords:
   - "startos"
   - "start9"
+  - "community registry"
+  - "marketplace"
   - "s9pk"
   - "sideload"
   - "pin"
   - "electrs"
   - "mempool"
 ---
+
+Control Center is in the **Start9 Community Registry**. Install it from the StartOS **Marketplace**. It needs StartOS 0.4.0.2 or later.
 
 ## Before you start
 
@@ -26,8 +30,11 @@ Install and fully sync these StartOS services. Control Center needs all of them 
 ## Install
 
 <Steps>
-  <Step title="Sideload the package">
-    Download the `.s9pk` from [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com). Sideload it in StartOS.
+  <Step title="Open the Community Registry">
+    In StartOS, open **Marketplace**. Switch the registry to the **Start9 Community Registry**.
+  </Step>
+  <Step title="Install">
+    Find **Bitcoin Control Center**. Select **Install**.
   </Step>
   <Step title="Set your PIN">
     StartOS shows a task: **Set a PIN before using Bitcoin Control Center**. Run **Set PIN**. Enter 6 digits twice. Save it in your password manager.
@@ -58,3 +65,9 @@ Run **Set PIN** again. Your accounts and history stay. Everyone is signed out. S
 ## Back up
 
 Use the normal StartOS backup. It saves everything. See [Backup and restore](/bitcoin-control-center/maintenance/backup-restore).
+
+## Advanced: sideload the package
+
+Only sideload if support asks you to. Download the `.s9pk` from [bitcoincontrolcenter.com](https://www.bitcoincontrolcenter.com). Sideload it in StartOS.
+
+Already sideloaded an earlier version? [Back up](/bitcoin-control-center/maintenance/backup-restore) before you switch to the registry version.

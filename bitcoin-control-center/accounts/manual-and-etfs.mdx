@@ -15,24 +15,26 @@ keywords:
 
 Use these for Bitcoin you can't connect, and for Bitcoin ETF shares. You keep them up to date yourself.
 
-1. Select **Add Account** → **Manual Entry**.
+1. Select **Add Account** → **Track Balance, ETF, or xpub**.
 2. Pick **Bitcoin Holdings** or **Bitcoin ETF Holdings**.
 
 <Frame caption="Pick a holding type.">
   <img
     src="/images/accounts-manual-type.png"
-    alt="Manual Entry type choice: Bitcoin or ETF"
+    alt="Track Balance, ETF, or xpub screen with Bitcoin Holdings, Bitcoin ETF Holdings, and xpub or Descriptor"
   />
 </Frame>
 
-<Note>Manual and ETF holdings count in your totals. They can't go on a statement, because there is nothing to verify.</Note>
+The third choice, **xpub or Descriptor**, tracks a wallet's live balance. See [Track a wallet](/bitcoin-control-center/accounts/xpub-and-descriptors#track-a-wallet).
+
+<Note>Manual and ETF holdings count in your totals. They show as **Unverified** and can't go on a statement, because there is nothing to verify.</Note>
 
 ## Manual Bitcoin
 
 For cold storage, paper wallets, or Bitcoin held elsewhere.
 
 1. Enter a **Display Name** and **Balance (BTC)**.
-2. Set the **As of Date**. It defaults to today.
+2. Set the **As of Date**. It defaults to today. The **Portfolio** chart starts the holding on this date.
 3. Select **Add Holding**.
 
 <Frame caption="Name and amount.">
@@ -55,13 +57,14 @@ Open the holding from **Accounts**.
   />
 </Frame>
 
-- **Update Balance:** enter the new total and its date. Select **Update**.
+- **Update Balance:** enter the new total and its date. Select **Update**. The chart changes from that date.
 - **Add Transaction:** log a **Buy**, **Sell**, **Transfer In**, or **Transfer Out**. Check **Add this amount to balance** to change the balance too.
 
 Things to know:
 
 - A **Sell** or **Transfer Out** can't take the balance below zero. Update the balance first if needed.
 - **Deleting a transaction always reverses it** in the balance, even if you didn't check **Add this amount to balance**.
+- A back-dated transaction changes the chart from its own date. So does deleting it.
 - Deleting a transaction has no confirmation.
 
 ## Bitcoin ETFs
@@ -99,6 +102,18 @@ Open the ETF account. Under **Holdings**, select **Add Holding** or **Remove**. 
 
 ## Removing a holding
 
-<Warning>**Remove Account** deletes a manual or ETF account and its history **immediately**. There is no confirmation and no undo.</Warning>
+Open the holding. Select **Remove Account**.
+
+- **Manual Bitcoin:** Control Center asks first. Select **Remove** to confirm.
+- **ETF:** the account is removed **immediately**, with no confirmation.
+
+<Frame caption="Removing a manual holding asks first.">
+  <img
+    src="/images/accounts-manual-remove-dialog.png"
+    alt="Remove Cold storage? dialog with Cancel and Remove buttons"
+  />
+</Frame>
+
+<Warning>Removing deletes the account, its balance history, and its transactions. There is no undo.</Warning>
 
 Manual and ETF accounts can't be renamed yet. To rename one, remove it and add it again.
