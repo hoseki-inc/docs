@@ -11,14 +11,13 @@ keywords:
   - "locked out"
 ---
 
-Control Center uses a **6-digit PIN** on desktop, StartOS, and Umbrel. It stops anyone else on your computer or network from opening it.
+Control Center uses a **6-digit PIN** on desktop and StartOS. It stops anyone else on your computer or network from opening it.
 
 ## Set your PIN
 
 | Platform | Where |
 | --- | --- |
 | Mac and Windows | The app asks on first launch. |
-| Umbrel | The app asks the first time anyone opens it. |
 | StartOS | In StartOS: **Actions** → **Set PIN**. |
 
 <Frame caption="Enter 6 digits, then enter them again.">
@@ -56,7 +55,7 @@ Reloading the page does not lock it. There is no idle timeout.
 
 Open **Settings** → **Security** → **Change PIN**. Enter your current PIN, then the new one twice. Other tabs and browsers are signed out.
 
-On StartOS and Umbrel, **Sign out everywhere** signs out every browser at once.
+On StartOS, **Sign out everywhere** signs out every browser at once.
 
 ## Forgot your PIN?
 
@@ -73,14 +72,6 @@ Select **Forgot PIN?** on the sign-in screen. Your accounts and history are kept
     2. Select **Actions** → **Set PIN**. Enter a new PIN.
     3. Come back. Enter the new PIN.
   </Tab>
-  <Tab title="Umbrel">
-    1. Open the umbrelOS terminal (**Settings** → **Advanced settings**).
-    2. Run:
-
-       ```bash
-       sudo docker exec bitcoin-control-center_web_1 node /app/dist/cli.js reset-pin
-       ```
-
-    3. Restart Bitcoin Control Center. Set a new PIN.
-  </Tab>
 </Tabs>
+
+Umbrel support is coming soon. Questions? Email [support@hoseki.app](mailto:support@hoseki.app).
