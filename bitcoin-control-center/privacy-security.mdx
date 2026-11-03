@@ -35,12 +35,12 @@ flowchart LR
 | --- | --- | --- |
 | Your Electrum server | The addresses you track, and your IP address | Use your own server. Use Tor for remote servers. |
 | Exchanges | Requests made with your API key | Use read-only keys. |
-| Price source | Price requests, no wallet data | Use your own Mempool on StartOS or Umbrel. |
+| Price source | Price requests, no wallet data | Use your own Mempool on StartOS. |
 | mempool.space (desktop statements) | Your IP address and the transactions on your statement | Set **Statement data** to **Configured Electrum server**. |
 | bitcoincontrolcenter.com (desktop) | Your IP address, once a day. No app or wallet data. | — |
 
 <Warning>
-  The desktop app starts on **Blockstream's public Electrum server**. Blockstream can see the addresses you track until you switch. See [First run](/bitcoin-control-center/getting-started/first-run#3-choose-an-electrum-server-desktop).
+  The desktop app starts on **Blockstream's public Electrum server**. The introduction lets you keep it or connect your own node. Blockstream can see the addresses you track until you switch, even over Tor. See [First run](/bitcoin-control-center/getting-started/first-run#3-choose-an-electrum-server-desktop).
 </Warning>
 
 ## Most private setup
@@ -48,11 +48,11 @@ flowchart LR
 1. Run your own node with an Electrum server.
 2. On desktop, connect to it. Use its `.onion` address with **Connect via Tor** when you're away from home.
 3. Set **Statement data** to **Configured Electrum server**.
-4. On StartOS or Umbrel, use **Your mempool server** as the price source.
+4. On StartOS, use **Your mempool server** as the price source.
 
 ## Stay safe
 
-- Never enter a seed phrase or private key. Control Center only needs public keys.
+- Never enter a seed phrase or private key. Control Center only needs public keys. It refuses any wallet that includes an extended private key, such as an `xprv` or `zprv`. If an earlier version saved one, updating replaces it with the matching public key.
 - Use read-only exchange API keys.
 - Set a PIN you don't use elsewhere. See [PIN and lock](/bitcoin-control-center/security/pin).
 - Delete wallet export and descriptor files after you use them.

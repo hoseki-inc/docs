@@ -7,12 +7,13 @@ keywords:
   - "self-custodial"
   - "pdf"
   - "proof of control"
+  - "proof-of-ownership statement"
   - "ownership proven"
   - "generated with bitcoin control center"
   - "qr code"
 ---
 
-A statement is a PDF of your self-custodial Bitcoin for a date range you choose. It is like a bank statement for wallets you hold yourself. You create it in Control Center, on your device.
+A statement, called a **proof-of-ownership statement** in the app, is a PDF of your self-custodial Bitcoin for a date range you choose. It is like a bank statement for wallets you hold yourself. It only includes wallets where you've proven ownership. You create it in Control Center, on your device.
 
 ## If you scanned a QR code
 
@@ -38,7 +39,7 @@ The holder created the PDF in Bitcoin Control Center, on their own device.
 
 - **Only verified wallets** can go on a statement. [Verify ownership](/bitcoin-control-center/accounts/verify-ownership) first. Pending and **Unverified** wallets, such as tracked xpubs and Bitkeys, are left out.
 - **Exchanges, manual, and ETF holdings are never included.** Ask your exchange for its own statement.
-- **On StartOS and Umbrel,** Mempool must be running.
+- **On StartOS,** Mempool must be running.
 
 No verified wallets yet? The heading says **First, Connect an Account.** Select **Connect Wallet**.
 
@@ -129,11 +130,11 @@ Open **Statements**. Switch between card and list view.
 - **View** opens a statement. **Download** saves it.
 - The trash icon deletes it, after you confirm. This can't be undone. Statement numbers are not reused.
 
-On a statement you open, a note says **Self-custodial Bitcoin statements**. **Help Center** links here.
+On a statement you open, a note says **Self-custodial proof-of-ownership statements**. **Help Center** links here.
 
 ## Where lookups go (desktop)
 
-To build a statement, Control Center looks up every transaction in your wallets. By default this uses **mempool.space**. It is fast, but mempool.space sees your IP address and transactions.
+To build a statement, Control Center looks up every transaction in your wallets. By default this uses **mempool.space**. It is fast, but mempool.space sees your IP address and transactions. If you chose **Connect via Tor** or your own node in the introduction, it uses your Electrum server instead.
 
 To keep lookups on your own server, open **Settings** → **Statement data** → **Configured Electrum server**. It is slower, especially over Tor. See [Settings](/bitcoin-control-center/settings/app-settings#statement-data-desktop).
 
@@ -142,7 +143,7 @@ To keep lookups on your own server, open **Settings** → **Statement data** →
 | Message | Fix |
 | --- | --- |
 | **Generation was interrupted.** | The app restarted during generation. Generate it again. |
-| **Couldn't get Bitcoin prices for this statement.** | Check your internet connection. On StartOS or Umbrel, check Mempool is running. |
+| **Couldn't get Bitcoin prices for this statement.** | Check your internet connection. On StartOS, check Mempool is running. |
 | **Couldn't load all transactions.** | Check your Electrum connection or statement data source. Try again. |
 | **Statement date range cannot exceed 2 years** | Pick a shorter range. |
 | **Statements must end at least 2 days ago** | Move the end date back. |
