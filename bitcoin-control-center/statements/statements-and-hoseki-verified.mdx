@@ -7,12 +7,13 @@ keywords:
   - "self-custodial"
   - "pdf"
   - "proof of control"
+  - "proof-of-ownership statement"
   - "ownership proven"
   - "generated with bitcoin control center"
   - "qr code"
 ---
 
-A statement is a PDF of your self-custodial Bitcoin for a date range you choose. It is like a bank statement for wallets you hold yourself. You create it in Control Center, on your device.
+A statement, called a **proof-of-ownership statement** in the app, is a PDF of your self-custodial Bitcoin for a date range you choose. It is like a bank statement for wallets you hold yourself. It only includes wallets where you've proven ownership. You create it in Control Center, on your device.
 
 ## If you scanned a QR code
 
@@ -129,11 +130,11 @@ Open **Statements**. Switch between card and list view.
 - **View** opens a statement. **Download** saves it.
 - The trash icon deletes it, after you confirm. This can't be undone. Statement numbers are not reused.
 
-On a statement you open, a note says **Self-custodial Bitcoin statements**. **Help Center** links here.
+On a statement you open, a note says **Self-custodial proof-of-ownership statements**. **Help Center** links here.
 
 ## Where lookups go (desktop)
 
-To build a statement, Control Center looks up every transaction in your wallets. By default this uses **mempool.space**. It is fast, but mempool.space sees your IP address and transactions.
+To build a statement, Control Center looks up every transaction in your wallets. By default this uses **mempool.space**. It is fast, but mempool.space sees your IP address and transactions. If you chose **Connect via Tor** or your own node in the introduction, it uses your Electrum server instead.
 
 To keep lookups on your own server, open **Settings** → **Statement data** → **Configured Electrum server**. It is slower, especially over Tor. See [Settings](/bitcoin-control-center/settings/app-settings#statement-data-desktop).
 

@@ -11,11 +11,12 @@ keywords:
   - "setup"
   - "blockstream"
   - "introduction"
+  - "my own node"
 ---
 
 ## 1. Set your PIN
 
-Choose a 6-digit PIN. You enter it each time you open Control Center. See [PIN and lock](/bitcoin-control-center/security/pin).
+Choose 6 digits, then enter them again. On **Your PIN is set**, select **Continue**. See [PIN and lock](/bitcoin-control-center/security/pin).
 
 ## 2. The introduction
 
@@ -41,6 +42,7 @@ The steps are:
 - **Bring in what you already use.** Connect a hardware wallet, multisig, exchange, or enter holdings yourself.
 - **It can see, not spend.** Wallets connect watch-only. Exchanges only need a read-only key.
 - **Your data stays with you.** Your history is saved on this computer, or on your server.
+- **Choose your Electrum server.** Desktop only. See [step 3](#3-choose-an-electrum-server-desktop).
 - **Start with one account.** Have your hardware wallet, a read-only API key from your exchange, or just your balance to enter by hand.
 
 <Frame caption="The last step takes you to Add Account.">
@@ -54,21 +56,50 @@ Select **Not Now** to look around first. The introduction does not come back aft
 
 ## 3. Choose an Electrum server (desktop)
 
-Control Center reads wallet balances from an **Electrum server**. Your choice affects privacy.
+Control Center reads wallet balances from an **Electrum server**. Whoever runs it can see which addresses are yours and your IP address.
 
-<Warning>
-  On desktop, Control Center starts on **Blockstream's public server** (`electrum.blockstream.info`). It is saved as **Current connection**. Blockstream can see which addresses you check. Switch to your own server for the most privacy.
-</Warning>
+On desktop, the introduction asks before you add an account. StartOS and Umbrel always use your own Electrs, so there is no server step.
 
-| Option | Privacy | Notes |
-| --- | --- | --- |
-| Your own node | Best | Electrs, Fulcrum, or Electrum Personal Server. |
-| Your own node over Tor | Best, works away from home | Use the `.onion` address. Turn on **Connect via Tor**. |
-| Public server | Lower | The operator sees the addresses you check. |
+```mermaid
+flowchart LR
+  A["Choose your Electrum server"] --> B["Blockstream's public server"]
+  A --> C["My own node"]
+  C --> D["Connect your node"]
+  B --> E["Start with one account"]
+  D --> E
+  E --> F["Add Account"]
+```
 
-StartOS and Umbrel always use your own Electrs. Skip this step there.
+### Blockstream's public server
 
-### Add your server
+It's selected to start. It works right away, with nothing to set up.
+
+1. Optional: turn on **Connect via Tor** to hide your IP address from Blockstream. Tor can take a minute to start. Blockstream still sees your addresses.
+2. Select **Continue**.
+
+**"Couldn't connect through Tor."** Try again, or turn off **Connect via Tor**.
+
+### My own node
+
+1. Select **My own node**. Select **Continue**.
+2. On **Connect your node**, enter the **Address**, such as `umbrel.local` or `192.168.1.20`. Find it in your node's Electrum server app, such as Electrs or Fulcrum.
+3. Check the **Port** and **Protocol**. SSL usually uses `50002`. TCP usually uses `50001`.
+4. For a `.onion` address, turn on **Connect via Tor**.
+5. Select **Connect**. When you see **Connected to your node.**, select **Continue**.
+
+**"Couldn't connect to …"** Check the details and that your node is on. The reason shows under the message.
+
+Your node is saved as **My node** in [Settings](/bitcoin-control-center/settings/app-settings#electrum-server-desktop). You can rename it there.
+
+<Note>
+  Choosing **Connect via Tor** or your own node here also sets **Statement data** to **Configured Electrum server**. Change it in [Settings](/bitcoin-control-center/settings/app-settings#statement-data-desktop).
+</Note>
+
+### While you use the public server
+
+A strip above the header says **Want more privacy? Look up your wallets on your own node.** Select **Connect your node** to open Electrum settings. It goes away once you connect another server, or when you close it.
+
+### Change it later
 
 1. Open **Settings** (gear icon, top right).
 2. Under **Electrum Server**, select **New connection**.
@@ -82,7 +113,6 @@ StartOS and Umbrel always use your own Electrs. Skip this step there.
   />
 </Frame>
 
-- **Port:** SSL usually uses `50002`. Plain TCP usually uses `50001`.
 - **Protocol:** use **SSL** for any server not on your own network. **TCP** is not encrypted.
 - **Connect via Tor:** required for `.onion` addresses. Tor can take up to two minutes to start the first time.
 

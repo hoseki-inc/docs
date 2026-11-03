@@ -40,7 +40,7 @@ flowchart LR
 | bitcoincontrolcenter.com (desktop) | Your IP address, once a day. No app or wallet data. | — |
 
 <Warning>
-  The desktop app starts on **Blockstream's public Electrum server**. Blockstream can see the addresses you track until you switch. See [First run](/bitcoin-control-center/getting-started/first-run#3-choose-an-electrum-server-desktop).
+  The desktop app starts on **Blockstream's public Electrum server**. The introduction lets you keep it or connect your own node. Blockstream can see the addresses you track until you switch, even over Tor. See [First run](/bitcoin-control-center/getting-started/first-run#3-choose-an-electrum-server-desktop).
 </Warning>
 
 ## Most private setup
@@ -52,7 +52,7 @@ flowchart LR
 
 ## Stay safe
 
-- Never enter a seed phrase or private key. Control Center only needs public keys.
+- Never enter a seed phrase or private key. Control Center only needs public keys. It refuses any wallet that includes an extended private key, such as an `xprv` or `zprv`. If an earlier version saved one, updating replaces it with the matching public key.
 - Use read-only exchange API keys.
 - Set a PIN you don't use elsewhere. See [PIN and lock](/bitcoin-control-center/security/pin).
 - Delete wallet export and descriptor files after you use them.
