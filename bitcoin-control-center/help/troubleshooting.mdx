@@ -39,6 +39,11 @@ keywords:
     - "Tor could not connect within two minutes": try again on another network.
     - "Bundled Tor is missing": reinstall the desktop app.
   </Accordion>
+  <Accordion title="Introduction: &quot;Couldn't connect through Tor&quot; or &quot;Couldn't connect to …&quot;">
+    - **Tor:** select **Continue** to try again, or turn off **Connect via Tor**.
+    - **Your node:** check the **Address**, **Port**, and **Protocol**, and that your node is on. The reason shows under the message.
+    - See [Choose an Electrum server](/bitcoin-control-center/getting-started/first-run#3-choose-an-electrum-server-desktop).
+  </Accordion>
   <Accordion title="StartOS: Control Center won't start">
     Control Center waits for Electrs. Check Electrs is running and fully synced. Then restart Control Center.
   </Accordion>
@@ -67,6 +72,9 @@ keywords:
   <Accordion title="&quot;No wallets found&quot; when adding a hardware wallet">
     Scans only list accounts with a balance above zero. Ledger also stops at the first empty account. Add the wallet by [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors) instead.
   </Accordion>
+  <Accordion title="My xpub or descriptor won't paste">
+    You may have pasted a private key, such as an `xprv` or `zprv`. Control Center refuses them. Paste the public key or watch-only descriptor instead. See [Pasted a private key?](/bitcoin-control-center/accounts/xpub-and-descriptors#pasted-a-private-key)
+  </Accordion>
   <Accordion title="My total shows &quot;—&quot; or dropped">
     - "—" means a balance couldn't be confirmed. Select **Try Again**.
     - A drop usually means an exchange needs **Reconnect**, or you archived a wallet. See [Home and Portfolio](/bitcoin-control-center/portfolio/home-and-portfolio#why-a-number-might-look-off).
@@ -90,7 +98,7 @@ keywords:
     - Unlock it. Open the Bitcoin app.
     - Close Ledger Live, Trezor Suite, and other wallet apps.
     - Use a USB cable that carries data, not just power.
-    - On StartOS or Umbrel, use Chrome, Brave, or Edge. Firefox and Safari can't connect to a Ledger.
+    - On StartOS, use Chrome, Brave, or Edge. Firefox and Safari can't connect to a Ledger.
   </Accordion>
   <Accordion title="Trezor Suite doesn't open">
     Allow pop-ups for Control Center. If asked, allow local network access so it can find Trezor Suite desktop.
@@ -155,7 +163,7 @@ keywords:
     </Frame>
 
     - Check your Electrum connection.
-    - On StartOS or Umbrel, make sure Mempool is running.
+    - On StartOS, make sure Mempool is running.
     - "Generation was interrupted" means the app restarted. Generate it again.
     - See [If a statement fails](/bitcoin-control-center/statements/statements-and-hoseki-verified#if-a-statement-fails).
   </Accordion>

@@ -124,3 +124,14 @@ See [Verify ownership](/bitcoin-control-center/accounts/verify-ownership) for de
 - **Manually Sign** is single-signature only. To verify a multisig wallet, see [Multisig](/bitcoin-control-center/accounts/multisig).
 - Mainnet only on packaged apps.
 - Never paste an `xprv` or a seed phrase. Control Center only needs public keys.
+
+## Pasted a private key?
+
+Control Center refuses extended private keys, such as `xprv`, `yprv`, `zprv`, or `tprv`. That includes a descriptor with one anywhere inside it.
+
+| Where | What you see |
+| --- | --- |
+| **Track** | **Enter an xpub, or a single-sig or multisig descriptor** |
+| **Manually Sign** | **Invalid input, please enter a valid xPub/yPub/zPub key** |
+
+Export the wallet's public key or watch-only descriptor instead. See [Find your xpub](/bitcoin-control-center/wallet-guides/find-xpub).
