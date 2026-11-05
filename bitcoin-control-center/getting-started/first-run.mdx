@@ -60,6 +60,8 @@ Control Center reads wallet balances from an **Electrum server**. Whoever runs i
 
 On desktop, the introduction asks before you add an account. StartOS always uses your own Electrs, so there is no server step.
 
+Skipped the introduction? You stay on Blockstream's public server. To switch, see [Change it later](#change-it-later).
+
 ```mermaid
 flowchart LR
   A["Choose your Electrum server"] --> B["Blockstream's public server"]
@@ -69,6 +71,13 @@ flowchart LR
   D --> E
   E --> F["Add Account"]
 ```
+
+<Frame caption="Pick Blockstream's public server or your own node.">
+  <img
+    src="/images/first-run-electrum-choice.png"
+    alt="Choose your Electrum server step with Blockstream's public server selected and Connect via Tor off"
+  />
+</Frame>
 
 ### Blockstream's public server
 
@@ -98,6 +107,15 @@ Your node is saved as **My node** in [Settings](/bitcoin-control-center/settings
 ### While you use the public server
 
 A strip above the header says **Want more privacy? Look up your wallets on your own node.** Select **Connect your node** to open Electrum settings. It goes away once you connect another server, or when you close it.
+
+
+<Frame caption="The strip while you're on Blockstream's public server.">
+  <img
+    src="/images/first-run-public-server-notice.png"
+    alt="Home with a Want more privacy strip and Connect your node link above the header"
+  />
+</Frame>
+
 
 ### Change it later
 
