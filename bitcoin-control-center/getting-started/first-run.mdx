@@ -60,7 +60,7 @@ Control Center reads wallet balances from an **Electrum server**. Whoever runs i
 
 On desktop, the introduction asks before you add an account. StartOS always uses your own Electrs, so there is no server step.
 
-Skipped the introduction? You stay on Blockstream's public server. To switch, see [Change it later](#change-it-later).
+Your choice only applies when you select **Continue** or **Connect**. Select **Skip** before that, and you stay on Blockstream's public server without Tor, even if you turned on **Connect via Tor**. To switch, see [Change it later](#change-it-later).
 
 ```mermaid
 flowchart LR
@@ -96,9 +96,18 @@ It's selected to start. It works right away, with nothing to set up.
 4. For a `.onion` address, turn on **Connect via Tor**.
 5. Select **Connect**. When you see **Connected to your node.**, select **Continue**.
 
+<Frame caption="Enter your node's Electrum address, port, and protocol.">
+  <img
+    src="/images/first-run-connect-node.png"
+    alt="Connect your node form with Address, Port, Protocol, and Connect via Tor"
+  />
+</Frame>
+
 **"Couldn't connect to …"** Check the details and that your node is on. The reason shows under the message.
 
 Your node is saved as **My node** in [Settings](/bitcoin-control-center/settings/app-settings#electrum-server-desktop). You can rename it there.
+
+Changed your mind? Select **Back**. Pick **Blockstream's public server**. Select **Continue**. **My node** stays saved in Settings.
 
 <Note>
   Choosing **Connect via Tor** or your own node here also sets **Statement data** to **Configured Electrum server**. Change it in [Settings](/bitcoin-control-center/settings/app-settings#statement-data-desktop).
@@ -107,6 +116,8 @@ Your node is saved as **My node** in [Settings](/bitcoin-control-center/settings
 ### While you use the public server
 
 A strip above the header says **Want more privacy? Look up your wallets on your own node.** Select **Connect your node** to open Electrum settings. It goes away once you connect another server, or when you close it.
+
+The strip still shows with **Connect via Tor** on. Tor hides your IP address, but Blockstream still sees your addresses.
 
 
 <Frame caption="The strip while you're on Blockstream's public server.">
