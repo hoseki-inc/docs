@@ -109,7 +109,9 @@ Match the start of your receive addresses.
 | `bc1q` | Native SegWit (P2WPKH) |
 | `bc1p` | Taproot (P2TR) |
 
-Balance is zero? You probably picked the wrong type. Go back and change it.
+A plain `xpub` starts on **Legacy (P2PKH)**. Change it if your addresses don't start with `1`.
+
+Balance is zero after adding? You picked the wrong type. Going back adds a second account; it doesn't fix the first. Open the wrong account, select **Abandon**, and add the wallet again.
 
 ### Sign the message
 
@@ -134,5 +136,7 @@ Control Center refuses extended private keys, such as `xprv`, `yprv`, `zprv`, or
 | **Track** | **Enter an xpub, or a single-sig or multisig descriptor** |
 | **Manually Sign** | **Invalid input, please enter a valid xPub/yPub/zPub key** |
 | **Multisig**, pasted descriptor | A message that starts **Invalid descriptor** |
+
+Pasted a multisig descriptor into **Manually Sign**? You see the same **Invalid input** message. Use **Multisig** instead.
 
 Export the wallet's public key or watch-only descriptor instead. See [Find your xpub](/bitcoin-control-center/wallet-guides/find-xpub).

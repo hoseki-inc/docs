@@ -56,6 +56,8 @@ Enter your PIN each time you open Control Center.
 
 **Wrong PIN?** You get 5 tries. After that, you wait 30 seconds. Each further wrong try doubles the wait, up to 1 hour.
 
+Quitting or restarting doesn't clear the wait. **Forgot PIN?** still works and clears it.
+
 ## When the app locks
 
 - You select the **padlock** icon at the top right.
@@ -63,7 +65,7 @@ Enter your PIN each time you open Control Center.
 - You reopen a closed tab, or duplicate a tab.
 - The app or server restarts. Everyone is signed out.
 
-Reloading the page does not lock it. There is no idle timeout.
+Reloading the page or minimizing the window does not lock it. There is no idle timeout.
 
 ## Change your PIN
 
@@ -84,13 +86,15 @@ Select **Forgot PIN?** on the sign-in screen. Your accounts and history are kept
 <Tabs>
   <Tab title="Mac and Windows">
     1. Select **Reset PIN**.
-    2. Enter your computer's administrator password when asked.
+    2. Confirm you're an administrator.
+       - **Mac:** enter an administrator's name and password.
+       - **Windows:** a User Account Control prompt for **Windows Command Processor** appears. This is expected. Select **Yes**, or enter an administrator's password.
     3. You see **PIN reset. Restarting Control Center…**
     4. On **Choose a new PIN**, set a new PIN.
 
-    Cancelled the password prompt? You see **PIN not reset. Nothing changed.**
+    Cancelled the prompt? You see **PIN not reset. Nothing changed.**
 
-    Not an administrator on this computer? Ask one to enter their password.
+    Not an administrator on this computer? Ask one to approve the prompt.
 
     Quit before you set a new PIN? Next time you see **Set up your PIN**. Your accounts and history are still there.
   </Tab>
