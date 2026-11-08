@@ -52,7 +52,7 @@ The steps are:
   />
 </Frame>
 
-Select **Not Now** to look around first. The introduction does not come back after you finish or skip it.
+Select **Not Now** to look around first. The introduction does not come back after you finish or skip it. Pressing **Esc** also skips it.
 
 ## 3. Choose an Electrum server (desktop)
 
@@ -92,8 +92,8 @@ It's selected to start. It works right away, with nothing to set up.
 
 1. Select **My own node**. Select **Continue**.
 2. On **Connect your node**, enter the **Address**, such as `mynode.local` or `192.168.1.20`. Find it in your node's Electrum server app, such as Electrs or Fulcrum.
-3. Check the **Port** and **Protocol**. SSL usually uses `50002`. TCP usually uses `50001`.
-4. For a `.onion` address, turn on **Connect via Tor**.
+3. Use the **Port** and **Protocol** your node's Electrum app shows. Many home nodes use **TCP** on `50001`. SSL usually uses `50002`.
+4. For a `.onion` address, turn on **Connect via Tor** and use **TCP**.
 5. Select **Connect**. When you see **Connected to your node.**, select **Continue**.
 
 <Frame caption="Enter your node's Electrum address, port, and protocol.">
@@ -142,7 +142,7 @@ The strip still shows with **Connect via Tor** on. Tor hides your IP address, bu
   />
 </Frame>
 
-- **Protocol:** use **SSL** for any server not on your own network. **TCP** is not encrypted.
+- **Protocol:** use **SSL** for a public server. **TCP** is not encrypted, so use it only on your own network or for a `.onion` address (Tor encrypts it).
 - **Connect via Tor:** required for `.onion` addresses. Tor can take up to two minutes to start the first time.
 
 <Frame caption="Connected.">

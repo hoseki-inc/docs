@@ -48,7 +48,9 @@ Step-by-step for Sparrow, Nunchuk, and BlueWallet: [Export a multisig wallet](/b
 
 Supported script types: `wsh(...)`, `sh(wsh(...))`, and `sh(...)` with `multi` or `sortedmulti`. Mainnet only.
 
-<Warning>Never upload a file that contains a seed phrase or private key. A seed phrase shows "Seed phrase found in wallet export file." Control Center also refuses any private key, such as an `xprv`. See [Pasted a private key?](/bitcoin-control-center/accounts/xpub-and-descriptors#pasted-a-private-key)</Warning>
+To verify, enough keys to meet your quorum must include their origin, such as `[a1b2c3d4/48'/0'/0'/2']xpub…`. Exports from the apps above include it. Without it you see a message ending **…keystores have derivation paths…**. You can still [track](/bitcoin-control-center/accounts/xpub-and-descriptors) the wallet.
+
+<Warning>Never upload a file that contains a seed phrase or private key. An upload it can't read shows "Invalid file. Please check your file and try again." Control Center also refuses any private key, such as an `xprv`. See [Pasted a private key?](/bitcoin-control-center/accounts/xpub-and-descriptors#pasted-a-private-key)</Warning>
 
 ## Add a multisig wallet
 

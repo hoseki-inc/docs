@@ -27,9 +27,20 @@ keywords:
 
     - Check host, port, and protocol. SSL usually uses `50002`. TCP usually uses `50001`.
     - Confirm the server is on mainnet and fully synced.
-    - `.onion` address? Turn on **Connect via Tor**. Tor can take up to two minutes to start.
-    - Using a StartOS Root CA? Install the CA on your computer. Fully quit and reopen the app.
+    - `.onion` address? Turn on **Connect via Tor**. Use **TCP**. Tor already encrypts it. Tor can take up to two minutes to start.
+    - SSL to a public hostname with a StartOS Root CA? Install the CA on your computer. Fully quit and reopen the app. Local addresses (`.local`, `192.168.x.x`) don't need it.
+    - Use the port and protocol your node's Electrum app shows. Many home nodes use **TCP** on `50001`.
+
+    | Error contains | Fix |
+    | --- | --- |
+    | `ENOTFOUND` | The address is wrong or can't be found. Try the node's IP address. |
+    | `ECONNREFUSED` | Wrong port, or the Electrum app isn't running. |
+    | `certificate` | Use **TCP**, or use your node's local address. |
+
     - Select **Test Connection** in [Settings](/bitcoin-control-center/settings/app-settings#electrum-server-desktop) to check.
+  </Accordion>
+  <Accordion title="Portfolio says &quot;Wallet history couldn't be loaded&quot; or &quot;Couldn't load this date range&quot;">
+    Control Center couldn't read wallet history from your Electrum server. It retries on its own. Check the connection above. For a date range, select **Try again** or pick another range.
   </Accordion>
   <Accordion title="Portfolio says &quot;Last synced…&quot; or &quot;Can't reach Electrum&quot;">
     Control Center can't reach your Electrum server. **Last synced …** shows your last saved balances. **Can't reach Electrum** means not every wallet on screen has a saved sync time. It keeps retrying. Fix the connection above.
@@ -67,6 +78,7 @@ keywords:
     - Confirm your Electrum server is fully synced.
     - **Wrong address type.** Added by xpub? Pick the script type that matches your addresses. See [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors#which-script-type).
     - **Wrong account.** Check you picked the right account number or passphrase wallet.
+    - **20 or more unused addresses in a row.** Control Center stops looking after 20 unused addresses. Funds past that gap don't show.
     - **Unconfirmed funds** don't count yet. Wait for one confirmation.
   </Accordion>
   <Accordion title="&quot;No wallets found&quot; when adding a hardware wallet">
@@ -142,12 +154,20 @@ keywords:
     - **Coinbase:** use an **ECDSA** key, and paste the whole private key.
     - **Strike:** turn on **Read account balances**. It's off by default.
     - Create a new key and try again.
+
+    | Message starts with | Fix |
+    | --- | --- |
+    | **Invalid Strike API key** or **Strike API error** | Turn on **Read account balances**, or make a new key. |
+    | **Failed to fetch Kraken balance** | Turn on **Query Funds**. Paste Kraken's Private Key into **Secret Key**. |
+    | **Failed to list Coinbase accounts** | Use an **ECDSA** key with **View** access. |
+    | **No BTC account found in Coinbase** | Create a BTC wallet in Coinbase first. |
+    | **Robinhood API auth failed** | The API key and private key don't match. Make a new pair. |
   </Accordion>
   <Accordion title="Exchange shows &quot;Reconnect&quot;">
-    Keys expire in Control Center after one year, or after a restore without the key file. Create a new key. Open the account. Select **Reconnect Account**.
+    Keys expire in Control Center after one year, or after a restore without the key file. **Refresh Balance** may say "Exchange credentials are unavailable or expired." Create a new key. Open the account. Select **Reconnect Account**.
   </Accordion>
-  <Accordion title="&quot;Rate limit exceeded&quot;">
-    The exchange is limiting requests. Wait a few minutes and select **Refresh Balance**.
+  <Accordion title="&quot;API rate limit exceeded&quot;">
+    Strike or Robinhood is limiting requests. Wait a few minutes and select **Refresh Balance**.
   </Accordion>
 </AccordionGroup>
 
@@ -185,10 +205,15 @@ keywords:
     See [PIN and lock](/bitcoin-control-center/security/pin#forgot-your-pin). Your data stays.
   </Accordion>
   <Accordion title="&quot;Too many wrong PINs&quot;">
-    Wait for the timer. Each wrong try after the fifth doubles the wait, up to 1 hour.
+    Wait for the timer. Each wrong try after the fifth doubles the wait, up to 1 hour. Quitting or restarting doesn't clear it.
+
+    Don't remember it? **Forgot PIN?** still works during the wait. See [PIN and lock](/bitcoin-control-center/security/pin#forgot-your-pin).
   </Accordion>
   <Accordion title="&quot;Couldn't reach Control Center&quot;">
     On StartOS, check that the Bitcoin Control Center service is running. On desktop, quit fully and reopen the app. Then select **Try again**.
+  </Accordion>
+  <Accordion title="&quot;Control Center could not start&quot;">
+    The desktop app closes after this message. Open it again. Still failing? Restart your computer, then [contact support](/contact).
   </Accordion>
   <Accordion title="I was signed out">
     The app or server restarted. Enter your PIN again.

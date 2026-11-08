@@ -30,6 +30,8 @@ Archive a wallet you no longer use. Control Center stops tracking it but keeps i
 1. Open the wallet. Select **Archive Account**.
 2. Read the message. Select **Archive**.
 
+**Archive** is greyed out if Control Center can't read the current balance. Check your [Electrum connection](/bitcoin-control-center/help/troubleshooting#connection), then try again.
+
 <Frame caption="Archiving keeps the wallet's history.">
   <img
     src="/images/accounts-archive-dialog.png"
@@ -68,6 +70,6 @@ Open the account. Select **Remove Account**.
 
 ## Add the same wallet again
 
-Adding a wallet you archived shows "This account is archived". Restore it from **Archived** instead. Adding a wallet that's already tracked takes you to the existing account. It does not create a duplicate.
+Adding a wallet you archived takes you to **Archived**. Restore it there. Adding a wallet that's already in Control Center opens that account. With a device or **Manually Sign**, you're asked to sign again. It never creates a duplicate.
 
 Adding an **Unverified** wallet again with your device, **Multisig**, or **Manually Sign** lets you sign for it. See [Verify a tracked wallet later](/bitcoin-control-center/accounts/how-accounts-work#verify-a-tracked-wallet-later).
