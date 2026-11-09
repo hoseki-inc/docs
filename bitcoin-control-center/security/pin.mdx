@@ -31,6 +31,8 @@ On Mac and Windows:
 
 1. On **Set up your PIN**, enter 6 digits.
 2. On **Confirm your PIN**, enter them again. Select **Back** to start over.
+
+   Don't match? You see **Those PINs didn't match. Choose your PIN again.** Start from step 1.
 3. On **Your PIN is set**, select **Show PIN** or **Copy PIN** to save it in your password manager.
 4. Select **Continue**.
 
@@ -56,6 +58,13 @@ Enter your PIN each time you open Control Center.
 
 **Wrong PIN?** You get 5 tries. After that, you wait 30 seconds. Each further wrong try doubles the wait, up to 1 hour.
 
+| You see | Meaning |
+| --- | --- |
+| **Wrong PIN. 2 more tries before a short wait.** | You're close to the limit. |
+| **Too many wrong PINs. Try again in …** | Wait for the timer, or use **Forgot PIN?**. |
+
+Quitting or restarting doesn't clear the wait. **Forgot PIN?** still works and clears it.
+
 ## When the app locks
 
 - You select the **padlock** icon at the top right.
@@ -63,7 +72,7 @@ Enter your PIN each time you open Control Center.
 - You reopen a closed tab, or duplicate a tab.
 - The app or server restarts. Everyone is signed out.
 
-Reloading the page does not lock it. There is no idle timeout.
+Reloading the page or minimizing the window does not lock it. There is no idle timeout.
 
 ## Change your PIN
 
@@ -81,16 +90,25 @@ On StartOS, **Sign out everywhere** signs out every browser at once.
 
 Select **Forgot PIN?** on the sign-in screen. Your accounts and history are kept on every platform.
 
+<Frame caption="Reset your PIN. Your accounts stay put.">
+  <img
+    src="/images/security-pin-reset.png"
+    alt="Reset your PIN screen showing PIN reset. Restarting Control Center…"
+  />
+</Frame>
+
 <Tabs>
   <Tab title="Mac and Windows">
     1. Select **Reset PIN**.
-    2. Enter your computer's administrator password when asked.
+    2. Confirm you're an administrator.
+       - **Mac:** the prompt says **Bitcoin Control Center wants to reset its PIN.** Enter an administrator's name and password.
+       - **Windows:** a User Account Control prompt for **Windows Command Processor** appears. This is expected. Select **Yes**, or enter an administrator's password.
     3. You see **PIN reset. Restarting Control Center…**
     4. On **Choose a new PIN**, set a new PIN.
 
-    Cancelled the password prompt? You see **PIN not reset. Nothing changed.**
+    Cancelled the prompt? You see **PIN not reset. Nothing changed.**
 
-    Not an administrator on this computer? Ask one to enter their password.
+    Not an administrator on this computer? Ask one to approve the prompt.
 
     Quit before you set a new PIN? Next time you see **Set up your PIN**. Your accounts and history are still there.
   </Tab>

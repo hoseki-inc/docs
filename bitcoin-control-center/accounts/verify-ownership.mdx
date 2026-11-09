@@ -35,7 +35,7 @@ The message looks like this:
 I, the owner, affirm sole control of this account. No other third-party claims/access permitted. Ownership revocable solely by me. ID=…
 ```
 
-The `ID` is unique to your account. You sign with the wallet's **first receive address** (path ending `/0/0`).
+The `ID` is unique to your account. You sign with the wallet's **first receive address** (path ending `/0/0`). For multisig, each key signs from its own Legacy (`1…`) address.
 
 ## How to sign
 
@@ -52,17 +52,10 @@ You sign right after adding a wallet. To finish later, open the **pending** acco
   <Tab title="Ledger and Trezor">
     1. Select **Prove Control**.
     2. Check the message and address on your device. Approve it.
-
-    <Frame caption="Sign on your device.">
-      <img
-        src="/images/statements-signing.png"
-        alt="Hardware wallet signing prompt for proof of control"
-      />
-    </Frame>
   </Tab>
   <Tab title="COLDCARD (MicroSD)">
     1. Select **Download** to save `hoseki-ownership-claim.txt`. Copy it to your MicroSD card. Do not edit it.
-    2. On the COLDCARD, go to **Advanced/Tools** → **File Management** → **Sign Text File**. Pick the file. Press Enter.
+    2. On the COLDCARD, go to **Advanced/Tools** → **File Management** → **Sign Text File**. On Mk2 or Mk3: **Advanced** → **MicroSD Card** → **Sign Text File**. Pick the file. Press Enter.
     3. Upload the new `hoseki-ownership-claim-signed.txt`. Select **Prove Control**.
   </Tab>
   <Tab title="COLDCARD Q and Keystone">
@@ -84,7 +77,7 @@ You sign right after adding a wallet. To finish later, open the **pending** acco
   </Tab>
 </Tabs>
 
-When it works, you see your device's name and **Verified!**, such as **Trezor Verified!**, with its balance. An unknown device shows **Wallet Verified!** Select **Generate Statement**, or **View** and the device's name to open the account. If you started from a statement, the button says **Complete Statement**.
+When it works, you see your device's name and **Verified!**, such as **Trezor Verified!** or **Coldcard Verified!**, with its balance. An unknown device shows **Wallet Verified!** Select **Generate Statement**, or **View** and the device's name to open the account. If you started from a statement, the button says **Complete Statement**.
 
 ## Good to know
 
@@ -97,7 +90,7 @@ When it works, you see your device's name and **Verified!**, such as **Trezor Ve
 
 | Message | Fix |
 | --- | --- |
-| **Invalid signature** | Sign the exact message shown, with the exact address shown. Don't add spaces or line breaks. |
-| **Signing address does not match the account key** | You signed with a different address or wallet. Use the address shown. |
+| **Couldn't verify this account** (xpub or descriptor) | Sign the exact message with the exact address shown. Paste the signature unchanged, with no extra spaces or line breaks. |
+| **Invalid signature** | Ledger or Trezor: sign with the same device, passphrase, and account you added. COLDCARD Q or Keystone: the signed QR couldn't be read. Scan it again. |
+| **The signing process did not complete successfully.** | COLDCARD (MicroSD): upload the file ending `-signed.txt`, not the original. QR devices: sign on the device and account you added. |
 | **File not downloaded or copied** | Download or copy the message file before you select **Next**. |
-| **The signing process did not complete successfully** (COLDCARD) | Upload the file ending `-signed.txt`, not the original. |

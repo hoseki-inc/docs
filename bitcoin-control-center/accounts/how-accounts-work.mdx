@@ -34,8 +34,8 @@ Each account card shows a badge.
 
 | Badge | Meaning | What to do |
 | --- | --- | --- |
-| **verified** | You proved control of this wallet. | Nothing. It can go on a statement. |
-| **pending** | Wallet added, but not yet verified. Its balance is still tracked. | Open it. Select **Continue** to [verify](/bitcoin-control-center/accounts/verify-ownership). |
+| **Verified** | You proved control of this wallet. | Nothing. It can go on a statement. |
+| **Pending** | Wallet added, but not yet verified. Its balance is still tracked. | Open it. Select **Continue** to [verify](/bitcoin-control-center/accounts/verify-ownership). For multisig, pick a signing device. |
 | **Connected** | Exchange key works. | Nothing. |
 | **Reconnect** | Exchange key expired or cannot be read. Balance shows "—" and is left out of totals. | Open it. Select **Reconnect Account**. |
 | **Unverified** | A wallet you track without proving you own it, such as a [tracked xpub](/bitcoin-control-center/accounts/xpub-and-descriptors) or a [Bitkey](/bitcoin-control-center/accounts/bitkey). Manual and ETF holdings show it too. Its balance is still tracked. | Nothing. To put a wallet on a statement, [verify it](#verify-a-tracked-wallet-later). |
@@ -51,7 +51,7 @@ flowchart TD
   B -- "Abandon" --> X["Removed"]
   U -- "Archive" --> D
   C -- "Archive" --> D["Archived<br/>history kept"]
-  D -- "Restore" --> C
+  D -- "Restore" --> R["Same status<br/>as before"]
   D -- "Delete Permanently" --> X
 ```
 

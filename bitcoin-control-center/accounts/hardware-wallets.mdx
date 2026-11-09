@@ -28,7 +28,7 @@ Control Center imports **public** keys (xpubs) only. Your coins stay on your wal
 
 Have a Bitkey? See [Bitkey](/bitcoin-control-center/accounts/bitkey). Other wallet or address type? Use an [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors) instead.
 
-<Warning>Wallet scans only list accounts with a balance above zero. A new or emptied wallet shows "No wallets found". To track it anyway, add it by [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors).</Warning>
+<Warning>Wallet scans only list accounts with a balance above zero. A new or emptied wallet shows "No wallets found" (Ledger) or "We were unable to find any accounts with a non-zero balance" (COLDCARD, Keystone). To track it anyway, add it by [xpub or descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors).</Warning>
 
 ## Add a hardware wallet
 
@@ -56,8 +56,16 @@ flowchart LR
 <Tabs>
   <Tab title="Ledger">
     1. Plug in by USB. Unlock with your PIN. Open the **Bitcoin** app.
-    2. Select **Next**. In a browser, allow the connection prompt.
+    2. Connect it.
+       - **Desktop:** select **Connect Ledger**. When you see **… is connected**, select **Continue**. Several Ledgers plugged in? Pick one and select **Connect selected Ledger**.
+       - **In a browser:** select **Next**. Allow the connection prompt.
     3. Control Center scans for accounts. Pick one if it finds several.
+
+    | Desktop message | Fix |
+    | --- | --- |
+    | **No Ledger detected** | Check the USB cable. Unlock the Ledger. The screen updates when it appears. |
+    | **Connection timed out** | Check your Ledger. Select **Try again**. |
+    | **Your Ledger was disconnected** | Plug it back in, unlock it, and open the **Bitcoin** app. |
 
     <Frame caption="Connect your Ledger.">
       <img
@@ -98,8 +106,8 @@ flowchart LR
          />
        </Frame>
 
-    2. On Mk2–Mk4, choose **By Airgapping**. USB is not supported.
-    3. On the COLDCARD, go to **Advanced/Tools** → **Export Wallet** → **Generic JSON**. If asked for an account number, choose yours (usually `0`).
+    2. On Mk2–Mk4, choose **By Airgapping**. USB is not supported. Choosing **With USB** shows **COLDCARD Setup Requires a MicroSD Card**.
+    3. On the COLDCARD, go to **Advanced/Tools** → **Export Wallet** → **Generic JSON**. On Mk2 or Mk3: **Advanced** → **MicroSD Card** → **Export Wallet** → **Generic JSON**. If asked for an account number, choose yours (usually `0`).
     4. Upload `coldcard-export.json`. Select **Connect Wallet**.
 
     <Frame caption="Export Generic JSON to the MicroSD card.">
@@ -131,6 +139,8 @@ flowchart LR
         alt="Keystone QR scan step"
       />
     </Frame>
+
+    **Invalid QR code** means you scanned something other than a Keystone wallet export. **Invalid wallet export** means Control Center couldn't read it. Show the export QR again.
 
     Keystone accounts are treated as Native SegWit (`bc1q…`). If the balance looks wrong, add the wallet by [descriptor](/bitcoin-control-center/accounts/xpub-and-descriptors) with the right address type.
   </Tab>

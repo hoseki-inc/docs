@@ -38,7 +38,7 @@ Control Center reads your exchange balance with an **API key** you create on the
 | Exchange | Where to create the key | Permissions to turn on | What you paste |
 | --- | --- | --- | --- |
 | **Coinbase** | [coinbase.com/settings/api](https://www.coinbase.com/settings/api) | **View (Read-Only)** only. Under Advanced, pick **ECDSA**. | API Key Name and the whole Private Key |
-| **Kraken** | [Kraken API settings](https://www.kraken.com/c/account-settings/api) | **Query Funds** and **Query Ledger Entries** only | API Key and Private Key (secret) |
+| **Kraken** | [Kraken API settings](https://www.kraken.com/c/account-settings/api) | **Query Funds** and **Query Ledger Entries** only | API Key, and Kraken's Private Key in **Secret Key** |
 | **Robinhood** | [Robinhood Crypto settings](https://robinhood.com/account/crypto) | Read-only API credential | Account name, API key (`rh-api-…`), and your base64 private key |
 | **Strike** | [Strike developer dashboard](https://dashboard.strike.me/developer/api-keys) | **Read account balances** only. It's off by default. | Account name and API key |
 
@@ -58,11 +58,13 @@ Control Center reads your exchange balance with an **API key** you create on the
     </Frame>
 
     Coinbase shows your **available** balance. Bitcoin on hold is not counted.
+
+    You need a BTC wallet in Coinbase, or you see "No BTC account found in Coinbase". The account takes that wallet's name.
   </Tab>
   <Tab title="Kraken">
     1. Select **Create API Key**.
     2. Turn on **Query Funds** and **Query Ledger Entries**. Leave everything else off.
-    3. Select **Generate Key**. Paste the API Key and the Private Key.
+    3. Select **Generate Key**. Paste the API Key. Paste Kraken's Private Key into **Secret Key**.
 
     <Frame caption="Kraken fields and setup steps.">
       <img
@@ -71,7 +73,7 @@ Control Center reads your exchange balance with an **API key** you create on the
       />
     </Frame>
 
-    Kraken accounts are always named "Kraken".
+    Kraken accounts are always named "Kraken". Only your spot BTC balance counts. Bitcoin in Kraken Earn or staking is not included.
   </Tab>
   <Tab title="Robinhood">
     1. Create an Ed25519 key pair with the script in Robinhood's API docs. Save both keys.
@@ -121,6 +123,14 @@ Add Strike statements to show transaction detail.
 3. Drop the CSV under **Account Statements**.
 
 Upload the CSV, not the PDF. If a statement includes a reversed transaction, use **Activity** → **Generate Report** instead.
+
+| You see | Meaning |
+| --- | --- |
+| **Imported N transactions (M duplicates skipped)** | It worked. Transactions already imported are skipped. |
+| **Please upload the CSV export, not the PDF.** | Download the CSV from Strike and upload that. |
+| **No Bitcoin transactions found.** | The file has no Bitcoin activity, or isn't a Strike CSV. |
+
+This adds detail to the account's history in Control Center. Strike still doesn't appear on [proof-of-ownership statements](/bitcoin-control-center/statements/statements-and-hoseki-verified), even though the upload screen says it will.
 
 ## Things to watch
 

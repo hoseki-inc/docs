@@ -45,15 +45,19 @@ Sets where the Bitcoin price comes from. Price requests include no wallet inform
 
 | Option | Notes |
 | --- | --- |
-| **Your mempool server** | Only on StartOS. Most private. The default there. |
+| **Your mempool server** (with its address) | Only on StartOS. Most private. The default there. |
 | **Block** | The default on desktop. |
 | **mempool.space** | Public. |
 | **Coinbase** | Public. |
 | **CoinGecko** | Public. |
 
-**Allow fallbacks** (on by default) uses the next source in the list if yours is down. With it off, you may see "No price is available right now."
+**Allow fallbacks** (on by default) uses the next source in the list if yours is down.
 
-If no source answers, Control Center shows the last known price.
+| You see | Meaning |
+| --- | --- |
+| **Using … while … is unavailable.** | Your source is down. A fallback is in use. |
+| **No price source is available right now. Showing the last known price.** | No source answered. Prices may be out of date. |
+| **No price is available right now.** | No source answered, and there's no saved price yet. Turn on **Allow fallbacks**, or pick another source. |
 
 ## Statement data (desktop)
 
@@ -79,13 +83,19 @@ Where wallet balances come from. Use your own server for the most privacy.
   />
 </Frame>
 
-- **Saved connections:** up to 5. One is active. Its status shows **Connected**, **Connecting…**, or **Disconnected**.
+- **Saved connections:** up to 5. One is active. It shows **Connected**, **Connecting…**, **Checking…**, or **Disconnected**. Others show **Tor** or **Direct**.
 - **New connection:** enter **Name**, **Host**, **Port**, and **Protocol**. **Start with** can fill in **Blockstream (Public)**.
-- **Test Connection** checks it without switching. **Save & Connect** switches to it.
+- **Test Connection** checks it without switching. **Save** keeps it for later. **Save & Connect** saves and switches to it.
+- To edit a saved connection, change its details. Then select **Save & Reconnect** (in use) or **Save & Connect** (not in use).
 - **Connect via Tor** sends Electrum requests through Tor. It's required for `.onion` addresses. Exchange and price requests, and statement lookups on mempool.space, do not use Tor.
 - **Delete** a connection with the trash icon. You can't delete the active one. Connect to another first.
+- **Limit reached. Delete one to add another.** You have 5 saved. Delete one first.
+- **Connection saved. Select Connect when you want to use it.** You saved without switching. Select **Connect** to use it.
+- **This connection changed in another window.** Reload the page, then save again.
 
 A node you connected in the introduction is listed as **My node**.
+
+The server you started with is listed as **Current connection**, even after you switch. Rename it with the pencil icon.
 
 Your accounts and history are kept when you switch servers.
 
@@ -115,11 +125,14 @@ flowchart LR
 
 | Message | Meaning |
 | --- | --- |
-| **Starting Tor… n%** | Tor is starting. It can take up to two minutes. |
+| **Starting Tor… n%** | Tor is starting. It can take up to two minutes. **Test Connection** and **Connect** wait until it's ready. |
+| **Tor could not connect within two minutes. Check your network.** | Check your internet. Then select **Test Connection** to try Tor again. |
 | **Tor ready** | Connected through Tor. |
 | **Onion addresses need Tor** | Turn on **Connect via Tor**. |
+| **This connection needs Tor** | You tried to turn Tor off for a `.onion` address. Select **Keep Tor on**. |
 | **Connect without Tor?** | You turned Tor off. The server will see your IP address. |
 | **Bundled Tor is missing** | Reinstall the desktop app. |
+| **Tor could not start.**, **Tor stopped unexpectedly.**, or **Tor did not open its local proxy.** | Quit fully and reopen the app. Still failing? Reinstall it, or turn off **Connect via Tor**. |
 
 ## What's not in Settings
 

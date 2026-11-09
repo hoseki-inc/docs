@@ -37,6 +37,10 @@ USD is your BTC total × the current Bitcoin price from your [price source](/bit
 | **Bitcoin Price** | USD price, with **7D**, **30D**, **6M**, or **1Y** history. Refreshes every 5 minutes. |
 | **Recent Statements** | Your last three statements. |
 
+The same sync status as Portfolio shows next to **Last 30 Days** when balances are updating or out of date. See [Sync status](#sync-status).
+
+**Some holdings data is unavailable** means Control Center couldn't confirm your balances. Select **Try Again**. Still there? Check your [Electrum connection](/bitcoin-control-center/help/troubleshooting#connection).
+
 ## Portfolio
 
 <Frame caption="Portfolio with the account filter on the left.">
@@ -50,7 +54,7 @@ USD is your BTC total × the current Bitcoin price from your [price source](/bit
 
 Select accounts on the left to see just those. **All accounts** shows everything. On a narrow window, use the **Filter accounts** button instead.
 
-- **Generate Statement** starts a statement with the wallets you filtered to.
+- **Generate Statement** checks the verified wallets you filtered to. If your filter has none, check the wallets you want on the next screen.
 - Exchanges marked **Reconnect needed** can't be selected. Select them to reconnect.
 
 ### Sync status
