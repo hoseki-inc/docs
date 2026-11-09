@@ -162,6 +162,15 @@ keywords:
     | **Failed to list Coinbase accounts** | Use an **ECDSA** key with **View** access. |
     | **No BTC account found in Coinbase** | Create a BTC wallet in Coinbase first. |
     | **Robinhood API auth failed** | The API key and private key don't match. Make a new pair. |
+
+    **Refresh Balance** on an account you already added shows different messages:
+
+    | Message starts with | Fix |
+    | --- | --- |
+    | **Kraken error:** | Check the key still has **Query Funds**. Make a new key if needed. |
+    | **Coinbase error:** | Check the key still exists with **View** access. |
+    | **No BTC account found** | Your Coinbase BTC wallet is gone. Create one in Coinbase. |
+    | **No BTC balance found in Strike account** | Strike didn't return a BTC balance. This usually means it's zero. |
   </Accordion>
   <Accordion title="Exchange shows &quot;Reconnect&quot;">
     Keys expire in Control Center after one year, or after a restore without the key file. **Refresh Balance** may say "Exchange credentials are unavailable or expired." Create a new key. Open the account. Select **Reconnect Account**.
@@ -215,8 +224,15 @@ keywords:
   <Accordion title="&quot;Control Center could not start&quot;">
     The desktop app closes after this message. Open it again. Still failing? Restart your computer, then [contact support](/contact).
   </Accordion>
+  <Accordion title="&quot;Something went wrong&quot;">
+    A page couldn't be displayed. Select **Reload**, or **Back to Home**. Still happening? [Contact support](/contact) and say which page you were on.
+  </Accordion>
   <Accordion title="I was signed out">
-    The app or server restarted. Enter your PIN again.
+    Enter your PIN again. This happens when:
+
+    - The app or server restarted.
+    - Someone changed the PIN in another tab or browser.
+    - On StartOS, someone ran **Set PIN** or selected **Sign out everywhere**.
   </Accordion>
   <Accordion title="I closed the window, but the app is still running">
     That's expected. It keeps running in the tray and locks. Use **Quit** in the tray menu to quit fully.

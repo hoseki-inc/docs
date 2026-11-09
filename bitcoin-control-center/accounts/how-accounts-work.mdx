@@ -51,7 +51,7 @@ flowchart TD
   B -- "Abandon" --> X["Removed"]
   U -- "Archive" --> D
   C -- "Archive" --> D["Archived<br/>history kept"]
-  D -- "Restore" --> C
+  D -- "Restore" --> R["Same status<br/>as before"]
   D -- "Delete Permanently" --> X
 ```
 

@@ -92,9 +92,9 @@ It's selected to start. It works right away, with nothing to set up.
 
 1. Select **My own node**. Select **Continue**.
 2. On **Connect your node**, enter the **Address**, such as `mynode.local` or `192.168.1.20`. Find it in your node's Electrum server app, such as Electrs or Fulcrum.
-3. Use the **Port** and **Protocol** your node's Electrum app shows. Many home nodes use **TCP** on `50001`. SSL usually uses `50002`.
+3. Use the **Port** and **Protocol** your node's Electrum app shows. The form starts on **SSL** and `50002`. Many home nodes use **TCP** on `50001`.
 4. For a `.onion` address, turn on **Connect via Tor** and use **TCP**.
-5. Select **Connect**. When you see **Connected to your node.**, select **Continue**.
+5. Select **Connect**. When it works, you see **Connected to your node** and move to the next step.
 
 <Frame caption="Enter your node's Electrum address, port, and protocol.">
   <img
@@ -104,6 +104,14 @@ It's selected to start. It works right away, with nothing to set up.
 </Frame>
 
 **"Couldn't connect to …"** Check the details and that your node is on. The reason shows under the message.
+
+If the form is incomplete, **Connect** shows what to fix:
+
+| Message | Fix |
+| --- | --- |
+| **Enter your node's address.** | Fill in **Address**. |
+| **Enter a port from 1 to 65535.** | Fix **Port**. |
+| **Onion addresses need Tor. Turn on Connect via Tor.** | Turn on **Connect via Tor**. |
 
 Your node is saved as **My node** in [Settings](/bitcoin-control-center/settings/app-settings#electrum-server-desktop). You can rename it there.
 
