@@ -75,6 +75,15 @@ Things to know:
 3. Select **+ Add Another ETF** for more funds.
 4. Select **Add ETF Holdings**. You see **ETF Holdings Added!** Select **View Holdings** or **Connect Another Account**.
 
+<Note>
+**Add ETF Holdings** stays grayed out until the form is valid. A field turns red when:
+
+- **Shares** is zero, below zero, or not a plain number. Use digits and a decimal point only, like `12.5`.
+- **Date Purchased** is after today. The date picker stops at today.
+
+You also need a **Display Name** and at least one fund with shares. A row with **Shares** left blank is skipped.
+</Note>
+
 <Frame caption="ETF holdings with an estimated BTC total.">
   <img
     src="/images/accounts-etf-form.png"
@@ -92,7 +101,12 @@ Shares × Bitcoin per share. Bitcoin per share is a fixed reference figure for e
 
 ### Change your holdings
 
-Open the ETF account. Under **Holdings**, select **Add Holding** or **Remove**. To change a share count, remove the row and add it again.
+Open the ETF account.
+
+- **Add:** under **Add Holding**, pick the **ETF**, enter **Shares** and an optional **Date Purchased**, then select **Add**. The same rules apply: **Add** stays grayed out until **Shares** is above zero and the date isn't after today.
+- **Remove:** under **Holdings**, select **Remove** on the row. It goes right away, with no confirmation.
+
+To change a share count, remove the row and add it again.
 
 <Frame caption="An ETF account and its holdings.">
   <img
